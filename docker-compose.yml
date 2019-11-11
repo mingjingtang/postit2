@@ -35,3 +35,35 @@ services:
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+  posts-api:
+    image: maven:3.6.1-jdk-8
+    ports:
+      - '8082:8082'
+    working_dir: /app
+    volumes:
+      - ./posts-api:/app
+    depends_on:
+      - eureka
+    command: 'mvn spring-boot:run'
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+  comments-api:
+    image: maven:3.6.1-jdk-8
+    ports:
+      - '8083:8083'
+    working_dir: /app
+    volumes:
+      - ./comments-api:/app
+    depends_on:
+      - eureka
+    command: 'mvn spring-boot:run'
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+  postgresdev:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=pgdev
