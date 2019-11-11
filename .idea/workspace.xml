@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d486d8b0-51ca-4b26-a0b5-d4f429ac130f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/resources/application-dev.properties" afterDir="false" />
-    </list>
+    <list default="true" id="d486d8b0-51ca-4b26-a0b5-d4f429ac130f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,11 +12,20 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/users-api/pom.xml">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="690">
                   <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/users-api/src/main/resources/db/migration/afterMigrate.sql">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
                 </state>
               </provider>
             </entry>
@@ -81,6 +84,7 @@
         <option value="$PROJECT_DIR$/users-api/src/main/resources/application-dev.properties" />
         <option value="$PROJECT_DIR$/users-api/src/main/resources/db/migration/V1__create_users.sql" />
         <option value="$PROJECT_DIR$/users-api/pom.xml" />
+        <option value="$PROJECT_DIR$/users-api/src/main/resources/db/migration/afterMigrate.sql" />
       </list>
     </option>
   </component>
@@ -177,6 +181,16 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="postit2" type="462c0819:PsiDirectoryNode" />
+              <item name="users-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="migration" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -186,7 +200,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573431464793" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573432334482" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -214,12 +228,12 @@
       <updated>1573245273390</updated>
       <workItem from="1573245277493" duration="28000" />
       <workItem from="1573245331326" duration="15000" />
-      <workItem from="1573245399987" duration="2828000" />
+      <workItem from="1573245399987" duration="3280000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2871000" />
+    <option name="totallyTimeSpent" value="3323000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2049" y="23" width="1896" height="1022" extended-state="0" />
@@ -284,6 +298,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users-api/src/main/resources/db/migration/afterMigrate.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
         </state>
       </provider>
     </entry>
