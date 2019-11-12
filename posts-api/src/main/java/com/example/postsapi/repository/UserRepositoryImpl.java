@@ -18,10 +18,10 @@ public class UserRepositoryImpl implements UserRepository {
     String message = "findIdByUsername:" + username;
     System.out.println("Sending message: " + message);
     String userIdStr = (String) amqpTemplate.convertSendAndReceive("findIdByUsername", message);
-    Long userId = Long.parseLong(userIdStr);
-    if(userId == null){
+    if(userIdStr.length() == 0){
       throw new RuntimeException("user not found");
     }
+    Long userId = Long.parseLong(userIdStr);
     return userId;
   }
 }
