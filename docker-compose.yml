@@ -2,13 +2,13 @@ version: '3'
 
 services:
   rabbitmq:
-      build: ./rabitmq
+      image: "rabbitmq:management"
       ports:
         - "15672:15672"
         - "5672:5672"
   eureka:
-#    image: maven:3.6.1-jdk-8
-    build: ./eureka
+    image: maven:3.6.1-jdk-8
+#    build: ./eureka-server
     ports:
       - '8761:8761'
     working_dir: /app
@@ -78,8 +78,8 @@ services:
     links: 
       - rabbitmq
   postgresdev:
-#    image: postgres
-    build: ./postgresdev
+    image: postgres
+#    build: ./postgresdev
     ports:
       - '5432:5432'
     environment:
