@@ -1,6 +1,11 @@
 version: '3'
 
 services:
+  rabbitmq:
+      image: "rabbitmq:management"
+      ports:
+        - "15672:15672"
+        - "5672:5672"
   eureka:
     image: maven:3.6.1-jdk-8
     ports:
@@ -23,6 +28,8 @@ services:
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+    links: 
+      - rabbitmq
   users-api:
     image: maven:3.6.1-jdk-8
     ports:
@@ -35,6 +42,8 @@ services:
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+    links: 
+      - rabbitmq
   posts-api:
     image: maven:3.6.1-jdk-8
     ports:
@@ -47,6 +56,8 @@ services:
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+    links: 
+      - rabbitmq
   comments-api:
     image: maven:3.6.1-jdk-8
     ports:
@@ -59,6 +70,8 @@ services:
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+    links: 
+      - rabbitmq
   postgresdev:
     image: postgres
     ports:

@@ -31,4 +31,10 @@ public class UserServiceImpl implements UserService {
     Iterable<User> userIter = userRepository.findAll();
     return StreamSupport.stream(userIter.spliterator(), false).collect(Collectors.toList());
   }
+
+  @Override
+  public Long findIdByUsername(String username) {
+    User user = userRepository.findByUsername(username);
+    return user.getId();
+  }
 }
