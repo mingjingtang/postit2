@@ -41,4 +41,17 @@ public class UserListener {
     }
     return "";
   }
+
+  @RabbitListener(queuesToDeclare = @Queue("findByUserId"))
+  public String handleMessage_findByUserId(String message) throws JsonProcessingException {
+    System.out.println("received:"+message);
+    String userJson = "";
+    if (message.startsWith("findByUserId")) {
+      Long userId = Long.parseLong(message.split(":")[1]);
+      User user = userService.findById(userId);
+      userJson = mapper.writeValueAsString(user);
+      return userJson;
+    }
+    return "";
+  }
 }

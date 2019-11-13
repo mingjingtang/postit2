@@ -43,4 +43,19 @@ public class UserRepositoryImpl implements UserRepository {
     }
     return user;
   }
+
+  @Override
+  public User findByUserId(Long userId) {
+    String message = "findByUserId:" + userId;
+    System.out.println("Sending message: " + message);
+    String userJson = (String) amqpTemplate.convertSendAndReceive("findByUserId", message);
+    User user = null;
+    try{
+      user = mapper.readValue(userJson, User.class);
+    } catch (Exception e) {
+      e.printStackTrace();
+      throw new RuntimeException("user not found");
+    }
+    return user;
+  }
 }

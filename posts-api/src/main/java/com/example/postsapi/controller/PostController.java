@@ -42,13 +42,7 @@ public class PostController {
   public Post updatePost(@PathVariable Long postId, @RequestBody Post post) {
     return postService.updatePost(postId, post);
   }
-
-
-  @PostMapping("/{username}/{postId}/comment")
-  public Comment createComment(@PathVariable String username, @PathVariable Long postId, @RequestBody Comment comment) {
-//    return commentService.createComment(authUtil.getUsername(), postId, comment);
-    return commentService.createComment(username, postId, comment);
-  }
+  
 
 //  @GetMapping("{postId}/comment")
 //  public List<Comment> getComments(@PathVariable Long postId){
