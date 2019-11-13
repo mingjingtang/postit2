@@ -2,6 +2,8 @@ package com.example.postsapi.controller;
 
 import com.example.postsapi.model.Comment;
 import com.example.postsapi.model.Post;
+import com.example.postsapi.service.CommentService;
+import com.example.postsapi.service.CommentServiceImpl;
 import com.example.postsapi.service.PostService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,9 @@ public class PostController {
 
   @Autowired
   private PostService postService;
+
+  @Autowired
+  private CommentService commentService;
 
   @PostMapping("/{username}")
   public Post createPost(@PathVariable String username, @RequestBody Post post) {
@@ -39,10 +44,11 @@ public class PostController {
   }
 
 
-//  @PostMapping("/{postId}/comment")
-//  public Comment createComment(@PathVariable Long postId, @RequestBody Comment comment) {
+  @PostMapping("/{username}/{postId}/comment")
+  public Comment createComment(@PathVariable String username, @PathVariable Long postId, @RequestBody Comment comment) {
 //    return commentService.createComment(authUtil.getUsername(), postId, comment);
-//  }
+    return commentService.createComment(username, postId, comment);
+  }
 
 //  @GetMapping("{postId}/comment")
 //  public List<Comment> getComments(@PathVariable Long postId){

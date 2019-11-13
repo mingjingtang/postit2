@@ -31,10 +31,6 @@ public class UserController {
     return userService.listUsers();
   }
 
-//  @PutMapping("/{userId}")
-//  public User updateUser(@RequestBody User user, @PathVariable Long userId){
-//      return userService.updateUser(user, userId);
-//  }
 
 //  @GetMapping("/post")
 //  public List<Post> getPostsByUser() {
