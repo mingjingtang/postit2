@@ -3,6 +3,7 @@ package com.example.usersapi.service;
 import com.example.usersapi.model.User;
 import com.example.usersapi.repository.UserRepository;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,4 +38,5 @@ public class UserServiceImpl implements UserService {
     User user = userRepository.findByUsername(username);
     return user.getId();
   }
+
 }

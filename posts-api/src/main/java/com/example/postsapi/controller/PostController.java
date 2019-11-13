@@ -1,21 +1,23 @@
 package com.example.postsapi.controller;
 
+import com.example.postsapi.model.Comment;
 import com.example.postsapi.model.Post;
+import com.example.postsapi.service.CommentService;
+import com.example.postsapi.service.CommentServiceImpl;
 import com.example.postsapi.service.PostService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 public class PostController {
 
   @Autowired
   private PostService postService;
+
+  @Autowired
+  private CommentService commentService;
 
   @PostMapping("/{username}")
   public Post createPost(@PathVariable String username, @RequestBody Post post) {
@@ -35,10 +37,21 @@ public class PostController {
     return postService.listPosts();
   }
 
-//  @GetMapping("/{postId}/comment")
-//  public List<Comment> getCommentsByPostId(@PathVariable Long postId)
-//      throws EntityNotFoundException {
-//
-//    return postService.getCommentsByPostId(postId);
+
+  @PutMapping("/{postId}")
+  public Post updatePost(@PathVariable Long postId, @RequestBody Post post) {
+    return postService.updatePost(postId, post);
+  }
+
+
+  @PostMapping("/{username}/{postId}/comment")
+  public Comment createComment(@PathVariable String username, @PathVariable Long postId, @RequestBody Comment comment) {
+//    return commentService.createComment(authUtil.getUsername(), postId, comment);
+    return commentService.createComment(username, postId, comment);
+  }
+
+//  @GetMapping("{postId}/comment")
+//  public List<Comment> getComments(@PathVariable Long postId){
+//    return commentService.getComments(postId);
 //  }
 }

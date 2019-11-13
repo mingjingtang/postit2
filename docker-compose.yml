@@ -72,6 +72,7 @@ services:
       - ./comments-api:/app
     depends_on:
       - eureka
+      - users-api
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev

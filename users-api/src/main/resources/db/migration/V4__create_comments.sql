@@ -1,0 +1,4 @@
+CREATE TABLE comments(
+  id SERIAL,
+  text VARCHAR(255) NOT NULL
+);
