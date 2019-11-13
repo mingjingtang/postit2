@@ -2,11 +2,12 @@ package com.example.postsapi.service;
 
 import com.example.postsapi.model.Comment;
 import com.example.postsapi.model.Post;
+import com.example.postsapi.model.PostWithUser;
 import java.util.List;
 
 public interface PostService {
 
-  public Post createPost(String username, Post post);
+  public PostWithUser createPost(String username, Post post);
 
   public Long deletePostByPostId(Long postId);
 

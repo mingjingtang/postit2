@@ -1,26 +1,26 @@
 package com.example.postsapi.model;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "posts")
-public class Post {
+public class PostWithUser {
 
-  @Id
-  @Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long postId;
 
-  @Column(name = "title")
   private String title;
 
-  @Column(name = "description")
   private String description;
+
+  private User user;
+
+  public PostWithUser(Post post, User user){
+    this.postId = post.getPostId();
+    this.title = post.getTitle();
+    this.description = post.getDescription();
+    this.user = user;
+  }
 
   public Long getPostId() {
     return postId;
@@ -46,4 +46,11 @@ public class Post {
     this.description = description;
   }
 
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
 }

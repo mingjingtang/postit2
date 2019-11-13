@@ -1,5 +1,6 @@
 package com.example.usersapi.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +20,7 @@ public class User {
   @Column(name = "username")
   private String username;
 
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @Column(name = "password")
   private String password;
 

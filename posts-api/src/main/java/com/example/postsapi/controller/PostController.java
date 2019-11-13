@@ -2,6 +2,7 @@ package com.example.postsapi.controller;
 
 import com.example.postsapi.model.Comment;
 import com.example.postsapi.model.Post;
+import com.example.postsapi.model.PostWithUser;
 import com.example.postsapi.service.CommentService;
 import com.example.postsapi.service.CommentServiceImpl;
 import com.example.postsapi.service.PostService;
@@ -20,8 +21,7 @@ public class PostController {
   private CommentService commentService;
 
   @PostMapping("/")
-  public Post createPost(@RequestHeader("username") String username, @RequestBody Post post) {
-    System.out.println("create pose username: " + username);
+  public PostWithUser createPost(@RequestHeader("username") String username, @RequestBody Post post) {
     return postService.createPost(username, post);
   }
 

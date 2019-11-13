@@ -2,6 +2,8 @@ package com.example.postsapi.service;
 
 import com.example.postsapi.model.Comment;
 import com.example.postsapi.model.Post;
+import com.example.postsapi.model.PostWithUser;
+import com.example.postsapi.model.User;
 import com.example.postsapi.repository.PostRepository;
 import com.example.postsapi.repository.PostUserRepository;
 import com.example.postsapi.repository.UserRepository;
@@ -28,14 +30,15 @@ public class PostServiceImpl implements PostService {
     private PostUserRepository postUserRepository;
 
     @Override
-    public Post createPost(String username, Post post) {
+    public PostWithUser createPost(String username, Post post) {
         Post savedPost = postRepository.save(post);
-        Long userId = userRepository.findIdByUsername(username);
-        if (userId == 0) {
+        User user = userRepository.findByUsername(username);
+        if (user == null) {
             return null;
         }
-        postUserRepository.save(userId, savedPost.getPostId());
-        return savedPost;
+        postUserRepository.save(user.getId(), savedPost.getPostId());
+        PostWithUser postWithUser = new PostWithUser(savedPost, user);
+        return postWithUser;
     }
 
     @Override

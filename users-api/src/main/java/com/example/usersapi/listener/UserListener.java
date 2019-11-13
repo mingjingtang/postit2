@@ -2,6 +2,7 @@ package com.example.usersapi.listener;
 
 import com.example.usersapi.model.User;
 import com.example.usersapi.service.UserService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -24,6 +25,19 @@ public class UserListener {
       String username = message.split(":")[1];
       Long userId = userService.findIdByUsername(username);
       return userId.toString();
+    }
+    return "";
+  }
+
+  @RabbitListener(queuesToDeclare = @Queue("findByUsername"))
+  public String handleMessage_findByUsername(String message) throws JsonProcessingException {
+    System.out.println("received:"+message);
+    String userJson = "";
+    if (message.startsWith("findByUsername")) {
+      String username = message.split(":")[1];
+      User user = userService.findByUsername(username);
+      userJson = mapper.writeValueAsString(user);
+      return userJson;
     }
     return "";
   }
