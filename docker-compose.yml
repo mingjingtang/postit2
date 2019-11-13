@@ -1,14 +1,18 @@
 version: '3'
 
 services:
+
+
   rabbitmq:
       image: "rabbitmq:management"
       ports:
         - "15672:15672"
         - "5672:5672"
+
+
   eureka:
-    image: maven:3.6.1-jdk-8
-#    build: ./eureka-server
+    # image: maven:3.6.1-jdk-8
+    build: ./eureka-server
     ports:
       - '8761:8761'
     working_dir: /app
@@ -17,6 +21,8 @@ services:
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+
+
   api-gateway:
 #    image: maven:3.6.1-jdk-8
     build: ./api-gateway
@@ -27,11 +33,14 @@ services:
       - ./api-gateway:/app
     depends_on:
       - eureka
+      - users-api
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
     links: 
       - rabbitmq
+
+
   users-api:
 #    image: maven:3.6.1-jdk-8
     build: ./users-api
@@ -47,6 +56,8 @@ services:
       - SPRING_PROFILES_ACTIVE=dev
     links: 
       - rabbitmq
+
+
   posts-api:
 #    image: maven:3.6.1-jdk-8
     build: ./posts-api
@@ -57,11 +68,14 @@ services:
       - ./posts-api:/app
     depends_on:
       - eureka
+      - users-api
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
     links: 
       - rabbitmq
+
+      
   comments-api:
 #    image: maven:3.6.1-jdk-8
     build: ./comments-api
@@ -78,6 +92,8 @@ services:
       - SPRING_PROFILES_ACTIVE=dev
     links: 
       - rabbitmq
+
+
   postgresdev:
     image: postgres
 #    build: ./postgresdev

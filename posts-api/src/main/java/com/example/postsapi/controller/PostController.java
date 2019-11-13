@@ -19,14 +19,14 @@ public class PostController {
   @Autowired
   private CommentService commentService;
 
-  @PostMapping("/{username}")
-  public Post createPost(@PathVariable String username, @RequestBody Post post) {
-
+  @PostMapping("/")
+  public Post createPost(@RequestHeader("username") String username, @RequestBody Post post) {
+    System.out.println("create pose username: " + username);
     return postService.createPost(username, post);
   }
 
   @DeleteMapping("/{postId}")
-  public Long deletePost( @PathVariable Long postId) {
+  public Long deletePost(@RequestHeader("username") String username, @PathVariable Long postId) {
 
     return postService.deletePostByPostId(postId);
   }

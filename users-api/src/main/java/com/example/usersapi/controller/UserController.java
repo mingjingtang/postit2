@@ -1,5 +1,6 @@
 package com.example.usersapi.controller;
 
+import com.example.usersapi.model.JwtResponse;
 import com.example.usersapi.model.User;
 import com.example.usersapi.service.UserService;
 import java.util.List;
@@ -13,16 +14,18 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @PostMapping("/signup")
-  public User signup(@RequestBody User user) {
-
-    return userService.signup(user);
+  @PostMapping("/login")
+  public ResponseEntity<?> login(@RequestBody User user) {
+    String token = userService.login(user);
+    User foundUser = userService.findByEmail(user.getEmail());
+    return ResponseEntity.ok(new JwtResponse(token, foundUser.getUsername()));
   }
 
-  @PostMapping("/login")
-  public User login(@RequestBody User user) {
-
-    return userService.login(user);
+  @PostMapping("/signup")
+  public ResponseEntity<?> signup(@RequestBody User user) {
+    String token = userService.signup(user);
+    User savedUser = userService.findByEmail(user.getEmail());
+    return ResponseEntity.ok(new JwtResponse(token, savedUser.getUsername()));
   }
 
   @GetMapping("/list")
