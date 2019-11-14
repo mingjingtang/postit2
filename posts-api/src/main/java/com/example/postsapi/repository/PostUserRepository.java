@@ -15,9 +15,8 @@ public class PostUserRepository {
                         "values(?,?)", userId, postId);
     }
 
-    public Long getByPostId(Long postId) {
-        String sql = "SELECT * FROM post_user WHERE post_id = ?";
-
+    public Long getUserIdByPostId(Long postId) {
+        String sql = "SELECT user_id FROM post_user WHERE post_id = " + postId;
         return jdbcTemplate.queryForObject(sql, Long.class);
     }
 }
