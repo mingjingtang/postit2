@@ -91,4 +91,9 @@ public class PostServiceImpl implements PostService {
     PostWithUser postWithUser = new PostWithUser(post, user);
     return postWithUser;
   }
+
+  @Override
+  public List<Post> findPostsByUserId(Long userId) {
+    return postUserRepository.findPostsByUserId(userId);
+  }
 }

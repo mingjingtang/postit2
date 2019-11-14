@@ -2,11 +2,9 @@ package com.example.postsapi.repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
+import com.example.postsapi.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,34 +17,49 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class PostUserRepository {
 
-  @Autowired
-  private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
-  @Autowired
-  private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    @Autowired
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-  public int save(long userId, long postId) {
-    return jdbcTemplate
-        .update("insert into post_user (user_id, post_id) " + "values(?,?)", userId, postId);
-  }
+    @Autowired
+    private PostRepository postRepository;
 
-  public Long getUserIdByPostId(Long postId) {
-    String sql = "SELECT user_id FROM post_user WHERE post_id = " + postId;
-    return jdbcTemplate.queryForObject(sql, Long.class);
-  }
+    public int save(long userId, long postId) {
+        return jdbcTemplate
+                .update("insert into post_user (user_id, post_id) " + "values(?,?)", userId, postId);
+    }
 
-  public List<Long> findUserIdsByPostIds(List<Long> postIdList) {
-      String sql = "select user_id from post_user where post_id in(:postids)";
-      Map<String,Object> queryParams = new HashMap<>();
-      queryParams.put("postids",postIdList);
-      List<Long> userIds = namedParameterJdbcTemplate.query(sql, queryParams, new RowMapper<Long>() {
-          @Override
-          public Long mapRow(ResultSet resultSet, int i) throws SQLException {
-              return resultSet.getLong("user_id");
-          }
-      });
+    public Long getUserIdByPostId(Long postId) {
+        String sql = "SELECT user_id FROM post_user WHERE post_id = " + postId;
+        return jdbcTemplate.queryForObject(sql, Long.class);
+    }
 
-      return userIds;
-  }
+    public List<Long> findUserIdsByPostIds(List<Long> postIdList) {
+        String sql = "select user_id from post_user where post_id in(:postids)";
+        Map<String, Object> queryParams = new HashMap<>();
+        queryParams.put("postids", postIdList);
+        List<Long> userIds = namedParameterJdbcTemplate.query(sql, queryParams, new RowMapper<Long>() {
+            @Override
+            public Long mapRow(ResultSet resultSet, int i) throws SQLException {
+                return resultSet.getLong("user_id");
+            }
+        });
+
+        return userIds;
+    }
+
+    public List<Post> findPostsByUserId(Long userId) {
+        String sql = "select post_id from post_user where user_id=" + userId;
+        List<Long> postIdList = jdbcTemplate.query(
+                sql,
+                (rs, rowNum) -> rs.getLong("post_id")
+        );
+
+        List<Post> postList = new ArrayList<>();
+        postIdList.forEach(postId -> postList.add(postRepository.findById(postId).orElse(null)));
+        return postList;
+    }
 }
 

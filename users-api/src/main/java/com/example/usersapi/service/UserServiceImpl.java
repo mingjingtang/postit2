@@ -1,12 +1,13 @@
 package com.example.usersapi.service;
 
 import com.example.usersapi.config.JwtUtil;
-import com.example.usersapi.model.PostWithDetails;
+import com.example.usersapi.model.Post;
+import com.example.usersapi.model.PostWithUser;
 import com.example.usersapi.model.User;
+import com.example.usersapi.repository.UserPostRepository;
 import com.example.usersapi.repository.UserRepository;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class UserServiceImpl implements UserService {
 
   @Autowired
   private UserRepository userRepository;
+
+  @Autowired
+  private UserPostRepository userPostRepository;
 
   private PasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
@@ -80,8 +84,13 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public List<PostWithDetails> getPostsByUser(String username) {
-    return null;
+  public List<PostWithUser> getPostsByUser(String username) {
+    User user = userRepository.findByUsername(username);
+    Long userId = user.getId();
+    List<Post> postlist = userPostRepository.findPostsByUserId(userId);
+    List<PostWithUser> postListWithUser = new ArrayList<>();
+    postlist.forEach(post->postListWithUser.add(new PostWithUser(post, user)));
+    return postListWithUser;
   }
 
   @Override

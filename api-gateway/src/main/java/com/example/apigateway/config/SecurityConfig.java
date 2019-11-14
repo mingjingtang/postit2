@@ -20,35 +20,36 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-  @Autowired
-  private UserService userService;
+    @Autowired
+    private UserService userService;
 
-  @Autowired
-  private JwtRequestFilter jwtRequestFilter;
+    @Autowired
+    private JwtRequestFilter jwtRequestFilter;
 
-  @Bean("encoder")
-  public PasswordEncoder encoder() {
-    return new BCryptPasswordEncoder();
-  }
+    @Bean("encoder")
+    public PasswordEncoder encoder() {
+        return new BCryptPasswordEncoder();
+    }
 
-  @Override
-  public void configure(HttpSecurity http) throws Exception {
+    @Override
+    public void configure(HttpSecurity http) throws Exception {
 
-    http.csrf().disable().authorizeRequests()
-        .antMatchers(HttpMethod.POST,"/user/signup").permitAll()
-        .antMatchers(HttpMethod.POST, "/user/login").permitAll()
-        .antMatchers(HttpMethod.GET, "/post/list").permitAll()
+        http.csrf().disable().authorizeRequests()
+                .antMatchers("/user/signup", "/user/login", "/post/list").permitAll()
+//                .antMatchers(HttpMethod.POST, "/user/signup").permitAll()
+//                .antMatchers(HttpMethod.POST, "/user/login").permitAll()
+//                .antMatchers(HttpMethod.GET, "/post/list").permitAll()
 //        .anyRequest().permitAll()
-        .antMatchers("/post/**", "comment/**").authenticated()
+                .antMatchers("/user/**", "/post/**", "comment/**").authenticated()
 //        .antMatchers("/role/**").hasRole("ADMIN")
-        .and().httpBasic().and().sessionManagement()
-        .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .and().httpBasic().and().sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-    http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
-  }
+        http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+    }
 
-  public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-    auth.userDetailsService(userService);
-  }
+    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userService);
+    }
 
 }

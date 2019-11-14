@@ -1,5 +1,6 @@
 package com.example.postsapi.listener;
 
+import com.example.postsapi.model.Post;
 import com.example.postsapi.model.PostWithUser;
 import com.example.postsapi.service.PostService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -8,6 +9,8 @@ import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class PostListener {
@@ -31,4 +34,19 @@ public class PostListener {
         }
         return "";
     }
+
+    @RabbitListener(queuesToDeclare = @Queue("findPostsByUserId"))
+    public String handleMessage_findPostsByUserId(String message) throws JsonProcessingException {
+        System.out.println("received:" + message);
+        String postsJson = "";
+        if (message.startsWith("findPostsByUserId")) {
+            Long userId = Long.parseLong(message.split(":")[1]);
+            List<Post> post = postService.findPostsByUserId(userId);
+            postsJson = mapper.writeValueAsString(post);
+            return postsJson;
+        }
+        return "";
+    }
+
+
 }

@@ -1,6 +1,6 @@
 package com.example.usersapi.service;
 
-import com.example.usersapi.model.PostWithDetails;
+import com.example.usersapi.model.PostWithUser;
 import com.example.usersapi.model.User;
 import java.util.List;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,7 +21,7 @@ public interface UserService extends UserDetailsService {
 
   public User findById(Long userId);
 
-  public List<PostWithDetails> getPostsByUser(String username);
+  public List<PostWithUser> getPostsByUser(String username);
 
   public List<User> findUsersByIds(List<Long> userIdList);
 }
