@@ -66,7 +66,7 @@ public class PostServiceImpl implements PostService {
     List<User> userList = userRepository.findUsersByUserIds(userIdList);
     System.out.println(userIdList);
     Map<Long, User> userMap = new HashMap<>();
-    userList.forEach(user->userMap.put(user.getId(), user));
+    userList.forEach(user -> userMap.put(user.getId(), user));
     List<PostWithUser> postWithUserList = new ArrayList<>();
     for (int i = 0; i < postList.size(); i++) {
       postWithUserList.add(new PostWithUser(postList.get(i), userMap.get(userIdList.get(i))));
@@ -95,5 +95,13 @@ public class PostServiceImpl implements PostService {
   @Override
   public List<Post> findPostsByUserId(Long userId) {
     return postUserRepository.findPostsByUserId(userId);
+  }
+
+  @Override
+  public List<Post> findPostsByPostIds(List<Long> postIdList) {
+    Iterable<Post> postIter = postRepository.findAllById(postIdList);
+    List<Post> postList = StreamSupport.stream(postIter.spliterator(), false)
+        .collect(Collectors.toList());
+    return postList;
   }
 }

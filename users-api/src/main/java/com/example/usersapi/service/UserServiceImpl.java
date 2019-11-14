@@ -1,13 +1,18 @@
 package com.example.usersapi.service;
 
 import com.example.usersapi.config.JwtUtil;
+import com.example.usersapi.model.Comment;
+import com.example.usersapi.model.CommentWithDetails;
 import com.example.usersapi.model.Post;
 import com.example.usersapi.model.PostWithUser;
 import com.example.usersapi.model.User;
+import com.example.usersapi.repository.UserCommentRepository;
 import com.example.usersapi.repository.UserPostRepository;
 import com.example.usersapi.repository.UserRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +30,9 @@ public class UserServiceImpl implements UserService {
 
   @Autowired
   private UserPostRepository userPostRepository;
+
+  @Autowired
+  private UserCommentRepository userCommentRepository;
 
   private PasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
@@ -89,13 +97,43 @@ public class UserServiceImpl implements UserService {
     Long userId = user.getId();
     List<Post> postlist = userPostRepository.findPostsByUserId(userId);
     List<PostWithUser> postListWithUser = new ArrayList<>();
-    postlist.forEach(post->postListWithUser.add(new PostWithUser(post, user)));
+    postlist.forEach(post -> postListWithUser.add(new PostWithUser(post, user)));
     return postListWithUser;
   }
 
   @Override
   public List<User> findUsersByIds(List<Long> userIdList) {
     return userRepository.findUsersByIds(userIdList);
+  }
+
+  @Override
+  public List<CommentWithDetails> getCommentsByUser(String username)
+      throws JsonProcessingException {
+    User user = userRepository.findByUsername(username);
+    Long userId = user.getId();
+    List<Comment> commentList = userCommentRepository.findCommentsByUserId(userId);
+    List<Long> commentIdList = commentList.stream().map(Comment::getCommentId)
+        .collect(Collectors.toList());
+    Map<Long, Long> commentIdToPostId = userCommentRepository
+        .findPostIdsByCommentIds(commentIdList);
+    List<Long> postIdList = commentIdToPostId.values().stream().collect(Collectors.toList());
+    List<Post> postList = userPostRepository.findPostsByPostIds(postIdList);
+    Map<Long, Long> postIdToUserId = userPostRepository.findUserIdsByPostIds(postIdList);
+    List<CommentWithDetails> commentWithDetailsList = new ArrayList<>();
+    for(int i=0; i<commentList.size(); i++){
+      Comment comment_i = commentList.get(i);
+      Long postId = commentIdToPostId.get(comment_i.getCommentId());
+      Post post = postList.stream().filter(p->p.getPostId()==postId).findFirst().orElse(null);
+      Long authorId = postIdToUserId.get(post.getPostId());
+      User author = userRepository.findById(authorId).orElse(null);
+      commentWithDetailsList.add(new CommentWithDetails(
+          comment_i,
+          user,
+          post,
+          author
+      ));
+    }
+    return commentWithDetailsList;
   }
 
   @Override

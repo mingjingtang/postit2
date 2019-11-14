@@ -1,7 +1,9 @@
 package com.example.usersapi.service;
 
+import com.example.usersapi.model.CommentWithDetails;
 import com.example.usersapi.model.PostWithUser;
 import com.example.usersapi.model.User;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
@@ -24,4 +26,6 @@ public interface UserService extends UserDetailsService {
   public List<PostWithUser> getPostsByUser(String username);
 
   public List<User> findUsersByIds(List<Long> userIdList);
+
+  public List<CommentWithDetails> getCommentsByUser(String username) throws JsonProcessingException;
 }

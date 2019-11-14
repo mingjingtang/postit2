@@ -1,9 +1,11 @@
 package com.example.usersapi.controller;
 
+import com.example.usersapi.model.CommentWithDetails;
 import com.example.usersapi.model.JwtResponse;
 import com.example.usersapi.model.PostWithUser;
 import com.example.usersapi.model.User;
 import com.example.usersapi.service.UserService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +41,12 @@ public class UserController {
   @GetMapping("/post")
   public List<PostWithUser> getPostsByUser(@RequestHeader String username) {
     return userService.getPostsByUser(username);
+  }
+
+  @GetMapping("/comment")
+  public List<CommentWithDetails> getCommentsByUser(@RequestHeader String username)
+      throws JsonProcessingException {
+    return userService.getCommentsByUser(username);
   }
 //
 //  @GetMapping("/comment")
