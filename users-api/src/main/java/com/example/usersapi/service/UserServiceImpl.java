@@ -1,6 +1,7 @@
 package com.example.usersapi.service;
 
 import com.example.usersapi.config.JwtUtil;
+import com.example.usersapi.model.PostWithDetails;
 import com.example.usersapi.model.User;
 import com.example.usersapi.repository.UserRepository;
 import java.util.ArrayList;
@@ -76,6 +77,16 @@ public class UserServiceImpl implements UserService {
   @Override
   public User findById(Long userId) {
     return userRepository.findById(userId).orElse(null);
+  }
+
+  @Override
+  public List<PostWithDetails> getPostsByUser(String username) {
+    return null;
+  }
+
+  @Override
+  public List<User> findUsersByIds(List<Long> userIdList) {
+    return userRepository.findUsersByIds(userIdList);
   }
 
   @Override

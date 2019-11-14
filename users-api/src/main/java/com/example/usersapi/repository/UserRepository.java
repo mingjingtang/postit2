@@ -1,6 +1,7 @@
 package com.example.usersapi.repository;
 
 import com.example.usersapi.model.User;
+import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -14,5 +15,8 @@ public interface UserRepository extends CrudRepository<User, Long> {
   public User findByUsername(String username);
 
   public User findByEmail(String email);
+
+  @Query("FROM User u WHERE u.id IN (?1)")
+  public List<User> findUsersByIds(List<Long> userIdList);
 
 }

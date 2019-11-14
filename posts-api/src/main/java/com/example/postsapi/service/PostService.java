@@ -3,6 +3,7 @@ package com.example.postsapi.service;
 import com.example.postsapi.model.Comment;
 import com.example.postsapi.model.Post;
 import com.example.postsapi.model.PostWithUser;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;
 
 public interface PostService {
@@ -11,7 +12,7 @@ public interface PostService {
 
   public Long deletePostByPostId(Long postId);
 
-  public List<Post> listPosts();
+  public List<PostWithUser> listPosts() throws JsonProcessingException;
 
   public Post updatePost(Long postId, Post post);
 

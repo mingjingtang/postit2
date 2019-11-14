@@ -6,6 +6,7 @@ import com.example.postsapi.model.PostWithUser;
 import com.example.postsapi.service.CommentService;
 import com.example.postsapi.service.CommentServiceImpl;
 import com.example.postsapi.service.PostService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,8 +33,7 @@ public class PostController {
   }
 
   @GetMapping("/list")
-  public List<Post> listPosts() {
-
+  public List<PostWithUser> listPosts() throws JsonProcessingException {
     return postService.listPosts();
   }
 

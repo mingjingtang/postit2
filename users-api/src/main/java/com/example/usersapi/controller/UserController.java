@@ -1,6 +1,7 @@
 package com.example.usersapi.controller;
 
 import com.example.usersapi.model.JwtResponse;
+import com.example.usersapi.model.PostWithDetails;
 import com.example.usersapi.model.User;
 import com.example.usersapi.service.UserService;
 import java.util.List;
@@ -35,12 +36,10 @@ public class UserController {
   }
 
 
-//  @GetMapping("/post")
-//  public List<Post> getPostsByUser() {
-//
-//    String username = securityUtils.getAuthenticatedUsername();
-//    return userService.getPostsByUser(username);
-//  }
+  @GetMapping("/post")
+  public List<PostWithDetails> getPostsByUser(@RequestHeader String username) {
+    return userService.getPostsByUser(username);
+  }
 //
 //  @GetMapping("/comment")
 //  public List<Comment> getCommentsByUser() {
