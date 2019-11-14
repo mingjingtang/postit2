@@ -42,10 +42,10 @@ public class PostController {
   public Post updatePost(@PathVariable Long postId, @RequestBody Post post) {
     return postService.updatePost(postId, post);
   }
-  
 
-//  @GetMapping("{postId}/comment")
-//  public List<Comment> getComments(@PathVariable Long postId){
-//    return commentService.getComments(postId);
-//  }
+
+  @GetMapping("{postId}/comment")
+  public List<Comment> getComments(@PathVariable Long postId){
+    return commentService.getComments(postId);
+  }
 }

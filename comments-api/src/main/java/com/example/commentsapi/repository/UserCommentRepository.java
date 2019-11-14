@@ -35,4 +35,9 @@ public class UserCommentRepository {
         .forEach(postId -> commentList.add(commentRepository.findById(postId).orElse(null)));
     return commentList;
   }
+
+  public List<Comment> findCommentsByPostId(Long postId){
+    String sql = "select comment_id from comment_post where post_id=" + postId;
+
+  }
 }

@@ -55,4 +55,16 @@ public class CommentListener {
     String mapJson = mapper.writeValueAsString(commentIdToPostId);
     return mapJson;
   }
+
+  @RabbitListener(queuesToDeclare = @Queue("getCommentsByPostId"))
+  public String handleMessage_getCommentsByPostId(String message) throws IOException {
+    System.out.println("received:" + message);
+    if (message.startsWith("getCommentsByPostId")) {
+      Long postId = Long.parseLong(message.split(":")[1]);
+      List<Comment> commentList = userCommentRepository.findCommentsByPostId(postId);
+      String commentsJson = mapper.writeValueAsString(commentList);
+      return commentsJson;
+    }
+    return "";
+  }
 }
