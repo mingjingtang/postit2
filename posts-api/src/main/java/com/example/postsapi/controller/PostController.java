@@ -1,6 +1,7 @@
 package com.example.postsapi.controller;
 
 import com.example.postsapi.model.Comment;
+import com.example.postsapi.model.CommentWithDetails;
 import com.example.postsapi.model.Post;
 import com.example.postsapi.model.PostWithUser;
 import com.example.postsapi.service.CommentService;
@@ -10,7 +11,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 public class PostController {
@@ -22,7 +22,8 @@ public class PostController {
   private CommentService commentService;
 
   @PostMapping("/")
-  public PostWithUser createPost(@RequestHeader("username") String username, @RequestBody Post post) {
+  public PostWithUser createPost(@RequestHeader("username") String username,
+      @RequestBody Post post) {
     return postService.createPost(username, post);
   }
 
@@ -37,15 +38,14 @@ public class PostController {
     return postService.listPosts();
   }
 
-
   @PutMapping("/{postId}")
   public Post updatePost(@PathVariable Long postId, @RequestBody Post post) {
     return postService.updatePost(postId, post);
   }
 
-
   @GetMapping("{postId}/comment")
-  public List<Comment> getComments(@PathVariable Long postId){
-    return commentService.getComments(postId);
+  public List<CommentWithDetails> getComments(@PathVariable Long postId)
+      throws JsonProcessingException {
+    return commentService.getCommentsByPostId(postId);
   }
 }

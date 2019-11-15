@@ -12,6 +12,9 @@ public class CommentWithDetails {
 
     public CommentWithDetails(Comment comment, User user, PostWithUser post){
         this.id = comment.getCommentId();
+        this.text = comment.getText();
+        this.user = user;
+        this.post = post;
     }
 
     public Long getId() {

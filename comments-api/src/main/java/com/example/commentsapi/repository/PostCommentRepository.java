@@ -50,13 +50,24 @@ public class PostCommentRepository {
     return commentIdToPostId;
   }
 
-  public List<Comment> findCommentsByPostId(Long postId){
+  public List<Comment> findCommentsByPostId(Long postId) {
     String sql = "select comment_id from post_comment where post_id=" + postId;
     List<Long> commentIdList = jdbcTemplate.query(sql, (rs, rowNum) -> rs.getLong("comment_id"));
 
     List<Comment> commentList = new ArrayList<>();
     commentIdList
-            .forEach(commentId -> commentList.add(commentRepository.findById(commentId).orElse(null)));
+        .forEach(commentId -> commentList.add(commentRepository.findById(commentId).orElse(null)));
     return commentList;
+  }
+
+  public Map<Long, Long> findUserIdsByCommentIds(List<Long> commentIdList) {
+    String sql = "select * from user_comment comm where comment_id in(:commentids)";
+    Map<String, Object> queryParams = new HashMap<>();
+    queryParams.put("commentids", commentIdList);
+    List<Map<String, Object>> results = namedParameterJdbcTemplate.queryForList(sql, queryParams);
+    Map<Long, Long> commentIdToUserId = results.stream().collect(Collectors
+        .toMap(k -> new Long((Integer) k.get("comment_id")),
+            k -> new Long((Integer) k.get("user_id"))));
+    return commentIdToUserId;
   }
 }

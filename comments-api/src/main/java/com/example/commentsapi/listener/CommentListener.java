@@ -64,4 +64,15 @@ public class CommentListener {
     }
     return "";
   }
+
+  @RabbitListener(queuesToDeclare = @Queue("findCommentIdsToUserIds"))
+  public String handleMessage_findCommentIdsToUserIds(String message) throws IOException {
+    System.out.println("received:" + message);
+    List<Long> commentIdList = mapper.readValue(message, new TypeReference<List<Long>>() {
+    });
+    Map<Long, Long> commentIdToUserId = postCommentRepository
+        .findUserIdsByCommentIds(commentIdList);
+    String mapJson = mapper.writeValueAsString(commentIdToUserId);
+    return mapJson;
+  }
 }

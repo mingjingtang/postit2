@@ -67,28 +67,6 @@ public class UserRepositoryImpl implements UserRepository {
 
   @Override
   public List<User> findUsersByUserIds(List<Long> userIdList) throws JsonProcessingException {
-//    Object[] userIdArr = userIdList
-//        .stream()
-//        .map(userId -> userId.toString())
-//        .collect(Collectors.toList()).toArray();
-//    String userIdsJson = mapper.writeValueAsString(userIdArr);
-//    System.out.println("Sending message: " + userIdsJson);
-//    String userListJson = (String) amqpTemplate.convertSendAndReceive("findUsersByUserIds", userIdsJson);
-//    System.out.println(userListJson);
-//    List<User> userList = new ArrayList<>();
-//    try{
-//      List<String> userStrList = Arrays.asList(mapper.readValue(userListJson, Object[].class))
-//          .stream()
-//          .map(obj->String.valueOf(obj))
-//          .collect(Collectors.toList());
-//      for(String userJson : userStrList) {
-//        userList.add(mapper.readValue(userJson, User.class));
-//      }
-//    } catch (Exception e) {
-//      e.printStackTrace();
-//    }
-//    return userList;
-
     String userIdsJson = mapper.writeValueAsString(userIdList);
     System.out.println("Sending message: " + userIdsJson);
     String userListJson = (String) amqpTemplate.convertSendAndReceive("findUsersByUserIds", userIdsJson);
