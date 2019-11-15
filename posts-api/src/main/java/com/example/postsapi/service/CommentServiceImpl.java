@@ -1,11 +1,13 @@
 package com.example.postsapi.service;
 
 import com.example.postsapi.model.Comment;
+import com.example.postsapi.model.CommentWithDetails;
 import com.example.postsapi.rabbitmq.Sender;
 import com.example.postsapi.repository.PostCommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,9 +25,14 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> getComments(Long postId) {
+    public List<CommentWithDetails> getComments(Long postId) {
         List<Comment> commentList = postCommentRepository.getCommentsByPostId(postId);
 
-        return commentList;
+        List<CommentWithDetails> commentWithDetails = new ArrayList<>();
+        for(int i = 0; i < commentList.size(); i++){
+
+            commentWithDetails.add()
+        }
+        return commentWithDetails;
     }
 }

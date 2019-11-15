@@ -1,5 +1,4 @@
-package com.example.commentsapi.model;
-
+package com.example.postsapi.model;
 
 public class CommentWithDetails {
 
@@ -10,6 +9,10 @@ public class CommentWithDetails {
     private User user;
 
     private PostWithUser post;
+
+    public CommentWithDetails(Comment comment, User user, PostWithUser post){
+        this.id = comment.getCommentId();
+    }
 
     public Long getId() {
         return id;
