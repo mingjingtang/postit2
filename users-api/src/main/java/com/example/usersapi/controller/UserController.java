@@ -1,9 +1,6 @@
 package com.example.usersapi.controller;
 
-import com.example.usersapi.model.CommentWithDetails;
-import com.example.usersapi.model.JwtResponse;
-import com.example.usersapi.model.PostWithUser;
-import com.example.usersapi.model.User;
+import com.example.usersapi.model.*;
 import com.example.usersapi.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;
@@ -48,11 +45,9 @@ public class UserController {
       throws JsonProcessingException {
     return userService.getCommentsByUser(username);
   }
-//
-//  @GetMapping("/comment")
-//  public List<Comment> getCommentsByUser() {
-//
-//    String username = securityUtils.getAuthenticatedUsername();
-//    return userService.getCommentsByUser(username);
-//  }
+
+  @PostMapping("/profile")
+  public UserProfile postUserProfile(@RequestHeader String username, @RequestBody UserProfile userProfile) {
+      return userService.createProfile(username, userProfile);
+  }
 }
