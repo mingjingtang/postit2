@@ -148,6 +148,27 @@ public class UserServiceImpl implements UserService {
         throw new RuntimeException("xx");
     }
 
+    @Override
+    public UserProfile updateProfile(String username, UserProfile userProfile) {
+        User user = userRepository.findByUsername(username);
+        Long userId = user.getId();
+        Long userProfileId = userProfileRepository.findProfileIdByUserId(userId);
+        UserProfile oldUserProfile = profileRepository.findById(userProfileId).orElse(null);
+        oldUserProfile.setAddress(userProfile.getAddress());
+        oldUserProfile.setPhone(userProfile.getPhone());
+        UserProfile updatedUserProfile = profileRepository.save(oldUserProfile);
+        return updatedUserProfile;
+    }
+
+    @Override
+    public UserProfile getProfile(String username) {
+        User user = userRepository.findByUsername(username);
+        Long userId = user.getId();
+        Long userProfileId = userProfileRepository.findProfileIdByUserId(userId);
+        UserProfile oldUserProfile = profileRepository.findById(userProfileId).orElse(null);
+        return oldUserProfile;
+    }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

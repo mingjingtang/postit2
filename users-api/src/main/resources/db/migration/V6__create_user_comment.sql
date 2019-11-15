@@ -1,4 +1,4 @@
-CREATE TABLE user_profile (
+CREATE TABLE user_comment (
     user_id INT NOT NULL,
-    profile_id INT UNIQUE NOT NULL
+    comment_id INT UNIQUE NOT NULL
 );

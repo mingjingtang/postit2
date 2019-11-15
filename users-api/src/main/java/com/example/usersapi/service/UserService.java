@@ -31,4 +31,8 @@ public interface UserService extends UserDetailsService {
   public List<CommentWithDetails> getCommentsByUser(String username) throws JsonProcessingException;
 
   public UserProfile createProfile(String username, UserProfile profile);
+
+  public UserProfile updateProfile(String username, UserProfile userProfile);
+
+  public UserProfile getProfile(String username);
 }

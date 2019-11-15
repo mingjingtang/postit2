@@ -50,4 +50,14 @@ public class UserController {
   public UserProfile postUserProfile(@RequestHeader String username, @RequestBody UserProfile userProfile) {
       return userService.createProfile(username, userProfile);
   }
+
+  @PutMapping("/profile")
+  public UserProfile updateUserProfile(@RequestHeader String username, @RequestBody UserProfile userProfile){
+      return userService.updateProfile(username, userProfile);
+  }
+
+  @GetMapping("/profile")
+  public UserProfile getUserProfile(@RequestHeader String username){
+      return userService.getProfile(username);
+  }
 }
