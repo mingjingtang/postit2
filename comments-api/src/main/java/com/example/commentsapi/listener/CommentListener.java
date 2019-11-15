@@ -22,9 +22,6 @@ import org.springframework.stereotype.Component;
 public class CommentListener {
 
   @Autowired
-  private CommentRepository commentRepository;
-
-  @Autowired
   private PostCommentRepository postCommentRepository;
 
   @Autowired
@@ -61,7 +58,7 @@ public class CommentListener {
     System.out.println("received:" + message);
     if (message.startsWith("getCommentsByPostId")) {
       Long postId = Long.parseLong(message.split(":")[1]);
-      List<Comment> commentList = userCommentRepository.findCommentsByPostId(postId);
+      List<Comment> commentList = postCommentRepository.findCommentsByPostId(postId);
       String commentsJson = mapper.writeValueAsString(commentList);
       return commentsJson;
     }

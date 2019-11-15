@@ -32,12 +32,7 @@ public class UserCommentRepository {
 
     List<Comment> commentList = new ArrayList<>();
     commentIdList
-        .forEach(postId -> commentList.add(commentRepository.findById(postId).orElse(null)));
+        .forEach(commentId -> commentList.add(commentRepository.findById(commentId).orElse(null)));
     return commentList;
-  }
-
-  public List<Comment> findCommentsByPostId(Long postId){
-    String sql = "select comment_id from comment_post where post_id=" + postId;
-
   }
 }

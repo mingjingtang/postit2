@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="106bac30-0aed-4688-9eb5-79914f93fdd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/repository/PostCommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/listener/CommentListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/listener/CommentListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/PostCommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/PostCommentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/UserCommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/UserCommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
     <ignored path="$PROJECT_DIR$/users-api/target/" />
@@ -26,27 +20,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/controller/PostController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/PostServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="62" column="94" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="94" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/service/CommentServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="213">
               <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -68,6 +44,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/service/CommentService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -91,17 +79,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/listener/CommentListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
-              <caret line="63" column="76" lean-forward="true" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="76" />
+            <state relative-caret-position="100">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/service/CommentService.java">
+        <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/UserCommentRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+            <state relative-caret-position="578">
+              <caret line="34" column="80" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/UserCommentRepository.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/PostCommentRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="79" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="79" />
+            <state relative-caret-position="774">
+              <caret line="58" column="85" selection-start-line="58" selection-start-column="85" selection-end-line="58" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,6 +117,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/CommentRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -184,8 +181,9 @@
         <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/repository/PostCommentRepository.java" />
         <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentServiceImpl.java" />
         <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/controller/PostController.java" />
-        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/listener/CommentListener.java" />
         <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/UserCommentRepository.java" />
+        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/PostCommentRepository.java" />
+        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/listener/CommentListener.java" />
       </list>
     </option>
   </component>
@@ -196,9 +194,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2048" />
+    <option name="y" value="23" />
+    <option name="width" value="1870" />
+    <option name="height" value="1076" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -241,33 +241,6 @@
             </path>
             <path>
               <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="commentsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="listener" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="commentsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="commentsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
               <item name="posts-api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -295,42 +268,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
@@ -400,7 +337,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573772279285" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573788188021" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -464,18 +401,18 @@
       <option name="presentableId" value="Default" />
       <updated>1573677394027</updated>
       <workItem from="1573677397935" duration="13550000" />
-      <workItem from="1573765508591" duration="6691000" />
+      <workItem from="1573765508591" duration="10492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20241000" />
+    <option name="totallyTimeSpent" value="24042000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="2048" y="23" width="1870" height="1076" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26801154" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23047304" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -513,13 +450,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/CommentRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -531,13 +461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/PostCommentRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -800,17 +723,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/CommentRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        <state relative-caret-position="85">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/repository/PostCommentRepository.java">
+    <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/PostRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="44" />
+          <caret line="20" column="83" lean-forward="true" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/PostCommentRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="58" column="85" selection-start-line="58" selection-start-column="85" selection-end-line="58" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/UserCommentRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="80" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -829,28 +782,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/service/CommentServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="213">
           <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/PostRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="83" lean-forward="true" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -859,18 +792,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/listener/CommentListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="63" column="76" lean-forward="true" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="76" />
+        <state relative-caret-position="100">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/UserCommentRepository.java">
+    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/repository/PostCommentRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="79" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="79" />
+        <state relative-caret-position="340">
+          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
         </state>
       </provider>
     </entry>
