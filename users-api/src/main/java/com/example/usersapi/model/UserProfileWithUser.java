@@ -1,26 +1,24 @@
 package com.example.usersapi.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+public class UserProfileWithUser {
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "profile")
-public class UserProfile {
-
-  @Id
-  @Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "mobile")
   private String mobile;
 
-  @Column(name = "address")
   private String address;
 
-  @Column(name = "email")
   private String additionalEmail;
+
+  private User user;
+
+  public UserProfileWithUser(UserProfile userProfile, User user){
+    this.id = userProfile.getId();
+    this.mobile = userProfile.getMobile();
+    this.address = userProfile.getAddress();
+    this.additionalEmail = userProfile.getAdditionalEmail();
+    this.user = user;
+  }
 
   public Long getId() {
     return id;
@@ -52,5 +50,13 @@ public class UserProfile {
 
   public void setAdditionalEmail(String additionalEmail) {
     this.additionalEmail = additionalEmail;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
   }
 }

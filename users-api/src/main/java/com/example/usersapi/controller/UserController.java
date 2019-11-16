@@ -34,7 +34,6 @@ public class UserController {
     return userService.listUsers();
   }
 
-
   @GetMapping("/post")
   public List<PostWithUser> getPostsByUser(@RequestHeader String username) {
     return userService.getPostsByUser(username);
@@ -44,20 +43,5 @@ public class UserController {
   public List<CommentWithDetails> getCommentsByUser(@RequestHeader String username)
       throws JsonProcessingException {
     return userService.getCommentsByUser(username);
-  }
-
-  @PostMapping("/profile")
-  public UserProfile postUserProfile(@RequestHeader String username, @RequestBody UserProfile userProfile) {
-      return userService.createProfile(username, userProfile);
-  }
-
-  @PutMapping("/profile")
-  public UserProfile updateUserProfile(@RequestHeader String username, @RequestBody UserProfile userProfile){
-      return userService.updateProfile(username, userProfile);
-  }
-
-  @GetMapping("/profile")
-  public UserProfile getUserProfile(@RequestHeader String username){
-      return userService.getProfile(username);
   }
 }
