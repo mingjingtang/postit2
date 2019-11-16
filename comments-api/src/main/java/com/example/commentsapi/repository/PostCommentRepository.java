@@ -40,6 +40,9 @@ public class PostCommentRepository {
   }
 
   public Map<Long, Long> findPostIdsByCommentIds(List<Long> commentIdList) {
+    if (commentIdList.size() == 0) {
+      return new HashMap<Long, Long>();
+    }
     String sql = "select * from post_comment where comment_id in(:commentids)";
     Map<String, Object> queryParams = new HashMap<>();
     queryParams.put("commentids", commentIdList);

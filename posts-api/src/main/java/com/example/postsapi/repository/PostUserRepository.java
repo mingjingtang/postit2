@@ -38,6 +38,9 @@ public class PostUserRepository {
   }
 
   public List<Long> findUserIdsByPostIds(List<Long> postIdList) {
+    if (postIdList.size() == 0) {
+      return new ArrayList<Long>();
+    }
     String sql = "select user_id from post_user where post_id in(:postids)";
     Map<String, Object> queryParams = new HashMap<>();
     queryParams.put("postids", postIdList);
@@ -61,6 +64,9 @@ public class PostUserRepository {
   }
 
   public Map<Long, Long> findUserIdsByCommentIds(List<Long> postIdList) {
+    if(postIdList.size() == 0){
+      return new HashMap<Long, Long>();
+    }
     String sql = "select * from post_user where post_id in(:postids)";
     Map<String, Object> queryParams = new HashMap<>();
     queryParams.put("postids", postIdList);

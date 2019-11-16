@@ -67,6 +67,9 @@ public class UserRepositoryImpl implements UserRepository {
 
   @Override
   public List<User> findUsersByUserIds(List<Long> userIdList) throws JsonProcessingException {
+    if(userIdList.size()==0){
+      return new ArrayList<User>();
+    }
     String userIdsJson = mapper.writeValueAsString(userIdList);
     System.out.println("Sending message: " + userIdsJson);
     String userListJson = (String) amqpTemplate.convertSendAndReceive("findUsersByUserIds", userIdsJson);
