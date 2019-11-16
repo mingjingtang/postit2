@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/role")
 public class UserRoleController {
     @Autowired
-    UserRoleService roleService;
+    UserRoleService userRoleService;
 
     @PostMapping
     public UserRole createRole(@RequestBody UserRole role) {
-        return roleService.createRole(role);
+        return userRoleService.createRole(role);
     }
 
 //    @GetMapping("/{rolename}")
