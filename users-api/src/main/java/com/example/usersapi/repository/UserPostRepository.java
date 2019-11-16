@@ -37,6 +37,9 @@ public class UserPostRepository {
   }
 
   public List<Post> findPostsByPostIds(List<Long> postIdList) throws JsonProcessingException {
+    if(postIdList.size() == 0){
+      return new ArrayList<Post>();
+    }
     String message = mapper.writeValueAsString(postIdList);
     System.out.println("Sending message: " + message);
     String postsJson = (String) amqpTemplate.convertSendAndReceive("findPostsByPostIds", message);

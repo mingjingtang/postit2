@@ -38,6 +38,9 @@ public class UserCommentRepository {
 
   public Map<Long, Long> findPostIdsByCommentIds(List<Long> commentIdList)
       throws JsonProcessingException {
+    if(commentIdList.size() == 0){
+      return new HashMap<Long, Long>();
+    }
     String message = mapper.writeValueAsString(commentIdList);
     System.out.println("Sending message: " + message);
     String mapJson = (String) amqpTemplate
