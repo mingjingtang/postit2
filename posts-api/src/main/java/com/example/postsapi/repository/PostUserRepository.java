@@ -64,7 +64,7 @@ public class PostUserRepository {
   }
 
   public Map<Long, Long> findUserIdsByCommentIds(List<Long> postIdList) {
-    if(postIdList.size() == 0){
+    if (postIdList.size() == 0) {
       return new HashMap<Long, Long>();
     }
     String sql = "select * from post_user where post_id in(:postids)";
@@ -75,6 +75,10 @@ public class PostUserRepository {
         .toMap(k -> new Long((Integer) k.get("post_id")),
             k -> new Long((Integer) k.get("user_id"))));
     return postIdToUserId;
+  }
+
+  public void deleteByPostId(Long postId) {
+    jdbcTemplate.update("DELETE FROM post_user WHERE post_id=?", postId);
   }
 }
 

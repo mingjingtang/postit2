@@ -52,6 +52,7 @@ public class PostServiceImpl implements PostService {
       return 0L;
     }
     postRepository.delete(post);
+    postUserRepository.deleteByPostId(postId);
     return post.getPostId();
   }
 
