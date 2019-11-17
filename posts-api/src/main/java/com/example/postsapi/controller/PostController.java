@@ -1,11 +1,9 @@
 package com.example.postsapi.controller;
 
-import com.example.postsapi.model.Comment;
-import com.example.postsapi.model.CommentWithDetails;
+import com.example.postsapi.model.wrapper.CommentWithDetails;
 import com.example.postsapi.model.Post;
-import com.example.postsapi.model.PostWithUser;
+import com.example.postsapi.model.wrapper.PostWithUser;
 import com.example.postsapi.service.CommentService;
-import com.example.postsapi.service.CommentServiceImpl;
 import com.example.postsapi.service.PostService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;

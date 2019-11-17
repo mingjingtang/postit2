@@ -1,4 +1,4 @@
-package com.example.postsapi.messagingqueue;
+package com.example.postsapi.messagingqueue.receiver;
 
 import com.example.postsapi.model.Post;
 import com.example.postsapi.model.wrapper.PostWithUser;

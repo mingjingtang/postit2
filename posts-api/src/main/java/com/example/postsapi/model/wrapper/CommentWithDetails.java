@@ -1,4 +1,7 @@
-package com.example.postsapi.model;
+package com.example.postsapi.model.wrapper;
+
+import com.example.postsapi.model.Comment;
+import com.example.postsapi.model.User;
 
 public class CommentWithDetails {
 

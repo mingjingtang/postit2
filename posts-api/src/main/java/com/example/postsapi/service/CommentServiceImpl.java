@@ -1,15 +1,14 @@
 package com.example.postsapi.service;
 
+import com.example.postsapi.repository.UserRepository;
 import com.example.postsapi.model.Comment;
-import com.example.postsapi.model.CommentWithDetails;
+import com.example.postsapi.model.wrapper.CommentWithDetails;
 import com.example.postsapi.model.Post;
-import com.example.postsapi.model.PostWithUser;
+import com.example.postsapi.model.wrapper.PostWithUser;
 import com.example.postsapi.model.User;
-import com.example.postsapi.rabbitmq.Sender;
-import com.example.postsapi.repository.PostCommentRepository;
+import com.example.postsapi.repository.CommentRepository;
 import com.example.postsapi.repository.PostRepository;
 import com.example.postsapi.repository.PostUserRepository;
-import com.example.postsapi.repository.UserRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -19,16 +18,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.util.StreamUtils;
 
 @Service
 public class CommentServiceImpl implements CommentService {
 
   @Autowired
-  private Sender sender;
-
-  @Autowired
-  private PostCommentRepository postCommentRepository;
+  private CommentRepository commentRepository;
 
   @Autowired
   private PostRepository postRepository;
@@ -41,27 +36,22 @@ public class CommentServiceImpl implements CommentService {
 
   @Override
   public Comment createComment(String username, Long postId, Comment text) {
-    Comment comment = sender.createComment(username, postId, text);
+    Comment comment = commentRepository.createComment(username, postId, text);
     return comment;
   }
 
   @Override
   public List<CommentWithDetails> getCommentsByPostId(Long postId) throws JsonProcessingException {
-    List<Comment> commentList = postCommentRepository.getCommentsByPostId(postId);
+    List<Comment> commentList = commentRepository.getCommentsByPostId(postId);
     List<Long> commentIdList = commentList.stream().map(Comment::getCommentId)
         .collect(Collectors.toList());
-    Map<Long, Long> commentIdToUserId = postCommentRepository
-        .findCommentIdsToUserIds(commentIdList);
-    Map<Long, Long> commentIdToPostId = postCommentRepository
-        .findPostIdsByCommentIds(commentIdList);
-    ;
+    Map<Long, Long> commentIdToUserId = commentRepository.findCommentIdsToUserIds(commentIdList);
+    Map<Long, Long> commentIdToPostId = commentRepository.findPostIdsByCommentIds(commentIdList);
     List<Long> commentAuthorId = new ArrayList<>(commentIdToUserId.values());
     List<Long> postIdList = new ArrayList<>(commentIdToPostId.values());
     Iterable<Post> postIter = postRepository.findAllById(postIdList);
     List<Post> postList = StreamSupport.stream(postIter.spliterator(), false)
         .collect(Collectors.toList());
-
-    //TODO
     List<CommentWithDetails> commentWithDetails = new ArrayList<>();
     for (int i = 0; i < commentList.size(); i++) {
       Comment comment_i = commentList.get(i);

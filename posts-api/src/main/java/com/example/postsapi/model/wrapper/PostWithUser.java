@@ -1,9 +1,7 @@
-package com.example.postsapi.model;
+package com.example.postsapi.model.wrapper;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.example.postsapi.model.Post;
+import com.example.postsapi.model.User;
 
 public class PostWithUser {
 

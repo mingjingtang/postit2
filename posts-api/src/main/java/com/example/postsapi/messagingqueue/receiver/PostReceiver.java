@@ -1,4 +1,4 @@
-package com.example.postsapi.messagingqueue;
+package com.example.postsapi.messagingqueue.receiver;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.io.IOException;

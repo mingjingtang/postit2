@@ -1,4 +1,4 @@
-package com.example.postsapi.messagingqueue;
+package com.example.postsapi.messagingqueue.sender;
 
 import com.example.postsapi.model.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -10,7 +10,6 @@ import java.util.List;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 @Component
 public class UserSenderImpl implements UserSender {

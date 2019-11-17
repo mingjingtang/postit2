@@ -1,4 +1,4 @@
-package com.example.postsapi.messagingqueue;
+package com.example.postsapi.repository;
 
 import com.example.postsapi.messagingqueue.sender.CommentSender;
 import com.example.postsapi.model.Comment;
@@ -30,7 +30,7 @@ public class CommentRepository {
 
   public Map<Long, Long> findPostIdsByCommentIds(List<Long> commentIdList)
       throws JsonProcessingException {
-    return findPostIdsByCommentIds(commentIdList);
+    return commentSender.findPostIdsByCommentIds(commentIdList);
   }
 }
 

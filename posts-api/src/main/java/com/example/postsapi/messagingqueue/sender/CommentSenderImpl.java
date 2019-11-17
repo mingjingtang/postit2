@@ -1,4 +1,4 @@
-package com.example.postsapi.messagingqueue;
+package com.example.postsapi.messagingqueue.sender;
 
 import com.example.postsapi.model.Comment;
 import com.fasterxml.jackson.core.JsonProcessingException;

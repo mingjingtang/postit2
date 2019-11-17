@@ -1,4 +1,4 @@
-package com.example.postsapi.messagingqueue;
+package com.example.postsapi.repository;
 
 import com.example.postsapi.messagingqueue.sender.UserSender;
 import com.example.postsapi.model.User;
