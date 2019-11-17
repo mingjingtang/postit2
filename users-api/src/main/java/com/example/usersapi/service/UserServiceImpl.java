@@ -36,6 +36,13 @@ public class UserServiceImpl implements UserService {
   @Autowired
   private UserCommentRepository userCommentRepository;
 
+  @Autowired
+  private UserRoleRepository userRoleRepository;
+
+  @Autowired
+  private UserUserRoleRepository userUserRoleRepository;
+
+
   private PasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
   @Autowired
@@ -55,10 +62,14 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public String signup(User newUser) {
-//    newUser.setUserRole("ROLE_USER");
-    newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
+//    newUser.setUserRole(newUser.getUserRole());
+    String defaultRoleName = "ROLE_USER";
+    UserRole userRole = userRoleRepository.findByName(defaultRoleName);
 
-    if (userRepository.save(newUser) != null) {
+    newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
+    User createdUser = userRepository.save(newUser);
+
+    if (createdUser!= null && userUserRoleRepository.update(createdUser.getId(), userRole.getId()) == 1) {
       UserDetails userDetails = loadUserByUsername(newUser.getUsername());
       return jwtUtil.generateToken(userDetails);
     }

@@ -44,4 +44,10 @@ public class UserController {
       throws JsonProcessingException {
     return userService.getCommentsByUser(username);
   }
+
+//  @GetMapping("/role")
+//  public List<UserRole> getRoleByUser(@RequestHeader String username)
+//    throws JsonProcessingException{
+//    return userService.getRoleByUser(username);
+//  }
 }

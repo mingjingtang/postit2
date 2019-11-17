@@ -27,6 +27,17 @@ public class User {
   @Column(name = "email")
   private String email;
 
+//  @Column(name="userRole")
+//  private UserRole userRole;
+//
+//  public UserRole getUserRole() {
+//    return userRole;
+//  }
+//
+//  public void setUserRole(UserRole userRole) {
+//    this.userRole = userRole;
+//  }
+
   public Long getId() {
     return id;
   }

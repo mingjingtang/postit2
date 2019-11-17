@@ -62,8 +62,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers(HttpMethod.POST, "/user/login").permitAll()
 //                .antMatchers(HttpMethod.GET, "/post/list").permitAll()
 //        .anyRequest().permitAll()
-        .antMatchers("/user/**", "/post/**", "comment/**").authenticated()
-        .antMatchers("/role/**").hasRole("ADMIN")
+        .antMatchers("/user/**", "/post/**", "comment/**", "/role/**").authenticated()
+//        .antMatchers("/role/**").hasRole("ADMIN")
         .and().httpBasic().and().sessionManagement()
         .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
