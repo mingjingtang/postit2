@@ -8,59 +8,52 @@ import com.example.commentsapi.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class CommentServiceImpl implements CommentService {
 
-    @Autowired
-    private CommentRepository commentRepository;
+  @Autowired
+  private CommentRepository commentRepository;
 
-    @Autowired
-    private PostCommentRepository postCommentRepository;
+  @Autowired
+  private CommentPostRepository commentPostRepository;
 
-    @Autowired
-    private UserRepository userRepository;
+  @Autowired
+  private UserRepository userRepository;
 
-    @Autowired
-    private PostRepository postRepository;
+  @Autowired
+  private PostRepository postRepository;
 
-    @Autowired
-    private UserCommentRepository userCommentRepository;
+  @Autowired
+  private CommentUserRepository commentUserRepository;
 
-    @Override
-    public CommentWithDetails createComment(String username, Long postId, Comment comment) {
-        User user = userRepository.findByUsername(username);
-        PostWithUser postWithUser = postRepository.findByPostId(postId);
-        Comment savedComment = commentRepository.save(comment);
+  @Override
+  public CommentWithDetails createComment(String username, Long postId, Comment comment) {
+    User user = userRepository.findByUsername(username);
+    PostWithUser postWithUser = postRepository.findByPostId(postId);
+    Comment savedComment = commentRepository.save(comment);
 
-
-
-        if (savedComment != null &&
-                postCommentRepository.save(postId, savedComment.getCommentId()) == 1 &&
-                userCommentRepository.save(user.getId(), savedComment.getCommentId()) == 1
-        ) {
-            CommentWithDetails commentWithDetails = new CommentWithDetails();
-            commentWithDetails.setId(savedComment.getCommentId());
-            commentWithDetails.setText(savedComment.getText());
-            commentWithDetails.setUser(user);
-            commentWithDetails.setPost(postWithUser);
-            return commentWithDetails;
-        }
-
-
-
-        return null;
+    if (savedComment != null && commentPostRepository.save(postId, savedComment.getCommentId()) == 1
+        && commentUserRepository.save(user.getId(), savedComment.getCommentId()) == 1) {
+      CommentWithDetails commentWithDetails = new CommentWithDetails();
+      commentWithDetails.setId(savedComment.getCommentId());
+      commentWithDetails.setText(savedComment.getText());
+      commentWithDetails.setUser(user);
+      commentWithDetails.setPost(postWithUser);
+      return commentWithDetails;
     }
 
-    @Override
-    public Long deleteComment(Long commentId) {
-        Comment comment = commentRepository.findById(commentId).orElse(null);
-        if(comment!= null){
-            commentRepository.delete(comment);
-            postCommentRepository.delete(commentId);
-            userCommentRepository.delete(commentId);
-            return commentId;
-        }
-        return 0L;
+    return null;
+  }
+
+  @Override
+  public Long deleteComment(Long commentId) {
+    Comment comment = commentRepository.findById(commentId).orElse(null);
+    if (comment != null) {
+      commentRepository.delete(comment);
+      commentPostRepository.delete(commentId);
+      commentUserRepository.delete(commentId);
+      return commentId;
     }
+    return 0L;
+  }
 }

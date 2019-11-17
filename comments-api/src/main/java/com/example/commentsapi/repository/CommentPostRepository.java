@@ -18,7 +18,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class PostCommentRepository {
+public class CommentPostRepository {
 
   @Autowired
   private JdbcTemplate jdbcTemplate;
