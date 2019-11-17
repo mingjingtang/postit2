@@ -2,7 +2,9 @@ package com.example.apigateway.service;
 
 import com.example.apigateway.config.JwtUtil;
 import com.example.apigateway.model.User;
+import com.example.apigateway.model.UserRole;
 import com.example.apigateway.repository.UserRepository;
+import com.example.apigateway.repository.UserRoleRepository;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +27,11 @@ public class UserServiceImpl implements UserService {
   private UserRepository userRepository;
 
   @Autowired
+  private UserRoleRepository userRoleRepository;
+
+  @Autowired
   private JwtUtil jwtUtil;
+
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -40,11 +46,15 @@ public class UserServiceImpl implements UserService {
         new ArrayList<>());
   }
 
-//  private List<GrantedAuthority> getGrantedAuthorities(User user) {
-//    List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-//
-//    authorities.add(new SimpleGrantedAuthority(user.getUserRole()));
-//
-//    return authorities;
-//  }
+  private List<GrantedAuthority> getGrantedAuthorities(User user) {
+    List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+    List<UserRole> roles = userRoleRepository.findRolesByUserId(user.getId());
+    for(UserRole role : roles) {
+      authorities.add(new SimpleGrantedAuthority(role.getName()));
+    }
+
+    return authorities;
+  }
+
+
 }
