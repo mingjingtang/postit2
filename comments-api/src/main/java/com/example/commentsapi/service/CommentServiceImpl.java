@@ -58,6 +58,7 @@ public class CommentServiceImpl implements CommentService {
         if(comment!= null){
             commentRepository.delete(comment);
             postCommentRepository.delete(commentId);
+            userCommentRepository.delete(commentId);
             return commentId;
         }
         return 0L;
