@@ -1,12 +1,8 @@
 package com.example.usersapi.controller;
 
-import com.example.usersapi.model.RoleWithUsers;
-import com.example.usersapi.model.User;
-import com.example.usersapi.model.UserProfile;
-import com.example.usersapi.model.UserProfileWithUser;
+import com.example.usersapi.model.wrapper.RoleWithUsers;
 import com.example.usersapi.model.UserRole;
-import com.example.usersapi.model.UserWithRoles;
-import com.example.usersapi.service.UserProfileService;
+import com.example.usersapi.model.wrapper.UserWithRoles;
 import com.example.usersapi.service.UserRoleService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

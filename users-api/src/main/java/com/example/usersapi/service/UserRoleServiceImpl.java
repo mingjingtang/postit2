@@ -1,9 +1,9 @@
 package com.example.usersapi.service;
 
-import com.example.usersapi.model.RoleWithUsers;
+import com.example.usersapi.model.wrapper.RoleWithUsers;
 import com.example.usersapi.model.User;
 import com.example.usersapi.model.UserRole;
-import com.example.usersapi.model.UserWithRoles;
+import com.example.usersapi.model.wrapper.UserWithRoles;
 import com.example.usersapi.repository.RoleRepository;
 import com.example.usersapi.repository.UserRepository;
 import com.example.usersapi.repository.UserRoleRepository;

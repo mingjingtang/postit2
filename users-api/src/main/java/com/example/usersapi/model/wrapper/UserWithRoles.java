@@ -1,5 +1,7 @@
-package com.example.usersapi.model;
+package com.example.usersapi.model.wrapper;
 
+import com.example.usersapi.model.User;
+import com.example.usersapi.model.UserRole;
 import java.util.List;
 
 public class UserWithRoles {

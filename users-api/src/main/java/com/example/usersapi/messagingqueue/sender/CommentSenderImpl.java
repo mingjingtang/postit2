@@ -1,4 +1,4 @@
-package com.example.usersapi.repository;
+package com.example.usersapi.messagingqueue.sender;
 
 import com.example.usersapi.model.Comment;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -10,16 +10,17 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-@Repository
-public class UserCommentRepository {
+@Component
+public class CommentSenderImpl implements CommentSender {
 
   @Autowired
   private AmqpTemplate amqpTemplate;
 
   private ObjectMapper mapper = new ObjectMapper();
 
+  @Override
   public List<Comment> findCommentsByUserId(Long userId) throws JsonProcessingException {
 
     String message = "findCommentsByUserId:" + userId;
@@ -36,9 +37,10 @@ public class UserCommentRepository {
     return commentList;
   }
 
+  @Override
   public Map<Long, Long> findPostIdsByCommentIds(List<Long> commentIdList)
       throws JsonProcessingException {
-    if(commentIdList.size() == 0){
+    if (commentIdList.size() == 0) {
       return new HashMap<Long, Long>();
     }
     String message = mapper.writeValueAsString(commentIdList);

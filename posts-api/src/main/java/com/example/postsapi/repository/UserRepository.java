@@ -1,16 +1,31 @@
-package com.example.postsapi.repository;
+package com.example.postsapi.messagingqueue;
 
+import com.example.postsapi.messagingqueue.sender.UserSender;
 import com.example.postsapi.model.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository {
+@Repository
+public class UserRepository {
 
-  public Long findIdByUsername(String username);
+  @Autowired
+  private UserSender userSender;
 
-  public User findByUsername(String username);
+  public Long findIdByUsername(String username) {
+    return userSender.findIdByUsername(username);
+  }
 
-  public  User findByUserId(Long userId);
+  public User findByUsername(String username) {
+    return userSender.findByUsername(username);
+  }
 
-  public List<User> findUsersByUserIds(List<Long> userIdList) throws JsonProcessingException;
+  public User findByUserId(Long userId) {
+    return userSender.findByUserId(userId);
+  }
+
+  public List<User> findUsersByUserIds(List<Long> userIdList) throws JsonProcessingException {
+    return userSender.findUsersByUserIds(userIdList);
+  }
 }

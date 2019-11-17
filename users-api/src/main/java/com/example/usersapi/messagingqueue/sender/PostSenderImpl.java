@@ -1,26 +1,26 @@
-package com.example.usersapi.repository;
+package com.example.usersapi.messagingqueue.sender;
 
 import com.example.usersapi.model.Post;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Repository
-public class UserPostRepository {
+@Component
+public class PostSenderImpl implements PostSender{
 
   @Autowired
   private AmqpTemplate amqpTemplate;
 
   private ObjectMapper mapper = new ObjectMapper();
 
+  @Override
   public List<Post> findPostsByUserId(Long userId) {
     String message = "findPostsByUserId:" + userId;
     System.out.println("Sending message: " + message);
@@ -36,6 +36,7 @@ public class UserPostRepository {
     return postList;
   }
 
+  @Override
   public List<Post> findPostsByPostIds(List<Long> postIdList) throws JsonProcessingException {
     if(postIdList.size() == 0){
       return new ArrayList<Post>();
@@ -54,6 +55,7 @@ public class UserPostRepository {
     return postList;
   }
 
+  @Override
   public Map<Long, Long> findUserIdsByPostIds(List<Long> postIdList)
       throws JsonProcessingException {
     String message = mapper.writeValueAsString(postIdList);

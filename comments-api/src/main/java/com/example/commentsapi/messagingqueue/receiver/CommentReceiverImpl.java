@@ -1,18 +1,14 @@
-package com.example.commentsapi.listener;
+package com.example.commentsapi.messagingqueue;
 
 import com.example.commentsapi.model.Comment;
-import com.example.commentsapi.repository.CommentRepository;
 import com.example.commentsapi.repository.PostCommentRepository;
 import com.example.commentsapi.repository.UserCommentRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
