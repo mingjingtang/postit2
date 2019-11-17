@@ -87,6 +87,9 @@ public class PostServiceImpl implements PostService {
   @Override
   public PostWithUser findByPostId(Long postId) {
     Post post = postRepository.findById(postId).orElse(null);
+    if(post == null){
+      return null;
+    }
     Long userId = postUserRepository.getUserIdByPostId(postId);
     User user = userRepository.findByUserId(userId);
     PostWithUser postWithUser = new PostWithUser(post, user);
