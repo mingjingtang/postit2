@@ -15,7 +15,7 @@ public class RoleRepository {
 
   public UserRole findRoleById(Long roleId) {
     try {
-      String sql = "SELECT * FROM user_role WHERE role_id = ?";
+      String sql = "SELECT * FROM roles WHERE id = ?";
       return jdbcTemplate.queryForObject(sql, new Object[]{roleId},
           (rs, rowNum) -> new UserRole(rs.getLong("id"), rs.getString("name")));
     } catch (EmptyResultDataAccessException e) {
