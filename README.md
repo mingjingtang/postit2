@@ -50,11 +50,12 @@ This project is to decompose a monolith spring back-end to work under microservi
   * We discussed and compared the trade-offs between different designs, and agreed to focus on high scalability. So the database is logically separate, the application layer taks the responsibility to maintain the entity relationship. Also, this requires us to use HTTP request/response or messaging to transfer data between services.
   
 * Data intercommunication
-  * Since the entitis are unlinked, so how to withdraw the correct data and compose them together is a challenge for us. We made lots of graphs to help verify our thoughts.
+  * Since the entities are unlinked, so how to withdraw the correct data and compose them together is a challenge for us. We made lots of graphs to help verify our thoughts.
 
 * RabbitMQ to use messaging mechanism
   * Messaging queue needs extra setup, while docker simplifies the setup and zuul can discover the service with little configuration
   * We use jackson to convert the object to JSON string for communication
+  * RabbitMQ use AMQP(Advanced Message Queuing Protocol), AMQP provides us with the capabilities to easily add in load balancing, and high availability, with guaranteed message deliveries.
 
 * Long starting up for docker-compose
   * At the beginning, the starting up time occupied a lot of our development time. we tried the maven go-offline solution shared by our classmate Davis Allen to speed up the starting up time.
@@ -64,6 +65,24 @@ This project is to decompose a monolith spring back-end to work under microservi
 
 * CORS (multiple headers)
   * During the integration, after setting up the CORS on SecurityConfig, we still have a CORS problem, but it is about multiple headers, we used a zuul setting to solved this problem.
+
+* Project file structure clear and easy to understand
+  * We Separate each function and file by it's own purpose, so that it's easy to let for us and other developer to understand.
+
+* Keep security in Api-gateway
+  * We Keep the security Jwt and UserRole in the Api-gateway.
+
+* Reading error from the running result
+  * The running result had been an issue for us. Instead use the iTerm, we use terminal so that we can get all the run time result and information.
+
+* Writing dry code in Messagingequeue
+  * It's a challenge to write dry code in the sender file, because that we have so many different message to send.
+
+* Use AmqpTemplate to query database and receive message
+  * Sometimes we need to query a list, we have to search online to get those query structures.
+
+* In order to get Json back creating different models to construct json object
+  * The whole process of creating json is a hard work, we has to draw the structure first, then add them one by one.
 
 ## Further Improvement
 
@@ -79,7 +98,7 @@ This project is to decompose a monolith spring back-end to work under microservi
   * research on methods about data intercommunication, OpenFeign as the backup plan, try RabbitMQ
   * setup spring boot projects
 * 2019 11 09 Sat - 2019 11 11 Mon
-  * continue on writing user storis, breaking down stories into tasks
+  * continue on writing user stories, breaking down stories into tasks
   * experiment on rabbitmq
   * experiment on deploying microservices project to pivotal cloud foundry
   * implement a helloworld restcontroller to test the setup
