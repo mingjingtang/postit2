@@ -84,7 +84,7 @@ This project is to decompose a monolith spring back-end to work under microservi
 * Compose all elements into a wrapper in order to produce the correct Json back 
   * We create different models to construct json object
   * We refactor the wrapper files into a sub path in model so the file structure is clearer. 
-  * The whole process of composing elements is a hard work, we has to draw the structure first, then add them one by one.
+  * The whole process of composing elements is a hard work, we have to draw the structure first, then add them one by one.
 
 ## Further Improvement
 
