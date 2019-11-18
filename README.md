@@ -67,22 +67,24 @@ This project is to decompose a monolith spring back-end to work under microservi
   * During the integration, after setting up the CORS on SecurityConfig, we still have a CORS problem, but it is about multiple headers, we used a zuul setting to solved this problem.
 
 * Project file structure clear and easy to understand
-  * We Separate each function and file by it's own purpose, so that it's easy to let for us and other developer to understand.
+  * We Separate each function and file by its own purpose, so that it's easy to let for us and other developer to understand.
 
-* Keep security in Api-gateway
-  * We Keep the security Jwt and UserRole in the Api-gateway.
+* Enable security in Api-gateway
+  * Enabling security in the api-gateway increases the security level
 
-* Reading error from the running result
-  * The running result had been an issue for us. Instead use the iTerm, we use terminal so that we can get all the run time result and information.
+* Debugging for microservices: reading errors from the running printouts
+  * Tracking the errors from the running result had been an issue for us. Instead of using the iTerm, we use mac terminal so that we can get all the runtime result and information.
 
-* Writing dry code in Messagingequeue
-  * It's a challenge to write dry code in the sender file, because that we have so many different message to send.
+* Writing DRY code in Messaginge Queue
+  * It's a challenge to write DRY code in the sender and receiver for messaging, because we have so many different messages to communication.
 
-* Use AmqpTemplate to query database and receive message
-  * Sometimes we need to query a list, we have to search online to get those query structures.
+* Use JdbcTemplate to query database and withdraw record
+  * Sometimes we need to query a list like WHERE IN clause, we have to search online to get those query structures.
 
-* In order to get Json back creating different models to construct json object
-  * The whole process of creating json is a hard work, we has to draw the structure first, then add them one by one.
+* Compose all elements into a wrapper in order to produce the correct Json back 
+  * We create different models to construct json object
+  * We refactor the wrapper files into a sub path in model so the file structure is clearer. 
+  * The whole process of composing elements is a hard work, we has to draw the structure first, then add them one by one.
 
 ## Further Improvement
 
