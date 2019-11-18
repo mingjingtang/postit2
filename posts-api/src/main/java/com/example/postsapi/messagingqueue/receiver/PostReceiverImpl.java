@@ -1,7 +1,7 @@
-package com.example.postsapi.listener;
+package com.example.postsapi.messagingqueue.receiver;
 
 import com.example.postsapi.model.Post;
-import com.example.postsapi.model.PostWithUser;
+import com.example.postsapi.model.wrapper.PostWithUser;
 import com.example.postsapi.repository.PostUserRepository;
 import com.example.postsapi.service.PostService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -9,7 +9,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.Map;
-import java.util.stream.Collectors;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class PostListener {
+public class PostReceiverImpl implements PostReceiver{
 
   @Autowired
   private PostService postService;
@@ -28,6 +27,7 @@ public class PostListener {
 
   private ObjectMapper mapper = new ObjectMapper();
 
+  @Override
   @RabbitListener(queuesToDeclare = @Queue("findByPostId"))
   public String handleMessage_findByPostId(String message) throws JsonProcessingException {
     System.out.println("received:" + message);
@@ -41,6 +41,7 @@ public class PostListener {
     return "";
   }
 
+  @Override
   @RabbitListener(queuesToDeclare = @Queue("findPostsByUserId"))
   public String handleMessage_findPostsByUserId(String message) throws JsonProcessingException {
     System.out.println("received:" + message);
@@ -54,6 +55,7 @@ public class PostListener {
     return "";
   }
 
+  @Override
   @RabbitListener(queuesToDeclare = @Queue("findPostsByPostIds"))
   public String handleMessage_findPostsByPostIds(String message) throws IOException {
     System.out.println("received:" + message);
@@ -64,6 +66,7 @@ public class PostListener {
     return postsJson;
   }
 
+  @Override
   @RabbitListener(queuesToDeclare = @Queue("findUserIdsByPostIds"))
   public String handleMessage_findUserIdsByPostIds(String message) throws IOException {
     System.out.println("received:" + message);

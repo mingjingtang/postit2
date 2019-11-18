@@ -1,6 +1,8 @@
 package com.example.usersapi.controller;
 
 import com.example.usersapi.model.*;
+import com.example.usersapi.model.wrapper.CommentWithDetails;
+import com.example.usersapi.model.wrapper.PostWithUser;
 import com.example.usersapi.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;

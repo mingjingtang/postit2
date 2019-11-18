@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
 
     return new org.springframework.security.core.userdetails.User(user.getUsername(),
         bCryptPasswordEncoder.encode(user.getPassword()), true, true, true, true,
-        new ArrayList<>());
+        getGrantedAuthorities(user));
   }
 
   private List<GrantedAuthority> getGrantedAuthorities(User user) {

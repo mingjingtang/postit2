@@ -2,9 +2,8 @@ package com.example.usersapi.service;
 
 import com.example.usersapi.model.User;
 import com.example.usersapi.model.UserProfile;
-import com.example.usersapi.model.UserProfileWithUser;
+import com.example.usersapi.model.wrapper.UserProfileWithUser;
 import com.example.usersapi.repository.ProfileRepository;
-import com.example.usersapi.repository.UserPostRepository;
 import com.example.usersapi.repository.UserProfileRepository;
 import com.example.usersapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

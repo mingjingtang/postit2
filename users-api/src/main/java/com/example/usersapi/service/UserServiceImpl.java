@@ -2,6 +2,8 @@ package com.example.usersapi.service;
 
 import com.example.usersapi.config.JwtUtil;
 import com.example.usersapi.model.*;
+import com.example.usersapi.model.wrapper.CommentWithDetails;
+import com.example.usersapi.model.wrapper.PostWithUser;
 import com.example.usersapi.repository.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
@@ -25,7 +27,7 @@ public class UserServiceImpl implements UserService {
   private UserRepository userRepository;
 
   @Autowired
-  private UserPostRepository userPostRepository;
+  private PostRepository postRepository;
 
   @Autowired
   private ProfileRepository profileRepository;
@@ -34,7 +36,7 @@ public class UserServiceImpl implements UserService {
   private UserProfileRepository userProfileRepository;
 
   @Autowired
-  private UserCommentRepository userCommentRepository;
+  private CommentRepository commentRepository;
 
   @Autowired
   private RoleRepository roleRepository;
@@ -61,7 +63,6 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public String signup(User newUser) {
-//    newUser.setUserRole("ROLE_USER");
     String defaultRoleName="ROLE_USER";
     UserRole userRole = roleRepository.findByName(defaultRoleName);
 
@@ -107,7 +108,7 @@ public class UserServiceImpl implements UserService {
   public List<PostWithUser> getPostsByUser(String username) {
     User user = userRepository.findByUsername(username);
     Long userId = user.getId();
-    List<Post> postlist = userPostRepository.findPostsByUserId(userId);
+    List<Post> postlist = postRepository.findPostsByUserId(userId);
     List<PostWithUser> postListWithUser = new ArrayList<>();
     postlist.forEach(post -> postListWithUser.add(new PostWithUser(post, user)));
     return postListWithUser;
@@ -123,14 +124,14 @@ public class UserServiceImpl implements UserService {
       throws JsonProcessingException {
     User user = userRepository.findByUsername(username);
     Long userId = user.getId();
-    List<Comment> commentList = userCommentRepository.findCommentsByUserId(userId);
+    List<Comment> commentList = commentRepository.findCommentsByUserId(userId);
     List<Long> commentIdList = commentList.stream().map(Comment::getCommentId)
         .collect(Collectors.toList());
-    Map<Long, Long> commentIdToPostId = userCommentRepository
+    Map<Long, Long> commentIdToPostId = commentRepository
         .findPostIdsByCommentIds(commentIdList);
     List<Long> postIdList = commentIdToPostId.values().stream().collect(Collectors.toList());
-    List<Post> postList = userPostRepository.findPostsByPostIds(postIdList);
-    Map<Long, Long> postIdToUserId = userPostRepository.findUserIdsByPostIds(postIdList);
+    List<Post> postList = postRepository.findPostsByPostIds(postIdList);
+    Map<Long, Long> postIdToUserId = postRepository.findUserIdsByPostIds(postIdList);
     List<CommentWithDetails> commentWithDetailsList = new ArrayList<>();
     for (int i = 0; i < commentList.size(); i++) {
       Comment comment_i = commentList.get(i);
@@ -156,11 +157,4 @@ public class UserServiceImpl implements UserService {
         new ArrayList<>());
   }
 
-//  private List<GrantedAuthority> getGrantedAuthorities(User user) {
-//    List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-//
-//    authorities.add(new SimpleGrantedAuthority(user.getUserRole()));
-//
-//    return authorities;
-//  }
 }

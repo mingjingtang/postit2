@@ -1,8 +1,8 @@
 package com.example.usersapi.service;
 
-import com.example.usersapi.model.RoleWithUsers;
+import com.example.usersapi.model.wrapper.RoleWithUsers;
 import com.example.usersapi.model.UserRole;
-import com.example.usersapi.model.UserWithRoles;
+import com.example.usersapi.model.wrapper.UserWithRoles;
 import java.util.List;
 
 public interface UserRoleService {

@@ -1,7 +1,7 @@
 package com.example.usersapi.controller;
 
 import com.example.usersapi.model.UserProfile;
-import com.example.usersapi.model.UserProfileWithUser;
+import com.example.usersapi.model.wrapper.UserProfileWithUser;
 import com.example.usersapi.service.UserProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

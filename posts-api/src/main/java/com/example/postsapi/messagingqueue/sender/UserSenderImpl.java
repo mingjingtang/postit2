@@ -1,22 +1,18 @@
-package com.example.postsapi.repository;
+package com.example.postsapi.messagingqueue.sender;
 
 import com.example.postsapi.model.User;
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-@Repository
-public class UserRepositoryImpl implements UserRepository {
+@Component
+public class UserSenderImpl implements UserSender {
 
   @Autowired
   private AmqpTemplate amqpTemplate;
@@ -67,16 +63,18 @@ public class UserRepositoryImpl implements UserRepository {
 
   @Override
   public List<User> findUsersByUserIds(List<Long> userIdList) throws JsonProcessingException {
-    if(userIdList.size()==0){
+    if (userIdList.size() == 0) {
       return new ArrayList<User>();
     }
     String userIdsJson = mapper.writeValueAsString(userIdList);
     System.out.println("Sending message: " + userIdsJson);
-    String userListJson = (String) amqpTemplate.convertSendAndReceive("findUsersByUserIds", userIdsJson);
+    String userListJson = (String) amqpTemplate
+        .convertSendAndReceive("findUsersByUserIds", userIdsJson);
     System.out.println(userListJson);
     List<User> userList = new ArrayList<>();
     try {
-      userList = mapper.readValue(userListJson, new TypeReference<List<User>>(){});
+      userList = mapper.readValue(userListJson, new TypeReference<List<User>>() {
+      });
     } catch (IOException e) {
       e.printStackTrace();
     }

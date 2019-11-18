@@ -1,27 +1,43 @@
-package com.example.postsapi.repository;
+package com.example.postsapi.messagingqueue.sender;
 
 import com.example.postsapi.model.Comment;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-@Repository
-public class PostCommentRepository {
+@Component
+public class CommentSenderImpl implements CommentSender {
 
   @Autowired
   private AmqpTemplate amqpTemplate;
 
   private ObjectMapper mapper = new ObjectMapper();
 
+  @Override
+  public Comment createComment(String username, Long postId, Comment text) {
+    String message = "addCommentToPost:" + username + ":" + postId + ":" + text;
+    System.out.println("Sending message: " + message);
+    String commentJson = (String) amqpTemplate.convertSendAndReceive("createComment", message);
+    System.out.println(commentJson);
+    Comment comment = null;
+    try {
+      comment = mapper.readValue(commentJson, Comment.class);
+    } catch (Exception e) {
+      System.out.println(e);
+    }
+
+    return comment;
+  }
+
+  @Override
   public List<Comment> getCommentsByPostId(Long postId) {
     String message = "getCommentsByPostId:" + postId;
     System.out.println("Sending message: " + message);
@@ -38,6 +54,7 @@ public class PostCommentRepository {
     return commentList;
   }
 
+  @Override
   public Map<Long, Long> findCommentIdsToUserIds(List<Long> commentIdList)
       throws JsonProcessingException {
     if (commentIdList.size() == 0) {
@@ -58,6 +75,7 @@ public class PostCommentRepository {
     return commentIdsToUserIds;
   }
 
+  @Override
   public Map<Long, Long> findPostIdsByCommentIds(List<Long> commentIdList)
       throws JsonProcessingException {
     if (commentIdList.size() == 0) {
@@ -78,4 +96,3 @@ public class PostCommentRepository {
     return commentIdToPostId;
   }
 }
-

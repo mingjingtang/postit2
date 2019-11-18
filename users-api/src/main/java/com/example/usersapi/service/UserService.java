@@ -1,9 +1,8 @@
 package com.example.usersapi.service;
 
-import com.example.usersapi.model.CommentWithDetails;
-import com.example.usersapi.model.PostWithUser;
+import com.example.usersapi.model.wrapper.CommentWithDetails;
+import com.example.usersapi.model.wrapper.PostWithUser;
 import com.example.usersapi.model.User;
-import com.example.usersapi.model.UserProfile;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;
 import org.springframework.security.core.userdetails.UserDetailsService;

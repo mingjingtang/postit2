@@ -1,25 +1,22 @@
 package com.example.postsapi.service;
 
-import com.example.postsapi.model.Comment;
+import com.example.postsapi.repository.UserRepository;
 import com.example.postsapi.model.Post;
-import com.example.postsapi.model.PostWithUser;
+import com.example.postsapi.model.wrapper.PostWithUser;
 import com.example.postsapi.model.User;
 import com.example.postsapi.repository.PostRepository;
 import com.example.postsapi.repository.PostUserRepository;
-import com.example.postsapi.repository.UserRepository;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StreamUtils;
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -87,6 +84,9 @@ public class PostServiceImpl implements PostService {
   @Override
   public PostWithUser findByPostId(Long postId) {
     Post post = postRepository.findById(postId).orElse(null);
+    if(post == null){
+      return null;
+    }
     Long userId = postUserRepository.getUserIdByPostId(postId);
     User user = userRepository.findByUserId(userId);
     PostWithUser postWithUser = new PostWithUser(post, user);
