@@ -6,10 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/posts-api/pom.xml" />
         <option value="$PROJECT_DIR$/users-api/pom.xml" />
-        <option value="$PROJECT_DIR$/api-gateway/target/maven-archiver/pom.properties" />
         <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/comments-api/pom.xml" />
-        <option value="$PROJECT_DIR$/eureka-server/target/maven-archiver/pom.properties" />
         <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
       </list>
     </option>

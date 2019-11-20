@@ -1,0 +1,5 @@
+CREATE TABLE posts (
+    id SERIAL UNIQUE NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    description VARCHAR(355) NOT NULL
+);

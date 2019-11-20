@@ -1,8 +1,18 @@
 version: '3'
 
 services:
+
+
+  rabbitmq:
+      image: "rabbitmq:management"
+      ports:
+        - "15672:15672"
+        - "5672:5672"
+
+
   eureka:
-    image: maven:3.6.1-jdk-8
+    # image: maven:3.6.1-jdk-8
+    build: ./eureka-server
     ports:
       - '8761:8761'
     working_dir: /app
@@ -11,8 +21,11 @@ services:
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+
+
   api-gateway:
-    image: maven:3.6.1-jdk-8
+#    image: maven:3.6.1-jdk-8
+    build: ./api-gateway
     ports:
       - '8080:8080'
     working_dir: /app
@@ -20,11 +33,17 @@ services:
       - ./api-gateway:/app
     depends_on:
       - eureka
+      - users-api
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+    links: 
+      - rabbitmq
+
+
   users-api:
-    image: maven:3.6.1-jdk-8
+#    image: maven:3.6.1-jdk-8
+    build: ./users-api
     ports:
       - '8081:8081'
     working_dir: /app
@@ -35,8 +54,13 @@ services:
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+    links: 
+      - rabbitmq
+
+
   posts-api:
-    image: maven:3.6.1-jdk-8
+#    image: maven:3.6.1-jdk-8
+    build: ./posts-api
     ports:
       - '8082:8082'
     working_dir: /app
@@ -44,11 +68,17 @@ services:
       - ./posts-api:/app
     depends_on:
       - eureka
+      - users-api
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+    links: 
+      - rabbitmq
+
+      
   comments-api:
-    image: maven:3.6.1-jdk-8
+#    image: maven:3.6.1-jdk-8
+    build: ./comments-api
     ports:
       - '8083:8083'
     working_dir: /app
@@ -56,13 +86,19 @@ services:
       - ./comments-api:/app
     depends_on:
       - eureka
+      - users-api
     command: 'mvn spring-boot:run'
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+    links: 
+      - rabbitmq
+
+
   postgresdev:
     image: postgres
+#    build: ./postgresdev
     ports:
-      - "5432:5432"
+      - '5432:5432'
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=postgres
