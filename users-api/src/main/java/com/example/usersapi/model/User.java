@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "users")
@@ -22,9 +24,11 @@ public class User {
 
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @Column(name = "password")
+  @NotNull(message = "{NotNull.name}")
   private String password;
 
   @Column(name = "email")
+  @Email(message = "Email invalid")
   private String email;
 
   public Long getId() {

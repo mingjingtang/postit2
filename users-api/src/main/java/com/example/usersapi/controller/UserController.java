@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 public class UserController {
 
@@ -24,7 +26,7 @@ public class UserController {
   }
 
   @PostMapping("/signup")
-  public ResponseEntity<?> signup(@RequestBody User user) {
+  public ResponseEntity<?> signup(@Valid @RequestBody User user) {
     String token = userService.signup(user);
     User savedUser = userService.findByEmail(user.getEmail());
     return ResponseEntity.ok(new JwtResponse(token, savedUser.getUsername()));
