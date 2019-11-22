@@ -5,7 +5,6 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -58,6 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.cors().and().csrf().disable().authorizeRequests()
         .antMatchers("/user/signup", "/user/login", "/post/list").permitAll()
         .antMatchers("/post/**/comment").permitAll()
+            .antMatchers("/user/v2/api-docs").permitAll()
 //                .antMatchers(HttpMethod.POST, "/user/signup").permitAll()
 //                .antMatchers(HttpMethod.POST, "/user/login").permitAll()
 //                .antMatchers(HttpMethod.GET, "/post/list").permitAll()

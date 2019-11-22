@@ -31,6 +31,7 @@ com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.class
 com/example/usersapi/model/wrapper/RoleWithUsers.class
 com/example/usersapi/controller/UserRoleController.class
 com/example/usersapi/service/UserProfileServiceImpl.class
+com/example/usersapi/config/SwaggerConfig.class
 com/example/usersapi/model/UserProfile.class
 com/example/usersapi/UsersApiApplication.class
 com/example/usersapi/service/UserService.class
