@@ -20,19 +20,19 @@ public class UserProfileController {
   private UserProfileService userProfileService;
 
   @PostMapping("/profile")
-  @ApiOperation(value = "Post a profile of an exist user ", notes = "post profile", response = UserProfileWithUser.class)
+  @ApiOperation(value = "Create a profile of a user ", notes = "create profile", response = UserProfileWithUser.class)
   public UserProfileWithUser postUserProfile(@RequestHeader String username, @RequestBody UserProfile userProfile) {
     return userProfileService.createProfile(username, userProfile);
   }
 
   @PutMapping("/profile")
-  @ApiOperation(value = "Update a profile of an exist user ", notes = "update profile", response = UserProfileWithUser.class)
+  @ApiOperation(value = "Update a profile of a user ", notes = "update profile", response = UserProfileWithUser.class)
   public UserProfileWithUser updateUserProfile(@RequestHeader String username, @RequestBody UserProfile userProfile){
     return userProfileService.updateProfile(username, userProfile);
   }
 
   @GetMapping("/profile")
-  @ApiOperation(value = "Get a profile of an exist user ", notes = "get profile", response = UserProfileWithUser.class)
+  @ApiOperation(value = "Get a profile of a user ", notes = "get profile", response = UserProfileWithUser.class)
   public UserProfileWithUser getUserProfile(@RequestHeader String username){
     return userProfileService.getProfile(username);
   }

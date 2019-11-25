@@ -5,6 +5,8 @@ import com.example.usersapi.model.wrapper.CommentWithDetails;
 import com.example.usersapi.model.wrapper.PostWithUser;
 import com.example.usersapi.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import io.jsonwebtoken.Jwt;
+import io.swagger.annotations.ApiParam;
 import java.util.List;
 
 import io.swagger.annotations.ApiOperation;
@@ -21,16 +23,18 @@ public class UserController {
   private UserService userService;
 
   @PostMapping("/login")
-  @ApiOperation(value = "Login a exist user", notes = "provide username and email", response = ResponseEntity.class)
-  public ResponseEntity<?> login(@RequestBody User user) {
+  @ApiOperation(value = "Login an user", notes = "provide email and password", response = JwtResponse.class)
+  public ResponseEntity<?> login(
+      @ApiParam(value = "user body: email and password", required = true) @RequestBody User user) {
     String token = userService.login(user);
     User foundUser = userService.findByEmail(user.getEmail());
     return ResponseEntity.ok(new JwtResponse(token, foundUser.getUsername()));
   }
 
   @PostMapping("/signup")
-  @ApiOperation(value = "Signup a new user", notes = "provide username, email and password", response = ResponseEntity.class)
-  public ResponseEntity<?> signup(@Valid @RequestBody User user) {
+  @ApiOperation(value = "Signup a new user", notes = "provide username, email and password", response = JwtResponse.class)
+  public ResponseEntity<?> signup(
+      @ApiParam(value = "user body: username, email and password", required = true) @Valid @RequestBody User user) {
     String token = userService.signup(user);
     User savedUser = userService.findByEmail(user.getEmail());
     return ResponseEntity.ok(new JwtResponse(token, savedUser.getUsername()));

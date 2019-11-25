@@ -6,6 +6,8 @@ import com.example.postsapi.model.wrapper.PostWithUser;
 import com.example.postsapi.service.CommentService;
 import com.example.postsapi.service.PostService;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,29 +22,32 @@ public class PostController {
   private CommentService commentService;
 
   @PostMapping("/")
-  public PostWithUser createPost(@RequestHeader("username") String username,
-      @RequestBody Post post) {
+  @ApiOperation(value = "Create a post by a user", notes = "create post", response = PostWithUser.class)
+  public PostWithUser createPost(
+      @ApiParam(value = "username", required = true) @RequestHeader("username") String username,
+      @ApiParam(value = "post body", required = true) @RequestBody Post post) {
     return postService.createPost(username, post);
   }
 
   @DeleteMapping("/{postId}")
-  public Long deletePost(@RequestHeader("username") String username, @PathVariable Long postId) {
+  @ApiOperation(value = "Delete a post by post id", notes = "delete post", response = Long.class)
+  public Long deletePost(
+      @ApiParam(value = "username", required = true) @RequestHeader("username") String username,
+      @ApiParam(value = "post id", required = true) @PathVariable Long postId) {
 
     return postService.deletePostByPostId(postId);
   }
 
   @GetMapping("/list")
+  @ApiOperation(value = "list all posts", notes = "list posts", response = PostWithUser.class, responseContainer = "List")
   public List<PostWithUser> listPosts() throws JsonProcessingException {
     return postService.listPosts();
   }
 
-  @PutMapping("/{postId}")
-  public Post updatePost(@PathVariable Long postId, @RequestBody Post post) {
-    return postService.updatePost(postId, post);
-  }
-
   @GetMapping("{postId}/comment")
-  public List<CommentWithDetails> getComments(@PathVariable Long postId)
+  @ApiOperation(value = "get comments for a post", notes = "get comments by post id", response = CommentWithDetails.class, responseContainer = "List")
+  public List<CommentWithDetails> getComments(
+      @ApiParam(value = "post id", required = true) @PathVariable Long postId)
       throws JsonProcessingException {
     return commentService.getCommentsByPostId(postId);
   }

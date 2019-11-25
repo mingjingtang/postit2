@@ -24,13 +24,13 @@ public class UserRoleController {
   private UserRoleService userRoleService;
 
   @GetMapping("/role")
-  @ApiOperation(value = "Get user role by username", notes = "get role", response = UserWithRoles.class)
+  @ApiOperation(value = "Get userrole by username", notes = "get role", response = UserWithRoles.class)
   public UserWithRoles getRoleByUsername(@RequestHeader("username") String username) {
     return userRoleService.getRoleByUsername(username);
   }
 
   @PostMapping("/role")
-  @ApiOperation(value = "Post user role by admin user", notes = "post role", response = UserRole.class, responseContainer = "List")
+  @ApiOperation(value = "create userrole by admin user", notes = "create role", response = UserRole.class, responseContainer = "List")
   public List<UserRole> createRole(@RequestHeader("username") String username, @RequestBody UserRole userRole){
     return userRoleService.createRole(userRole);
   }

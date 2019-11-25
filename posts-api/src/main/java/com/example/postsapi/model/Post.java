@@ -1,5 +1,6 @@
 package com.example.postsapi.model;
 
+import io.swagger.annotations.ApiModelProperty;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ public class Post {
   @Id
   @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @ApiModelProperty(hidden = true)
   private Long postId;
 
   @Column(name = "title")

@@ -18,6 +18,8 @@ public class DocumentationController implements SwaggerResourcesProvider {
     public List get() {
         List resources = new ArrayList<>();
         resources.add(swaggerResource("users-api", "/user/v2/api-docs", "2.0"));
+        resources.add(swaggerResource("posts-api", "/post/v2/api-docs", "2.0"));
+        resources.add(swaggerResource("comments-api", "/comment/v2/api-docs", "2.0"));
         return resources;
     }
 

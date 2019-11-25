@@ -1,5 +1,6 @@
 package com.example.commentsapi.model;
 
+import io.swagger.annotations.ApiModelProperty;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,9 +13,9 @@ import javax.persistence.Table;
 public class Comment {
 
     @Id
-//    @Column(name = "id", unique = true, nullable = false)
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty(hidden = true)
     private Long commentId;
 
     @Column(name = "text")
