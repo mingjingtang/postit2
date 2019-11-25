@@ -2,6 +2,8 @@ package com.example.usersapi.repository;
 
 import com.example.usersapi.model.User;
 import java.util.List;
+
+import io.swagger.annotations.ApiOperation;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
