@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
+import com.example.usersapi.exception.LoginException;
 import com.example.usersapi.model.User;
 import com.example.usersapi.model.UserRole;
 import com.example.usersapi.repository.UserRepository;
@@ -57,14 +58,13 @@ public class UserServiceTest {
     }
 
 
-    @Test
-    public void login_UserNotFound() {
+    @Test(expected = LoginException.class)
+    public void login_UserNotFound() throws LoginException {
 
         when(userRepository.findByUsername(anyString())).thenReturn(null);
 
         String token = userService.login(user);
 
-        assertEquals(null, token);
     }
 
 }

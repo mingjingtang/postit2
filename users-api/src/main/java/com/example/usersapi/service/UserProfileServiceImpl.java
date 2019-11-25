@@ -6,7 +6,9 @@ import com.example.usersapi.model.wrapper.UserProfileWithUser;
 import com.example.usersapi.repository.ProfileRepository;
 import com.example.usersapi.repository.UserProfileRepository;
 import com.example.usersapi.repository.UserRepository;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,27 +24,36 @@ public class UserProfileServiceImpl implements UserProfileService {
   private UserProfileRepository userProfileRepository;
 
   @Override
-  public UserProfileWithUser createProfile(String username, UserProfile userProfile) {
+  public UserProfileWithUser createProfile(String username, @Valid UserProfile userProfile) {
     UserProfile savedProfile = profileRepository.save(userProfile);
     User user = userRepository.findByUsername(username);
     if (savedProfile != null && user != null
         && userProfileRepository.update(user.getId(), savedProfile.getId()) == 1) {
       return new UserProfileWithUser(savedProfile, user);
     }
-    throw new RuntimeException("xx");
+    throw new RuntimeException("failed to save user profile");
   }
 
   @Override
   public UserProfileWithUser updateProfile(String username, UserProfile userProfile) {
     User user = userRepository.findByUsername(username);
     Long userId = user.getId();
-    Long userProfileId = userProfileRepository.findProfileIdByUserId(userId);
+    Long userProfileId = 0L;
+    try {
+      userProfileId = userProfileRepository.findProfileIdByUserId(userId);
+    } catch (EmptyResultDataAccessException e) {
+      System.out.println("this user has no profile yet");
+      return this.createProfile(username, userProfile);
+    }
     UserProfile oldUserProfile = profileRepository.findById(userProfileId).orElse(null);
     if (userProfile.getAddress() != null) {
       oldUserProfile.setAddress(userProfile.getAddress());
     }
     if (userProfile.getMobile() != null) {
       oldUserProfile.setMobile(userProfile.getMobile());
+    }
+    if (userProfile.getAdditionalEmail() != null) {
+      oldUserProfile.setAdditionalEmail(userProfile.getAdditionalEmail());
     }
     UserProfile updatedUserProfile = profileRepository.save(oldUserProfile);
     return new UserProfileWithUser(updatedUserProfile, user);

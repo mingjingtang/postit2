@@ -9,6 +9,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import java.util.List;
+import javax.security.auth.message.AuthException;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +27,7 @@ public class PostController {
   @ApiOperation(value = "Create a post by a user", notes = "create post", response = PostWithUser.class)
   public PostWithUser createPost(
       @ApiParam(value = "username", required = true) @RequestHeader("username") String username,
-      @ApiParam(value = "post body", required = true) @RequestBody Post post) {
+      @ApiParam(value = "post body", required = true) @Valid @RequestBody Post post) {
     return postService.createPost(username, post);
   }
 
@@ -33,9 +35,10 @@ public class PostController {
   @ApiOperation(value = "Delete a post by post id", notes = "delete post", response = Long.class)
   public Long deletePost(
       @ApiParam(value = "username", required = true) @RequestHeader("username") String username,
-      @ApiParam(value = "post id", required = true) @PathVariable Long postId) {
+      @ApiParam(value = "post id", required = true) @PathVariable Long postId)
+      throws AuthException {
 
-    return postService.deletePostByPostId(postId);
+    return postService.deletePostByPostId(username, postId);
   }
 
   @GetMapping("/list")

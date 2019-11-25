@@ -17,6 +17,8 @@
 /app/src/main/java/com/example/usersapi/repository/UserRepository.java
 /app/src/main/java/com/example/usersapi/model/Comment.java
 /app/src/main/java/com/example/usersapi/repository/ProfileRepository.java
+/app/src/main/java/com/example/usersapi/exception/LoginException.java
+/app/src/main/java/com/example/usersapi/exception/SignUpException.java
 /app/src/main/java/com/example/usersapi/repository/RoleRepository.java
 /app/src/main/java/com/example/usersapi/messagingqueue/sender/PostSenderImpl.java
 /app/src/main/java/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.java

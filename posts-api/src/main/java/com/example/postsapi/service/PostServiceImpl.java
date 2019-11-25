@@ -15,6 +15,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import javax.persistence.EntityNotFoundException;
+import javax.security.auth.message.AuthException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,10 +45,15 @@ public class PostServiceImpl implements PostService {
   }
 
   @Override
-  public Long deletePostByPostId(Long postId) {
+  public Long deletePostByPostId(String username, Long postId) throws AuthException {
     Post post = postRepository.findById(postId).orElse(null);
     if (post == null) {
-      return 0L;
+      throw new EntityNotFoundException("post with id:" + postId + " not found");
+    }
+    User user = userRepository.findByUsername(username);
+    Long authorId = postUserRepository.getUserIdByPostId(postId);
+    if (user.getId() != authorId) {
+      throw new AuthException("this post cannot be deleted by this user");
     }
     postRepository.delete(post);
     postUserRepository.deleteByPostId(postId);
@@ -73,18 +80,9 @@ public class PostServiceImpl implements PostService {
   }
 
   @Override
-  public Post updatePost(Long postId, Post post) {
-    Post newPost = postRepository.findById(postId).get();
-    newPost.setTitle(post.getTitle());
-    newPost.setDescription(post.getDescription());
-    postRepository.save(newPost);
-    return newPost;
-  }
-
-  @Override
   public PostWithUser findByPostId(Long postId) {
     Post post = postRepository.findById(postId).orElse(null);
-    if(post == null){
+    if (post == null) {
       return null;
     }
     Long userId = postUserRepository.getUserIdByPostId(postId);

@@ -4,6 +4,7 @@ com/example/usersapi/service/UserServiceImpl.class
 com/example/usersapi/repository/CommentRepository.class
 com/example/usersapi/messagingqueue/sender/CommentSender.class
 com/example/usersapi/messagingqueue/receiver/UserReceiverImpl$1.class
+com/example/usersapi/exception/LoginException.class
 com/example/usersapi/messagingqueue/sender/PostSenderImpl$1.class
 com/example/usersapi/repository/ProfileRepository.class
 com/example/usersapi/messagingqueue/sender/PostSenderImpl.class
@@ -21,6 +22,7 @@ com/example/usersapi/messagingqueue/sender/CommentSenderImpl$2.class
 com/example/usersapi/repository/UserRepository.class
 com/example/usersapi/repository/UserRoleRepository.class
 com/example/usersapi/messagingqueue/sender/CommentSenderImpl$1.class
+com/example/usersapi/exception/SignUpException.class
 com/example/usersapi/model/User.class
 com/example/usersapi/model/UserRole.class
 com/example/usersapi/config/JwtUtil.class

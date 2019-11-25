@@ -5,6 +5,8 @@ import com.example.commentsapi.model.CommentWithDetails;
 import com.example.commentsapi.model.PostWithUser;
 import com.example.commentsapi.model.User;
 import com.example.commentsapi.repository.*;
+import javax.persistence.EntityNotFoundException;
+import javax.security.auth.message.AuthException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,14 +48,19 @@ public class CommentServiceImpl implements CommentService {
   }
 
   @Override
-  public Long deleteComment(Long commentId) {
+  public Long deleteComment(String username, Long commentId) throws AuthException {
     Comment comment = commentRepository.findById(commentId).orElse(null);
-    if (comment != null) {
-      commentRepository.delete(comment);
-      commentPostRepository.delete(commentId);
-      commentUserRepository.delete(commentId);
-      return commentId;
+    if (comment == null) {
+      throw new EntityNotFoundException("comment with id: " + commentId + " not found");
     }
-    return 0L;
+    User user = userRepository.findByUsername(username);
+    if(commentUserRepository.findCommentsByUserId(user.getId()).contains(comment) == false){
+      throw new AuthException("this comment cannot be deleted by this user");
+    }
+    commentRepository.delete(comment);
+    commentPostRepository.delete(commentId);
+    commentUserRepository.delete(commentId);
+    return commentId;
   }
 }
+

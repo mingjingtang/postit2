@@ -4,6 +4,7 @@ import com.example.usersapi.model.UserProfile;
 import com.example.usersapi.model.wrapper.UserProfileWithUser;
 import com.example.usersapi.service.UserProfileService;
 import io.swagger.annotations.ApiOperation;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,19 +22,21 @@ public class UserProfileController {
 
   @PostMapping("/profile")
   @ApiOperation(value = "Create a profile of a user ", notes = "create profile", response = UserProfileWithUser.class)
-  public UserProfileWithUser postUserProfile(@RequestHeader String username, @RequestBody UserProfile userProfile) {
+  public UserProfileWithUser postUserProfile(@RequestHeader String username,
+      @Valid @RequestBody UserProfile userProfile) {
     return userProfileService.createProfile(username, userProfile);
   }
 
   @PutMapping("/profile")
   @ApiOperation(value = "Update a profile of a user ", notes = "update profile", response = UserProfileWithUser.class)
-  public UserProfileWithUser updateUserProfile(@RequestHeader String username, @RequestBody UserProfile userProfile){
+  public UserProfileWithUser updateUserProfile(@RequestHeader String username,
+      @RequestBody UserProfile userProfile) {
     return userProfileService.updateProfile(username, userProfile);
   }
 
   @GetMapping("/profile")
   @ApiOperation(value = "Get a profile of a user ", notes = "get profile", response = UserProfileWithUser.class)
-  public UserProfileWithUser getUserProfile(@RequestHeader String username){
+  public UserProfileWithUser getUserProfile(@RequestHeader String username) {
     return userProfileService.getProfile(username);
   }
 }

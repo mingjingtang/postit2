@@ -1,6 +1,8 @@
 package com.example.usersapi.service;
 
 import com.example.usersapi.config.JwtUtil;
+import com.example.usersapi.exception.LoginException;
+import com.example.usersapi.exception.SignUpException;
 import com.example.usersapi.model.*;
 import com.example.usersapi.model.wrapper.CommentWithDetails;
 import com.example.usersapi.model.wrapper.PostWithUser;
@@ -50,7 +52,13 @@ public class UserServiceImpl implements UserService {
   private JwtUtil jwtUtil;
 
   @Override
-  public String login(User user) {
+  public String login(User user) throws LoginException {
+    if(user.getEmail() == null || user.getEmail().length() == 0) {
+      throw new LoginException("invalid email");
+    }
+    if(user.getPassword() == null || user.getPassword().length() == 0) {
+      throw new LoginException("invalid password");
+    }
     User newUser = userRepository.findByEmail(user.getEmail());
 
     if (newUser != null && bCryptPasswordEncoder
@@ -58,16 +66,23 @@ public class UserServiceImpl implements UserService {
       UserDetails userDetails = loadUserByUsername(newUser.getUsername());
       return jwtUtil.generateToken(userDetails);
     }
-    return null;
+
+    throw new LoginException("invalid email/password pair");
   }
 
   @Override
-  public String signup(User newUser) {
+  public String signup(User newUser) throws SignUpException {
     String defaultRoleName="ROLE_USER";
     UserRole userRole = roleRepository.findByName(defaultRoleName);
 
     newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
 
+    if(userRepository.findByUsername(newUser.getUsername()) !=null ) {
+      throw new SignUpException("username already exists");
+    }
+    if(userRepository.findByEmail(newUser.getEmail()) !=null ) {
+      throw new SignUpException("email already exists");
+    }
     User createdUser = userRepository.save(newUser);
     if ( createdUser!=null && userRoleRepository.save(createdUser.getId(), userRole.getId())==1) {
       UserDetails userDetails = loadUserByUsername(newUser.getUsername());

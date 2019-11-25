@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -23,15 +24,17 @@ public class User {
   private Long id;
 
   @Column(name = "username")
+  @NotBlank(message = "invalid username")
   private String username;
 
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @Column(name = "password")
-  @NotNull(message = "{NotNull.name}")
+  @NotBlank(message = "invalid password")
   private String password;
 
   @Column(name = "email")
   @Email(message = "Email invalid")
+  @NotBlank(message = "invalid email")
   private String email;
 
   public Long getId() {

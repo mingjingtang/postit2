@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "posts")
@@ -19,9 +20,11 @@ public class Post {
   private Long postId;
 
   @Column(name = "title")
+  @NotBlank(message = "invalid title")
   private String title;
 
   @Column(name = "description")
+  @NotBlank(message = "invalid description")
   private String description;
 
   public Long getPostId() {

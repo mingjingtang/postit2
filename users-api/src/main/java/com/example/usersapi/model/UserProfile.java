@@ -1,6 +1,8 @@
 package com.example.usersapi.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "profile")
@@ -12,12 +14,16 @@ public class UserProfile {
   private Long id;
 
   @Column(name = "mobile")
+  @NotBlank(message = "invalid mobile")
   private String mobile;
 
   @Column(name = "address")
+  @NotBlank(message = "invalid address")
   private String address;
 
   @Column(name = "email")
+  @NotBlank(message = "invalid email")
+  @Email(message = "invalid email")
   private String additionalEmail;
 
   public Long getId() {

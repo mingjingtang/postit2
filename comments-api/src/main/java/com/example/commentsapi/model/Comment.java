@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "comments")
@@ -19,6 +20,7 @@ public class Comment {
     private Long commentId;
 
     @Column(name = "text")
+    @NotBlank(message = "invalid comment text")
     private String text;
 
     public Long getCommentId() {

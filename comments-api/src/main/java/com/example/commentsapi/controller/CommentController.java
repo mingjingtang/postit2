@@ -6,6 +6,8 @@ import com.example.commentsapi.service.CommentService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
+import javax.security.auth.message.AuthException;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +22,7 @@ public class CommentController {
   public CommentWithDetails createComment(
       @ApiParam(value = "username", required = true) @RequestHeader("username") String username,
       @ApiParam(value = "post id", required = true) @PathVariable Long postId,
-      @ApiParam(value = "comment body", required = true) @RequestBody Comment comment) {
+      @ApiParam(value = "comment body", required = true) @Valid @RequestBody Comment comment) {
     return commentService.createComment(username, postId, comment);
   }
 
@@ -28,7 +30,8 @@ public class CommentController {
   @ApiOperation(value = "Delete a comment by comment id", notes = "delete comment", response = Long.class)
   public Long deleteCommentById(
       @ApiParam(value = "username", required = true) @RequestHeader("username") String username,
-      @ApiParam(value = "comment id", required = true) @PathVariable Long commentId) {
-    return commentService.deleteComment(commentId);
+      @ApiParam(value = "comment id", required = true) @PathVariable Long commentId)
+      throws AuthException {
+    return commentService.deleteComment(username, commentId);
   }
 }

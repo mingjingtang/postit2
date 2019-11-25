@@ -1,5 +1,7 @@
 package com.example.usersapi.service;
 
+import com.example.usersapi.exception.LoginException;
+import com.example.usersapi.exception.SignUpException;
 import com.example.usersapi.model.wrapper.CommentWithDetails;
 import com.example.usersapi.model.wrapper.PostWithUser;
 import com.example.usersapi.model.User;
@@ -9,9 +11,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface UserService extends UserDetailsService {
 
-  public String signup(User user);
+  public String signup(User user) throws SignUpException;
 
-  public String login(User user);
+  public String login(User user) throws LoginException;
 
   public List<User> listUsers();
 

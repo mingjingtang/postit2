@@ -13,6 +13,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
+import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +43,9 @@ public class CommentServiceImpl implements CommentService {
 
   @Override
   public List<CommentWithDetails> getCommentsByPostId(Long postId) throws JsonProcessingException {
+    if (postRepository.findById(postId).orElse(null) == null) {
+      throw new EntityNotFoundException("post with id " + postId + " not found");
+    }
     List<Comment> commentList = commentRepository.getCommentsByPostId(postId);
     List<Long> commentIdList = commentList.stream().map(Comment::getCommentId)
         .collect(Collectors.toList());

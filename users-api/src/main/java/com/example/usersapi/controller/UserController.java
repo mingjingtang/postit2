@@ -1,5 +1,7 @@
 package com.example.usersapi.controller;
 
+import com.example.usersapi.exception.LoginException;
+import com.example.usersapi.exception.SignUpException;
 import com.example.usersapi.model.*;
 import com.example.usersapi.model.wrapper.CommentWithDetails;
 import com.example.usersapi.model.wrapper.PostWithUser;
@@ -22,22 +24,24 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @PostMapping("/login")
-  @ApiOperation(value = "Login an user", notes = "provide email and password", response = JwtResponse.class)
-  public ResponseEntity<?> login(
-      @ApiParam(value = "user body: email and password", required = true) @RequestBody User user) {
-    String token = userService.login(user);
-    User foundUser = userService.findByEmail(user.getEmail());
-    return ResponseEntity.ok(new JwtResponse(token, foundUser.getUsername()));
-  }
-
   @PostMapping("/signup")
   @ApiOperation(value = "Signup a new user", notes = "provide username, email and password", response = JwtResponse.class)
   public ResponseEntity<?> signup(
-      @ApiParam(value = "user body: username, email and password", required = true) @Valid @RequestBody User user) {
+      @ApiParam(value = "user body: username, email and password", required = true) @Valid @RequestBody User user)
+      throws SignUpException {
     String token = userService.signup(user);
     User savedUser = userService.findByEmail(user.getEmail());
     return ResponseEntity.ok(new JwtResponse(token, savedUser.getUsername()));
+  }
+
+  @PostMapping("/login")
+  @ApiOperation(value = "Login an user", notes = "provide email and password", response = JwtResponse.class)
+  public ResponseEntity<?> login(
+      @ApiParam(value = "user body: email and password", required = true) @RequestBody User user)
+      throws LoginException {
+    String token = userService.login(user);
+    User foundUser = userService.findByEmail(user.getEmail());
+    return ResponseEntity.ok(new JwtResponse(token, foundUser.getUsername()));
   }
 
   @GetMapping("/list")
