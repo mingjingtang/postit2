@@ -42,7 +42,7 @@ public class UserRoleController {
   }
 
   @GetMapping("/roles")
-  @ApiOperation(value = "List all user roles", notes = "get role", response = UserRole.class, responseContainer = "List")
+  @ApiOperation(value = "List all user roles", notes = "get roles", response = UserRole.class, responseContainer = "List")
   public List<UserRole> listAllRoles(@RequestHeader("username") String username){
     return userRoleService.listAllRoles();
   }
