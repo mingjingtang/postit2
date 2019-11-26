@@ -1,5 +1,6 @@
 package com.example.postsapi.repository;
 
+import com.example.postsapi.messagingqueue.sender.CommentSender;
 import com.example.postsapi.model.Comment;
 import com.example.postsapi.model.Post;
 import com.example.postsapi.model.User;
@@ -7,9 +8,16 @@ import com.example.postsapi.model.wrapper.CommentWithDetails;
 import com.example.postsapi.model.wrapper.PostWithUser;
 import org.junit.Before;
 import org.junit.Rule;
+import org.junit.Test;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.when;
 
 public class PostUserRepositoryTest {
     @Rule
@@ -23,6 +31,9 @@ public class PostUserRepositoryTest {
 
     @InjectMocks
     private Comment comment;
+
+    @Mock
+    CommentSender commentSender;
 
     private PostWithUser postWithUser;
 
@@ -47,6 +58,13 @@ public class PostUserRepositoryTest {
         comment.setText("comment");
 
         commentWithDetails = new CommentWithDetails(comment, user, postWithUser);
+    }
 
+    @Test
+    public void save_Success(){
+        when(commentSender.createComment(anyString(), anyLong(), any())).thenReturn(comment);
+        Comment result = commentRepository.createComment("name", 1L, comment);
+        assertNotNull(result);
+        assertEquals(result, comment);
     }
 }
