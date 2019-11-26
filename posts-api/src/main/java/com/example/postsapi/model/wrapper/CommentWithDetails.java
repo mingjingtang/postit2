@@ -2,7 +2,9 @@ package com.example.postsapi.model.wrapper;
 
 import com.example.postsapi.model.Comment;
 import com.example.postsapi.model.User;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CommentWithDetails {
 
     private Long id;
