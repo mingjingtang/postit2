@@ -15,12 +15,12 @@ public class UserProfileWithUser {
 
   private User user;
 
-  public UserProfileWithUser(UserProfile userProfile, User user){
-    this.id = userProfile.getId();
-    this.mobile = userProfile.getMobile();
-    this.address = userProfile.getAddress();
-    this.additionalEmail = userProfile.getAdditionalEmail();
-    this.user = user;
+  public UserProfileWithUser(UserProfile userProfile, User user) {
+    this.setId(userProfile.getId());
+    this.setMobile(userProfile.getMobile());
+    this.setAddress(userProfile.getAddress());
+    this.setAdditionalEmail(userProfile.getAdditionalEmail());
+    this.setUser(user);
   }
 
   public Long getId() {

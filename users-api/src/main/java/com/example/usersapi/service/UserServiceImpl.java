@@ -88,7 +88,7 @@ public class UserServiceImpl implements UserService {
       UserDetails userDetails = loadUserByUsername(newUser.getUsername());
       return jwtUtil.generateToken(userDetails);
     }
-    return null;
+    throw new SignUpException("signup failed");
   }
 
   @Override

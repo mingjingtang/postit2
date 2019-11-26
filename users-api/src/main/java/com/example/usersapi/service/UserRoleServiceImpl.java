@@ -10,6 +10,7 @@ import com.example.usersapi.repository.UserRoleRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
+import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,8 +36,8 @@ public class UserRoleServiceImpl implements UserRoleService {
   @Override
   public UserWithRoles assginRoleToUser(String roleName, Long userId) {
     User user = userRepository.findById(userId).orElse(null);
-    if (userId == null) {
-      throw new RuntimeException("user not found");
+    if (user == null) {
+      throw new EntityNotFoundException("user not found");
     }
     UserRole userRole = roleRepository.findByName(roleName);
     List<UserRole> roles = userRoleRepository.findRolesByUserId(userId);
@@ -44,26 +45,24 @@ public class UserRoleServiceImpl implements UserRoleService {
       System.out.println("duplicate role for the same user");
       return new UserWithRoles(user, roles);
     }
-    if (userRoleRepository.save(user.getId(), userRole.getId()) == 1) {
-      roles.add(userRole);
-      return new UserWithRoles(user, roles);
-    } else {
-      throw new RuntimeException("user role cannot be added: save relationship failed");
-    }
+    userRoleRepository.save(user.getId(), userRole.getId());
+    roles.add(userRole);
+    return new UserWithRoles(user, roles);
   }
 
   @Override
   public List<UserRole> listAllRoles() {
     Iterable<UserRole> roleIter = roleRepository.findAll();
-    List<UserRole> roles = StreamSupport.stream(roleIter.spliterator(), false).collect(Collectors.toList());
+    List<UserRole> roles = StreamSupport.stream(roleIter.spliterator(), false)
+        .collect(Collectors.toList());
     return roles;
   }
 
   @Override
   public RoleWithUsers findUsersByRole(String roleName) {
     UserRole role = roleRepository.findByName(roleName);
-    if(role == null) {
-      throw new RuntimeException("userrole not found: " + roleName);
+    if (role == null) {
+      throw new EntityNotFoundException("userrole not found: " + roleName);
     }
     List<User> users = userRoleRepository.findUserByRoleId(role.getId());
     return new RoleWithUsers(role, users);
@@ -72,8 +71,8 @@ public class UserRoleServiceImpl implements UserRoleService {
   @Override
   public UserWithRoles removeRoleFromUser(String roleName, Long userId) {
     User user = userRepository.findById(userId).orElse(null);
-    if (userId == null) {
-      throw new RuntimeException("user not found");
+    if (user == null) {
+      throw new EntityNotFoundException("user not found");
     }
     UserRole userRole = roleRepository.findByName(roleName);
     List<UserRole> roles = userRoleRepository.findRolesByUserId(userId);
@@ -92,7 +91,7 @@ public class UserRoleServiceImpl implements UserRoleService {
   @Override
   public List<UserRole> createRole(UserRole userRole) {
     List<UserRole> roles = listAllRoles();
-    if(roles.stream().anyMatch(role->role.getName().equals(userRole.getName()))==false){
+    if (roles.stream().anyMatch(role -> role.getName().equals(userRole.getName())) == false) {
       UserRole savedUserRole = roleRepository.save(userRole);
       roles.add(savedUserRole);
     }

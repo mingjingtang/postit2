@@ -22,7 +22,7 @@ public class UserProfileController {
 
   @PostMapping("/profile")
   @ApiOperation(value = "Create a profile of a user ", notes = "create profile", response = UserProfileWithUser.class)
-  public UserProfileWithUser postUserProfile(@RequestHeader String username,
+  public UserProfileWithUser createUserProfile(@RequestHeader String username,
       @Valid @RequestBody UserProfile userProfile) {
     return userProfileService.createProfile(username, userProfile);
   }

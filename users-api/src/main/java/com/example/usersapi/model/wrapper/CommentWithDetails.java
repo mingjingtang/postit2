@@ -12,10 +12,10 @@ public class CommentWithDetails {
   private PostWithUser post;
 
   public CommentWithDetails(Comment comment, User commentAuthor, Post post, User postAuthor) {
-    this.id = comment.getCommentId();
-    this.text = comment.getText();
-    this.user = commentAuthor;
-    this.post = new PostWithUser(post, postAuthor);
+    this.setId(comment.getCommentId());
+    this.setText(comment.getText());
+    this.setUser(commentAuthor);
+    this.setPost(new PostWithUser(post, postAuthor));
   }
 
   public Long getId() {
