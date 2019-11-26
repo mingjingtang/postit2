@@ -11,9 +11,9 @@ public class UserWithRoles {
   private List<UserRole> roles;
 
   public UserWithRoles(User user, List<UserRole> roles) {
-    this.id = user.getId();
-    this.username = user.getUsername();
-    this.roles = roles;
+    this.setId(user.getId());
+    this.setUsername(user.getUsername());
+    this.setRoles(roles);
   }
 
   public Long getId() {

@@ -1,1 +1,9 @@
+/app/src/test/java/com/example/usersapi/service/UserRoleServiceTest.java
+/app/src/test/java/com/example/usersapi/service/UserProfileServiceTest.java
+/app/src/test/java/com/example/usersapi/messagingqueue/sender/CommentSenderTest.java
+/app/src/test/java/com/example/usersapi/messagingqueue/receiver/UserReceiverTest.java
+/app/src/test/java/com/example/usersapi/controller/UserControllerTest.java
+/app/src/test/java/com/example/usersapi/controller/UserProfileControllerTest.java
+/app/src/test/java/com/example/usersapi/messagingqueue/sender/PostSenderTest.java
 /app/src/test/java/com/example/usersapi/service/UserServiceTest.java
+/app/src/test/java/com/example/usersapi/controller/UserRoleControllerTest.java

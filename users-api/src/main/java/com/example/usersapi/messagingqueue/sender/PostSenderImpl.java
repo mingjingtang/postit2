@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.persistence.EntityNotFoundException;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -31,7 +32,7 @@ public class PostSenderImpl implements PostSender{
       });
     } catch (Exception e) {
       e.printStackTrace();
-      throw new RuntimeException("postList not found");
+      throw new EntityNotFoundException("postList not found");
     }
     return postList;
   }

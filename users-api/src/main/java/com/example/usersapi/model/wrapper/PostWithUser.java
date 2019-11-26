@@ -4,51 +4,51 @@ import com.example.usersapi.model.Post;
 import com.example.usersapi.model.User;
 
 public class PostWithUser {
-    private Long postId;
 
-    private String title;
+  private Long postId;
 
-    private String description;
+  private String title;
 
-    private User user;
+  private String description;
 
-    public PostWithUser(Post post, User user){
-        this.postId = post.getPostId();
-        this.title = post.getTitle();
-        this.description = post.getDescription();
-        this.user = user;
-    }
+  private User user;
 
-    public Long getPostId() {
-        return postId;
-    }
+  public PostWithUser(Post post, User user) {
+    this.setPostId(post.getPostId());
+    this.setTitle(post.getTitle());
+    this.setDescription(post.getDescription());
+    this.setUser(user);
+  }
 
-    public void setPostId(Long postId) {
-        this.postId = postId;
-    }
+  public Long getPostId() {
+    return postId;
+  }
 
-    public String getTitle() {
-        return title;
-    }
+  public void setPostId(Long postId) {
+    this.postId = postId;
+  }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public String getDescription() {
-        return description;
-    }
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    public User getUser() {
-        return user;
-    }
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+  public User getUser() {
+    return user;
+  }
 
+  public void setUser(User user) {
+    this.user = user;
+  }
 }
