@@ -1,4 +1,4 @@
-package com.ga.controller;
+package com.example.postsapi.controller;
 
 import com.example.postsapi.controller.PostController;
 import com.example.postsapi.model.Comment;
