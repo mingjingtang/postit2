@@ -1,0 +1,6 @@
+CREATE TABLE profile (
+    id SERIAL UNIQUE NOT NULL,
+    mobile VARCHAR(100) UNIQUE NOT NULL,
+    address VARCHAR(355) NOT NULL,
+    email VARCHAR(355) UNIQUE NOT NULL
+);
