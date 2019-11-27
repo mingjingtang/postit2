@@ -122,19 +122,21 @@ public class PostUserRepositoryTest {
     //not working yet
     @Test
     public void findUserIdsByCommentIds_Success(){
-        String sql = "select * from post_user where post_id in(:postids)";
         List<Long> postIdList = new ArrayList<>();
         postIdList.add(1L);
-        Map<String, Object> queryParams = new HashMap<>();
-        queryParams.put("postids", postIdList);
         List<Map<String, Object>> list = new ArrayList<>();
-        list.add(queryParams);
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("post_id", 1);
+        resultMap.put("user_id", 2);
+        list.add(resultMap);
+
         when(namedParameterJdbcTemplate.queryForList(anyString(),anyMap())).thenReturn(list);
+
         Map<Long, Long> result = postUserRepository.findUserIdsByCommentIds(postIdList);
-        Map<Long, Long> map = new HashMap<>();
-        map.put(1L, 1L);
+//        Map<Long, Long> map = new HashMap<>();
+//        map.put(1L, 1L);
         assertNotNull(result);
-        assertEquals(result, map);
+        assertEquals(2l, (long)result.get(1L));
     }
 
 //    @Test
