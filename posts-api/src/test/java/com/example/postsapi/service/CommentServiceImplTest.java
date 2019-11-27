@@ -18,10 +18,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -103,6 +100,7 @@ public class CommentServiceImplTest {
 
         List<Post> posts = new ArrayList<>();
         posts.add(post);
+        when(postRepository.findById(anyLong())).thenReturn(Optional.of(post));
         when(postRepository.findAllById(anyList())).thenReturn(posts);
 
         when(userRepository.findByUserId(anyLong())).thenReturn(user);
