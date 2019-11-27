@@ -17,9 +17,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 
 import static org.junit.Assert.assertEquals;
@@ -48,6 +46,9 @@ public class PostUserRepositoryTest {
 
     @InjectMocks
     PostUserRepository postUserRepository;
+
+    @Mock
+    PostRepository postRepository;
 
 
     private PostWithUser postWithUser;
@@ -108,12 +109,31 @@ public class PostUserRepositoryTest {
     public void findUserIdsByUserIds_Success(){
         List<Long> postIds = new ArrayList<>();
         postIds.add(1L);
-        when(jdbcTemplate.query(anyString(), any(RowMapper.class))).thenReturn();
+        when(jdbcTemplate.query(anyString(), any(RowMapper.class))).thenReturn(postIds);
+        when(postRepository.findById(anyLong())).thenReturn(Optional.of(post));
+        List<Post> postList = new ArrayList<>();
+        postList.add(post);
+        List<Post> result =  postUserRepository.findPostsByUserId(1L);
+        assertNotNull(result);
+        assertEquals(result, postList);
     }
 
 
-//    @Test
-//    public void deleteByPostId_Success(){
-//        when(jdbcTemplate.update(anyString(), anyLong())).thenReturn(null);
-//    }
+    //not working yet
+    @Test
+    public void findUserIdsByCommentIds_Success(){
+        String sql = "select * from post_user where post_id in(:postids)";
+        List<Long> postIdList = new ArrayList<>();
+        postIdList.add(1L);
+        Map<String, Object> queryParams = new HashMap<>();
+        queryParams.put("postids", postIdList);
+        List<Map<String, Object>> list = new ArrayList<>();
+        list.add(queryParams);
+        when(namedParameterJdbcTemplate.queryForList(anyString(),anyMap())).thenReturn(list);
+        Map<Long, Long> result = postUserRepository.findUserIdsByCommentIds(postIdList);
+        Map<Long, Long> map = new HashMap<>();
+        map.put(1L, 1L);
+        assertNotNull(result);
+        assertEquals(result, map);
+    }
 }
