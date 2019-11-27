@@ -136,4 +136,10 @@ public class PostUserRepositoryTest {
         assertNotNull(result);
         assertEquals(result, map);
     }
+
+//    @Test
+//    public void deleteByPostId(){
+//        when(jdbcTemplate.update(anyString(), anyLong()));
+//        postUserRepository.deleteByPostId(1L);
+//    }
 }
