@@ -3,62 +3,89 @@
   <component name="ChangeListManager">
     <list default="true" id="106bac30-0aed-4688-9eb5-79914f93fdd9" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/PostServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/PostServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/PostSenderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/PostSenderImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/CommentWithDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/CommentWithDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/PostWithUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/PostWithUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/RoleWithUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/RoleWithUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserProfileWithUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserProfileWithUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserWithRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserWithRoles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/UsersApiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/UsersApiApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/JwtUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserRoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/JwtResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/JwtResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserProfile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/CommentWithDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/CommentWithDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/PostWithUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/PostWithUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/RoleWithUsers.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/RoleWithUsers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserProfileWithUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserProfileWithUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserWithRoles.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserWithRoles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/CommentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/PostRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/ProfileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/ProfileRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/RoleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserProfileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserProfileRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRoleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/TEST-com.example.usersapi.service.UserServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/surefire-reports/TEST-com.example.usersapi.service.UserServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/com.example.usersapi.service.UserServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/surefire-reports/com.example.usersapi.service.UserServiceTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/test-classes/com/example/usersapi/service/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/test-classes/com/example/usersapi/service/UserServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserProfileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/application-dev.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/UsersApiApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/JwtUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserProfileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserRoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Comment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/JwtResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Post.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserProfile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/CommentWithDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/PostWithUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/RoleWithUsers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserProfileWithUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserWithRoles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/CommentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/PostRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/ProfileRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserProfileRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V10__create_user_role.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V1__create_users.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V2__create_posts.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V3__create_post_user.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V4__create_comments.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V5__create_post_comment.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V6__create_user_comment.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V7__create_profile.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V8__create_user_profile.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V9__create_roles.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/afterMigrate.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/TEST-com.example.usersapi.service.UserServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/com.example.usersapi.service.UserServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/test-classes/com/example/usersapi/service/UserServiceTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
     <ignored path="$PROJECT_DIR$/users-api/target/" />
@@ -72,35 +99,58 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserProfileController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserRoleController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="44" column="65" selection-start-line="44" selection-start-column="65" selection-end-line="44" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="23" column="116" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="116" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/PostServiceImpl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-764">
+                  <caret line="23" selection-start-line="21" selection-end-line="23" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/PostServiceImplTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="527">
+                  <caret line="147" column="5" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1559">
+                  <caret line="83" column="19" lean-forward="true" selection-start-line="83" selection-start-column="2" selection-end-line="83" selection-end-column="19" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/PostServiceImpl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-833">
+                  <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,12 +169,11 @@
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/users-api" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/model/User.java" />
         <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/model/Post.java" />
         <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/PostRepository.java" />
@@ -175,6 +224,7 @@
         <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" />
         <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserProfileController.java" />
         <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserRoleController.java" />
+        <option value="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/PostServiceImplTest.java" />
       </list>
     </option>
   </component>
@@ -189,8 +239,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="2049" />
     <option name="y" value="23" />
-    <option name="width" value="1923" />
-    <option name="height" value="1042" />
+    <option name="width" value="1931" />
+    <option name="height" value="1075" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -198,38 +248,125 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="wrapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="users-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="users-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="users-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="users-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="users-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="usersapi" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -237,33 +374,22 @@
               <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
               <item name="users-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="usersapi" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574642886033" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574983293701" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -290,18 +416,82 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTest.login_UserNotFound_Error">
-    <configuration name="UserServiceTest.login_UserNotFound_Error" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="users-api" />
+  <component name="RunManager" selected="JUnit.PostServiceImplTest.findPostByPostId_List_Success">
+    <configuration name="PostServiceImplTest.findByPostId_PostWithUser_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="posts-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.usersapi.service.*" />
+          <option name="PATTERN" value="com.example.postsapi.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.usersapi.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.usersapi.service.UserServiceTest" />
-      <option name="METHOD_NAME" value="login_UserNotFound_Error" />
+      <option name="PACKAGE_NAME" value="com.example.postsapi.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.service.PostServiceImplTest" />
+      <option name="METHOD_NAME" value="findByPostId_PostWithUser_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostServiceImplTest.findPostByPostId_List_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="posts-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.postsapi.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.postsapi.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.service.PostServiceImplTest" />
+      <option name="METHOD_NAME" value="findPostByPostId_List_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostServiceImplTest.findPostByUserId_List_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="posts-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.postsapi.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.postsapi.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.service.PostServiceImplTest" />
+      <option name="METHOD_NAME" value="findPostByUserId_List_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostServiceImplTest.findPostByUserId_postNotFound_EntityNotFoundException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="posts-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.postsapi.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.postsapi.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.service.PostServiceImplTest" />
+      <option name="METHOD_NAME" value="findPostByUserId_postNotFound_EntityNotFoundException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostServiceImplTest.listPost_List_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="posts-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.postsapi.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.postsapi.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.service.PostServiceImplTest" />
+      <option name="METHOD_NAME" value="listPost_List_Success" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -344,7 +534,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceTest.login_UserNotFound_Error" />
+        <item itemvalue="JUnit.PostServiceImplTest.findPostByPostId_List_Success" />
+        <item itemvalue="JUnit.PostServiceImplTest.findByPostId_PostWithUser_Success" />
+        <item itemvalue="JUnit.PostServiceImplTest.findPostByUserId_List_Success" />
+        <item itemvalue="JUnit.PostServiceImplTest.findPostByUserId_postNotFound_EntityNotFoundException" />
+        <item itemvalue="JUnit.PostServiceImplTest.listPost_List_Success" />
       </list>
     </recent_temporary>
   </component>
@@ -362,22 +556,50 @@
       <workItem from="1573765508591" duration="29650000" />
       <workItem from="1574451804635" duration="153000" />
       <workItem from="1574453615468" duration="723000" />
+      <workItem from="1574965873117" duration="11256000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserServiceTest_login_UserNotFound_Error - 2019.11.21 at 15h 18m 38s.xml">
-      <configuration name="UserServiceTest.login_UserNotFound_Error" configurationId="JUnit" />
+    <history-entry file="PostServiceImplTest_findPostByUserId_postNotFound_EntityNotFoundException - 2019.11.28 at 18h 02m 33s.xml">
+      <configuration name="PostServiceImplTest.findPostByUserId_postNotFound_EntityNotFoundException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PostServiceImplTest_findPostByUserId_postNotFound_EntityNotFoundException - 2019.11.28 at 18h 03m 47s.xml">
+      <configuration name="PostServiceImplTest.findPostByUserId_postNotFound_EntityNotFoundException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PostServiceImplTest_findPostByUserId_postNotFound_EntityNotFoundException - 2019.11.28 at 18h 05m 19s.xml">
+      <configuration name="PostServiceImplTest.findPostByUserId_postNotFound_EntityNotFoundException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PostServiceImplTest_findPostByUserId_postNotFound_EntityNotFoundException - 2019.11.28 at 18h 07m 57s.xml">
+      <configuration name="PostServiceImplTest.findPostByUserId_postNotFound_EntityNotFoundException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PostServiceImplTest_findPostByUserId_postNotFound_EntityNotFoundException - 2019.11.28 at 18h 08m 11s.xml">
+      <configuration name="PostServiceImplTest.findPostByUserId_postNotFound_EntityNotFoundException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PostServiceImplTest_findPostByUserId_List_Success - 2019.11.28 at 18h 10m 49s.xml">
+      <configuration name="PostServiceImplTest.findPostByUserId_List_Success" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PostServiceImplTest_findByPostId_PostWithUser_Success - 2019.11.28 at 18h 15m 20s.xml">
+      <configuration name="PostServiceImplTest.findByPostId_PostWithUser_Success" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PostServiceImplTest_findByPostId_PostWithUser_Success - 2019.11.28 at 18h 15m 45s.xml">
+      <configuration name="PostServiceImplTest.findByPostId_PostWithUser_Success" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PostServiceImplTest_findByPostId_PostWithUser_Success - 2019.11.28 at 18h 16m 01s.xml">
+      <configuration name="PostServiceImplTest.findByPostId_PostWithUser_Success" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PostServiceImplTest_findPostByPostId_List_Success - 2019.11.28 at 18h 21m 24s.xml">
+      <configuration name="PostServiceImplTest.findPostByPostId_List_Success" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59512000" />
+    <option name="totallyTimeSpent" value="70768000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2049" y="23" width="1923" height="1042" extended-state="0" />
+    <frame x="2049" y="23" width="1931" height="1075" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22928914" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17509313" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -387,7 +609,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3487395" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25414938" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -398,8 +620,8 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32913166" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" visible="true" weight="0.040816326" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32913166" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.040816326" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32883817" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -416,48 +638,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/JwtUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/CommentSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/PostSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/PostSenderImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/PostRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/ProfileRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -563,16 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -760,15 +930,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="23" column="116" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="116" />
+        <state relative-caret-position="153">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
@@ -776,6 +939,66 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="44" column="65" selection-start-line="44" selection-start-column="65" selection-end-line="44" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts-api/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-840" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/model/wrapper/PostWithUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/CommentServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-118">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/PostServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-764">
+          <caret line="23" selection-start-line="21" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1559">
+          <caret line="83" column="19" lean-forward="true" selection-start-line="83" selection-start-column="2" selection-end-line="83" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/PostServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="147" column="5" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
