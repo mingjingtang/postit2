@@ -2,6 +2,7 @@ package com.example.commentsapi.messagingqueue.sender;
 
 import com.example.commentsapi.model.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javax.persistence.EntityNotFoundException;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,7 +25,7 @@ public class UserSenderImpl implements UserSender {
       user = mapper.readValue(userJson, User.class);
     } catch (Exception e) {
       e.printStackTrace();
-      throw new RuntimeException("user not found");
+      throw new EntityNotFoundException("user not found");
     }
     return user;
   }
