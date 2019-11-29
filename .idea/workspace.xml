@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="106bac30-0aed-4688-9eb5-79914f93fdd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/receiver/PostReceiverImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/CommentSenderImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" afterDir="false" />
@@ -100,57 +98,38 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/postit2$com_example_postsapi_in_posts_api.ic" NAME="com.example.postsapi in posts-api Coverage Results" MODIFIED="1575003152406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.postsapi.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="272" />
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49181223">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/CommentSenderImplTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/PostServiceImplTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="738">
-                  <caret line="73" column="25" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="73" selection-end-column="25" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+                <state relative-caret-position="266">
+                  <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/CommentServiceImplTest.java">
+            <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/CommentSenderImplTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="585">
-                  <caret line="76" column="81" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="76" selection-end-column="81" />
+                <state relative-caret-position="388">
+                  <caret line="107" column="67" lean-forward="true" selection-start-line="107" selection-start-column="43" selection-end-line="107" selection-end-column="67" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -159,32 +138,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/messagingqueue/sender/CommentSenderTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="546">
-                  <caret line="83" column="77" lean-forward="true" selection-start-line="73" selection-start-column="4" selection-end-line="83" selection-end-column="77" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/messagingqueue/receiver/UserReceiverTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/messagingqueue/sender/CommentSenderImpl.java">
+            <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/messagingqueue/sender/UserSenderImpl.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-386">
-                  <caret line="36" column="18" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="18" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                <state relative-caret-position="-19">
+                  <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -220,8 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/PostRepository.java" />
-        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/model/PostWithUser.java" />
         <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/service/CommentServiceImpl.java" />
         <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/service/CommentService.java" />
         <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/controller/CommentController.java" />
@@ -271,6 +227,8 @@
         <option value="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/PostServiceImplTest.java" />
         <option value="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/messagingqueue/sender/CommentSenderTest.java" />
         <option value="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/CommentSenderImplTest.java" />
+        <option value="$PROJECT_DIR$/posts-api/pom.xml" />
+        <option value="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java" />
       </list>
     </option>
   </component>
@@ -285,7 +243,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="2049" />
     <option name="y" value="23" />
-    <option name="width" value="1884" />
+    <option name="width" value="1942" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -301,6 +259,55 @@
           <expand>
             <path>
               <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="commentsapi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="commentsapi" type="462c0819:PsiDirectoryNode" />
+              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="commentsapi" type="462c0819:PsiDirectoryNode" />
+              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
+              <item name="sender" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
               <item name="posts-api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -387,16 +394,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="postsapi" type="462c0819:PsiDirectoryNode" />
               <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-              <item name="receiver" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
@@ -436,40 +433,6 @@
               <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
               <item name="users-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="usersapi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="usersapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="usersapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-              <item name="sender" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -505,25 +468,6 @@
               <item name="usersapi" type="462c0819:PsiDirectoryNode" />
               <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
               <item name="receiver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="usersapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-              <item name="sender" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="usersapi" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -534,7 +478,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574999640398" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575003820954" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -561,8 +505,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CommentSenderImplTest.findPostIdByCommentId_Map_Success">
-    <configuration name="CommentSenderImplTest.createComment_Comment_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserSenderImplTest.findByUsername_User_Success">
+    <configuration name="UserSenderImplTest.findByUserId_User_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="posts-api" />
       <extension name="coverage">
         <pattern>
@@ -571,14 +515,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.postsapi.messagingqueue.sender" />
-      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.messagingqueue.sender.CommentSenderImplTest" />
-      <option name="METHOD_NAME" value="createComment_Comment_Success" />
+      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.messagingqueue.sender.UserSenderImplTest" />
+      <option name="METHOD_NAME" value="findByUserId_User_Success" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommentSenderImplTest.findPostIdByCommentId_Map_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserSenderImplTest.findByUsername_User_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="posts-api" />
       <extension name="coverage">
         <pattern>
@@ -587,14 +531,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.postsapi.messagingqueue.sender" />
-      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.messagingqueue.sender.CommentSenderImplTest" />
-      <option name="METHOD_NAME" value="findPostIdByCommentId_Map_Success" />
+      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.messagingqueue.sender.UserSenderImplTest" />
+      <option name="METHOD_NAME" value="findByUsername_User_Success" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommentSenderImplTest.getCommentByPostId_ListComments_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserSenderImplTest.findIdByUserName_Long_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="posts-api" />
       <extension name="coverage">
         <pattern>
@@ -603,41 +547,39 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.postsapi.messagingqueue.sender" />
-      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.messagingqueue.sender.CommentSenderImplTest" />
-      <option name="METHOD_NAME" value="getCommentByPostId_ListComments_Success" />
+      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.messagingqueue.sender.UserSenderImplTest" />
+      <option name="METHOD_NAME" value="findIdByUserName_Long_Success" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostServiceImplTest.findPostByUserId_postNotFound_EntityNotFoundException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserSenderImplTest.findUserByUserIds_ListUsers_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="posts-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.postsapi.service.*" />
+          <option name="PATTERN" value="com.example.postsapi.messagingqueue.sender.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.postsapi.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.service.PostServiceImplTest" />
-      <option name="METHOD_NAME" value="findPostByUserId_postNotFound_EntityNotFoundException" />
+      <option name="PACKAGE_NAME" value="com.example.postsapi.messagingqueue.sender" />
+      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.messagingqueue.sender.UserSenderImplTest" />
+      <option name="METHOD_NAME" value="findUserByUserIds_ListUsers_Success" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostServiceImplTest.listPost_List_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="com.example.postsapi in posts-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="posts-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.postsapi.service.*" />
+          <option name="PATTERN" value="com.example.postsapi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.postsapi.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.service.PostServiceImplTest" />
-      <option name="METHOD_NAME" value="listPost_List_Success" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.example.postsapi" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -679,11 +621,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CommentSenderImplTest.findPostIdByCommentId_Map_Success" />
-        <item itemvalue="JUnit.CommentSenderImplTest.getCommentByPostId_ListComments_Success" />
-        <item itemvalue="JUnit.CommentSenderImplTest.createComment_Comment_Success" />
-        <item itemvalue="JUnit.PostServiceImplTest.listPost_List_Success" />
-        <item itemvalue="JUnit.PostServiceImplTest.findPostByUserId_postNotFound_EntityNotFoundException" />
+        <item itemvalue="JUnit.UserSenderImplTest.findByUsername_User_Success" />
+        <item itemvalue="JUnit.UserSenderImplTest.findIdByUserName_Long_Success" />
+        <item itemvalue="JUnit.com.example.postsapi in posts-api" />
+        <item itemvalue="JUnit.UserSenderImplTest.findUserByUserIds_ListUsers_Success" />
+        <item itemvalue="JUnit.UserSenderImplTest.findByUserId_User_Success" />
       </list>
     </recent_temporary>
   </component>
@@ -702,50 +644,50 @@
       <workItem from="1574451804635" duration="153000" />
       <workItem from="1574453615468" duration="723000" />
       <workItem from="1574965873117" duration="11256000" />
-      <workItem from="1574984402909" duration="9181000" />
+      <workItem from="1574984402909" duration="13340000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CommentSenderImplTest_createComment_Comment_Success - 2019.11.28 at 22h 09m 35s.xml">
-      <configuration name="CommentSenderImplTest.createComment_Comment_Success" configurationId="JUnit" />
+    <history-entry file="com_example_postsapi_in_posts-api - 2019.11.28 at 23h 52m 39s.xml">
+      <configuration name="com.example.postsapi in posts-api" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentSenderImplTest_createComment_Comment_Success - 2019.11.28 at 22h 11m 10s.xml">
-      <configuration name="CommentSenderImplTest.createComment_Comment_Success" configurationId="JUnit" />
+    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 53m 45s.xml">
+      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentSenderImplTest_createComment_Comment_Success - 2019.11.28 at 22h 11m 44s.xml">
-      <configuration name="CommentSenderImplTest.createComment_Comment_Success" configurationId="JUnit" />
+    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 55m 05s.xml">
+      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentSenderImplTest_createComment_Comment_Success - 2019.11.28 at 22h 16m 22s.xml">
-      <configuration name="CommentSenderImplTest.createComment_Comment_Success" configurationId="JUnit" />
+    <history-entry file="UserSenderImplTest_findIdByUserName_Long_Success - 2019.11.28 at 23h 55m 39s.xml">
+      <configuration name="UserSenderImplTest.findIdByUserName_Long_Success" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentSenderImplTest_createComment_Comment_Success - 2019.11.28 at 22h 22m 25s.xml">
-      <configuration name="CommentSenderImplTest.createComment_Comment_Success" configurationId="JUnit" />
+    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 55m 58s.xml">
+      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentSenderImplTest_getCommentByPostId_ListComments_Success - 2019.11.28 at 22h 39m 23s.xml">
-      <configuration name="CommentSenderImplTest.getCommentByPostId_ListComments_Success" configurationId="JUnit" />
+    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 57m 50s.xml">
+      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentSenderImplTest_createComment_Comment_Success - 2019.11.28 at 22h 47m 50s.xml">
-      <configuration name="CommentSenderImplTest.createComment_Comment_Success" configurationId="JUnit" />
+    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 58m 18s.xml">
+      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentSenderImplTest_getCommentByPostId_ListComments_Success - 2019.11.28 at 22h 48m 02s.xml">
-      <configuration name="CommentSenderImplTest.getCommentByPostId_ListComments_Success" configurationId="JUnit" />
+    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 59m 52s.xml">
+      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentSenderImplTest_getCommentByPostId_ListComments_Success - 2019.11.28 at 22h 48m 48s.xml">
-      <configuration name="CommentSenderImplTest.getCommentByPostId_ListComments_Success" configurationId="JUnit" />
+    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.29 at 00h 00m 05s.xml">
+      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentSenderImplTest_findPostIdByCommentId_Map_Success - 2019.11.28 at 22h 52m 49s.xml">
-      <configuration name="CommentSenderImplTest.findPostIdByCommentId_Map_Success" configurationId="JUnit" />
+    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.29 at 00h 02m 27s.xml">
+      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79949000" />
+    <option name="totallyTimeSpent" value="84108000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2049" y="23" width="1884" height="1053" extended-state="0" />
+    <frame x="2049" y="23" width="1942" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.19104804" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.0984127" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -755,7 +697,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.12420382" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27070063" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -768,6 +710,7 @@
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.040816326" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32883817" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32962963" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -819,14 +762,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/users-api/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/model/UserRole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1022,11 +957,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-840" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/model/wrapper/PostWithUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1079,13 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/messagingqueue/sender/UserSenderImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/messagingqueue/receiver/PostReceiverImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1121,13 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/messagingqueue/sender/PostSenderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1135,17 +1051,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/PostServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="73" column="25" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="73" selection-end-column="25" />
+        <state relative-caret-position="327">
+          <caret line="30" column="59" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="30" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1159,16 +1068,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/messagingqueue/sender/PostSenderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1389">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/messagingqueue/sender/CommentSenderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="83" column="77" lean-forward="true" selection-start-line="73" selection-start-column="4" selection-end-line="83" selection-end-column="77" />
+        <state relative-caret-position="-194">
+          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comments-api/src/test/java/com/example/commentsapi/messagingqueue/sender/UserSenderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="44" column="24" lean-forward="true" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/messagingqueue/sender/UserSenderImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comments-api/src/test/java/com/example/commentsapi/messagingqueue/sender/PostSenderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts-api/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="112" column="17" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/messagingqueue/sender/CommentSenderImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-386">
+        <state relative-caret-position="-496">
           <caret line="36" column="18" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1178,8 +1122,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/CommentSenderImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+        <state relative-caret-position="388">
+          <caret line="107" column="67" lean-forward="true" selection-start-line="107" selection-start-column="43" selection-end-line="107" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
