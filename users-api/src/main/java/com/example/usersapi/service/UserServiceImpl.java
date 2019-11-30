@@ -15,12 +15,15 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestContextHolder;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -48,15 +51,17 @@ public class UserServiceImpl implements UserService {
 
   private PasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
+  private Logger logger = LoggerFactory.getLogger(this.getClass());
+
   @Autowired
   private JwtUtil jwtUtil;
 
   @Override
   public String login(User user) throws LoginException {
-    if(user.getEmail() == null || user.getEmail().length() == 0) {
+    if (user.getEmail() == null || user.getEmail().length() == 0) {
       throw new LoginException("invalid email");
     }
-    if(user.getPassword() == null || user.getPassword().length() == 0) {
+    if (user.getPassword() == null || user.getPassword().length() == 0) {
       throw new LoginException("invalid password");
     }
     User newUser = userRepository.findByEmail(user.getEmail());
@@ -72,22 +77,28 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public String signup(User newUser) throws SignUpException {
-    String defaultRoleName="ROLE_USER";
+    String defaultRoleName = "ROLE_USER";
     UserRole userRole = roleRepository.findByName(defaultRoleName);
 
     newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
 
-    if(userRepository.findByUsername(newUser.getUsername()) !=null ) {
+    if (userRepository.findByUsername(newUser.getUsername()) != null) {
+      logger.info("username already exists: " + newUser.getUsername());
       throw new SignUpException("username already exists");
     }
-    if(userRepository.findByEmail(newUser.getEmail()) !=null ) {
+    if (userRepository.findByEmail(newUser.getEmail()) != null) {
+      logger.info("username already exists: " + newUser.getEmail());
       throw new SignUpException("email already exists");
     }
     User createdUser = userRepository.save(newUser);
-    if ( createdUser!=null && userRoleRepository.save(createdUser.getId(), userRole.getId())==1) {
+    if (createdUser != null
+        && userRoleRepository.save(createdUser.getId(), userRole.getId()) == 1) {
       UserDetails userDetails = loadUserByUsername(newUser.getUsername());
+      logger.info("user: " + newUser.getUsername() + ":" + newUser.getEmail()
+          + " successfully created an account");
       return jwtUtil.generateToken(userDetails);
     }
+    logger.info("signup failed");
     throw new SignUpException("signup failed");
   }
 
@@ -142,8 +153,7 @@ public class UserServiceImpl implements UserService {
     List<Comment> commentList = commentRepository.findCommentsByUserId(userId);
     List<Long> commentIdList = commentList.stream().map(Comment::getCommentId)
         .collect(Collectors.toList());
-    Map<Long, Long> commentIdToPostId = commentRepository
-        .findPostIdsByCommentIds(commentIdList);
+    Map<Long, Long> commentIdToPostId = commentRepository.findPostIdsByCommentIds(commentIdList);
     List<Long> postIdList = commentIdToPostId.values().stream().collect(Collectors.toList());
     List<Post> postList = postRepository.findPostsByPostIds(postIdList);
     Map<Long, Long> postIdToUserId = postRepository.findUserIdsByPostIds(postIdList);
@@ -171,5 +181,4 @@ public class UserServiceImpl implements UserService {
         bCryptPasswordEncoder.encode(user.getPassword()), true, true, true, true,
         new ArrayList<>());
   }
-
 }
