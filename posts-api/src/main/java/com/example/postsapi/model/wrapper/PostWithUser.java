@@ -13,11 +13,11 @@ public class PostWithUser {
 
   private User user;
 
-  public PostWithUser(Post post, User user){
-    this.postId = post.getPostId();
-    this.title = post.getTitle();
-    this.description = post.getDescription();
-    this.user = user;
+  public PostWithUser(Post post, User user) {
+    this.setPostId(post.getPostId());
+    this.setTitle(post.getTitle());
+    this.setDescription(post.getDescription());
+    this.setUser(user);
   }
 
   public Long getPostId() {
