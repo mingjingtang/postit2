@@ -1,8 +1,8 @@
 pipeline {
     agent {
         docker {
-            image 'maven:3.6.2-jdk-8'
-            args '--privileged -u="root" -v /tmp/.m2:/root/.m2 -v /usr/local/bin/docker:/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock'
+            image 'maven:3-alpine'
+            args '-v /tmp/.m2:/tmp/.m2'
         }
     }
     options {
@@ -102,7 +102,7 @@ pipeline {
             }
         }
         stage('Coverage') {
-            stages {
+            parallel {
                 stage('Api-Gateway') {
                     steps {
                         dir("api-gateway") {
