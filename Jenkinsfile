@@ -51,7 +51,9 @@ pipeline {
                     }
                     post {
                         always {  
-                            junit 'target/surefire-reports/*.xml'
+                            dir("api-gateway") {
+                                junit 'target/surefire-reports/*.xml'
+                            }
                         }
                     }
                 }
@@ -62,8 +64,10 @@ pipeline {
                         }
                     }
                     post {
-                        always {  
-                            junit 'target/surefire-reports/*.xml'
+                        always { 
+                            dir("users-api") { 
+                                junit 'target/surefire-reports/*.xml'
+                            }
                         }
                     }
                 }
@@ -75,7 +79,9 @@ pipeline {
                     }
                     post {
                         always {  
-                            junit 'target/surefire-reports/*.xml'
+                            dir("posts-api") {
+                                junit 'target/surefire-reports/*.xml'
+                            }
                         }
                     }
                 }
@@ -87,7 +93,9 @@ pipeline {
                     }
                     post {
                         always {  
-                            junit 'target/surefire-reports/*.xml'
+                            dir("comments-api") {
+                                junit 'target/surefire-reports/*.xml'
+                            }
                         }
                     }
                 }
