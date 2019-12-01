@@ -1,0 +1,157 @@
+pipeline {
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /tmp/.m2:/tmp/.m2'
+        }
+    }
+    options {
+        skipStagesAfterUnstable()
+    }
+	stages {
+        stage('Build') {
+            parallel {
+                stage('Api-Gateway') {
+                    steps {
+                        dir("api-gateway") {
+                            sh 'mvn -B -DskipTests clean package'
+                        }
+                    }
+                }
+                stage('Users-API') {
+                    steps {
+                        dir("users-api") {
+                            sh 'mvn -B -DskipTests clean package'
+                        }
+                    }
+                }
+                stage('Posts-API') {
+                    steps {
+                        dir("posts-api") {
+                            sh 'mvn -B -DskipTests clean package'
+                        }
+                    }
+                }
+                stage('Comments-API') {
+                    steps {
+                        dir("comments-api") {
+                            sh 'mvn -B -DskipTests clean package'
+                        }
+                    }
+                }
+            }
+        }
+        stage('Test') {
+            parallel {
+                stage('Api-Gateway') {
+                    steps {
+                        dir("api-gateway") {
+                            sh 'mvn test'
+                        }
+                    }
+                    post {
+                        always {  
+                            junit 'target/surefire-reports/*.xml'
+                        }
+                    }
+                }
+                stage('Users-API') {
+                    steps {
+                        dir("users-api") {
+                            sh 'mvn test'
+                        }
+                    }
+                    post {
+                        always {  
+                            junit 'target/surefire-reports/*.xml'
+                        }
+                    }
+                }
+                stage('Posts-API') {
+                    steps {
+                        dir("posts-api") {
+                            sh 'mvn test'
+                        }
+                    }
+                    post {
+                        always {  
+                            junit 'target/surefire-reports/*.xml'
+                        }
+                    }
+                }
+                stage('Comments-API') {
+                    steps {
+                        dir("comments-api") {
+                            sh 'mvn test'
+                        }
+                    }
+                    post {
+                        always {  
+                            junit 'target/surefire-reports/*.xml'
+                        }
+                    }
+                }
+            }
+        }
+        stage('Coverage') {
+            parallel {
+                stage('Api-Gateway') {
+                    steps {
+                        dir("api-gateway") {
+                            sh 'mvn clean package jacoco:report'
+                        }
+                    }
+                    post {
+                        always {
+                            dir("api-gateway") {
+                                publishCoverage adapters: [jacocoAdapter('target/site/jacoco/jacoco.xml')]
+                            }
+                        }
+                    }
+                }
+                stage('Users-API') {
+                    steps {
+                        dir("users-api") {
+                            sh 'mvn clean package jacoco:report'
+                        }
+                    }
+                    post {
+                        always {
+                            dir("users-api") {
+                                publishCoverage adapters: [jacocoAdapter('target/site/jacoco/jacoco.xml')]
+                            }
+                        }
+                    }
+                }
+                stage('Posts-API') {
+                    steps {
+                        dir("posts-api") {
+                            sh 'mvn clean package jacoco:report'
+                        }
+                    }
+                    post {
+                        always {
+                            dir("posts-api") {
+                                publishCoverage adapters: [jacocoAdapter('target/site/jacoco/jacoco.xml')]
+                            }
+                        }
+                    }
+                }
+                stage('Comments-API') {
+                    steps {
+                        dir("comments-api") {
+                            sh 'mvn clean package jacoco:report'
+                        }
+                    }
+                    post {
+                        always {
+                            dir("comments-api") {
+                                publishCoverage adapters: [jacocoAdapter('target/site/jacoco/jacoco.xml')]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+	}
+}
