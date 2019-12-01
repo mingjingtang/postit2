@@ -18,70 +18,72 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-//@ActiveProfiles("test")
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
-//@EnableAutoConfiguration(exclude = {RabbitAutoConfiguration.class})
+@ActiveProfiles("test")
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@EnableAutoConfiguration(exclude = {RabbitAutoConfiguration.class})
+@DirtiesContext
 public class UserIntegrationTest {
 
-//  @Autowired
-//  RoleRepository roleRepository;
-//
-//  @Autowired
-//  UserRepository userRepository;
-//
-//  @MockBean
-//  private AmqpTemplate amqpTemplate;
-//
-//  private UserRole createUserRole(){
-//    UserRole userRole = roleRepository.findByName("ROLE_ADMIN");
-//    if(userRole == null){
-//      userRole = new UserRole();
-//      userRole.setName("ROLE_ADMIN");
-//      userRole = roleRepository.save(userRole);
-//    }
-//    return userRole;
-//  }
-//
-//  private User createUser(){
-//    UserRole userRole = createUserRole();
-//
-//    User user = new User();
-//    user.setUsername("batman");
-//    user.setEmail("batman@email.com");
-//    user.setPassword("bat");
-//
-//    return user;
-//  }
-//
-//
-//
-//  @Test
-//  public void signup_User_Success() {
-//    User user = userRepository.findByUsername("batman");
-//    if(user != null) {
-//      userRepository.delete(user);
-//    }
-//    user = createUser();
-//    user = userRepository.save(user);
-//    User foundUser = userRepository.findByUsername(user.getUsername());
-//
-//    assertNotNull(user);
-//    assertNotNull(foundUser);
-//    assertEquals(user.getId(), foundUser.getId());
-//
-//    userRepository.delete(user);
-//  }
-//
-//  @Test(expected = DataIntegrityViolationException.class)
-//  public void signup_DuplicateUsername_Exception() {
-//    User user = createUser();
-//    userRepository.save(user);
-//    user.setId(null);
-//    userRepository.save(user);
-//  }
+  @Autowired
+  RoleRepository roleRepository;
+
+  @Autowired
+  UserRepository userRepository;
+
+  @MockBean
+  private AmqpTemplate amqpTemplate;
+
+  private UserRole createUserRole(){
+    UserRole userRole = roleRepository.findByName("ROLE_ADMIN");
+    if(userRole == null){
+      userRole = new UserRole();
+      userRole.setName("ROLE_ADMIN");
+      userRole = roleRepository.save(userRole);
+    }
+    return userRole;
+  }
+
+  private User createUser(){
+    UserRole userRole = createUserRole();
+
+    User user = new User();
+    user.setUsername("batman");
+    user.setEmail("batman@email.com");
+    user.setPassword("bat");
+
+    return user;
+  }
+
+
+
+  @Test
+  public void signup_User_Success() {
+    User user = userRepository.findByUsername("batman");
+    if(user != null) {
+      userRepository.delete(user);
+    }
+    user = createUser();
+    user = userRepository.save(user);
+    User foundUser = userRepository.findByUsername(user.getUsername());
+
+    assertNotNull(user);
+    assertNotNull(foundUser);
+    assertEquals(user.getId(), foundUser.getId());
+
+    userRepository.delete(user);
+  }
+
+  @Test(expected = DataIntegrityViolationException.class)
+  public void signup_DuplicateUsername_Exception() {
+    User user = createUser();
+    userRepository.save(user);
+    user.setId(null);
+    userRepository.save(user);
+  }
 }
 
