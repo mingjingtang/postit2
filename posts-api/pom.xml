@@ -12,7 +12,7 @@
   <groupId>com.example</groupId>
   <artifactId>posts-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>demo</name>
+  <name>posts-api</name>
   <description>Demo project for Spring Boot</description>
 
   <properties>
