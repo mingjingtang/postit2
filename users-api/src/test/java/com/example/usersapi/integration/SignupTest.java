@@ -24,79 +24,79 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-@ActiveProfiles("test")
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
-@EnableAutoConfiguration(exclude = {RabbitAutoConfiguration.class})
+//@ActiveProfiles("test")
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+//@AutoConfigureMockMvc
+//@EnableAutoConfiguration(exclude = {RabbitAutoConfiguration.class})
 public class SignupTest {
-
-  @Autowired
-  private MockMvc mockMvc;
-
-  @Autowired
-  private UserRepository userRepository;
-
-  @MockBean
-  private AmqpTemplate amqpTemplate;
-
-  @Before
-  public void init(){}
-
-  @After
-  public void clear(){
-    User user = userRepository.findByUsername("user1");
-    if(userRepository.findByUsername("user1") != null) {
-      userRepository.delete(user);
-    }
-  }
-
-  @Test
-  public void Signup_User_Success() throws Exception {
-
-    RequestBuilder requestBuilder = MockMvcRequestBuilders
-        .post("/signup")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content("{" + "\"email\":\"email1@email.com\"," + "\"username\":\"user1\","
-                + "\"password\":\"pwd1\"" + "}");
-
-    MvcResult token = mockMvc.perform(requestBuilder)
-        .andExpect(status().isOk())
-        .andReturn();
-
-    assertNotNull(token);
-    System.out.println(token.getResponse().getContentAsString());
-  }
-
-  @Test
-  public void Signup_Validator_Email() throws Exception {
-
-    RequestBuilder requestBuilder = MockMvcRequestBuilders
-        .post("/signup")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content("{" + "\"email\":\"email1email.com\"," + "\"username\":\"user1\","
-            + "\"password\":\"pwd1\"" + "}");
-
-    MvcResult result = mockMvc.perform(requestBuilder)
-        .andExpect(status().is4xxClientError())
-        .andReturn();
-
-    System.out.println(result.getResolvedException().getMessage());
-  }
-
-  @Test
-  public void Signup_Duplicate_Username() throws Exception {
-
-    RequestBuilder requestBuilder = MockMvcRequestBuilders
-        .post("/signup")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content("{" + "\"email\":\"email1@email.com\"," + "\"username\":\"user1\","
-            + "\"password\":\"pwd1\"" + "}");
-
-    MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-
-    result = mockMvc.perform(requestBuilder).andExpect(status().is5xxServerError()).andReturn();
-
-    System.out.println(result.getResolvedException().getMessage());
-  }
+//
+//  @Autowired
+//  private MockMvc mockMvc;
+//
+//  @Autowired
+//  private UserRepository userRepository;
+//
+//  @MockBean
+//  private AmqpTemplate amqpTemplate;
+//
+//  @Before
+//  public void init(){}
+//
+//  @After
+//  public void clear(){
+//    User user = userRepository.findByUsername("user1");
+//    if(userRepository.findByUsername("user1") != null) {
+//      userRepository.delete(user);
+//    }
+//  }
+//
+//  @Test
+//  public void Signup_User_Success() throws Exception {
+//
+//    RequestBuilder requestBuilder = MockMvcRequestBuilders
+//        .post("/signup")
+//        .contentType(MediaType.APPLICATION_JSON)
+//        .content("{" + "\"email\":\"email1@email.com\"," + "\"username\":\"user1\","
+//                + "\"password\":\"pwd1\"" + "}");
+//
+//    MvcResult token = mockMvc.perform(requestBuilder)
+//        .andExpect(status().isOk())
+//        .andReturn();
+//
+//    assertNotNull(token);
+//    System.out.println(token.getResponse().getContentAsString());
+//  }
+//
+//  @Test
+//  public void Signup_Validator_Email() throws Exception {
+//
+//    RequestBuilder requestBuilder = MockMvcRequestBuilders
+//        .post("/signup")
+//        .contentType(MediaType.APPLICATION_JSON)
+//        .content("{" + "\"email\":\"email1email.com\"," + "\"username\":\"user1\","
+//            + "\"password\":\"pwd1\"" + "}");
+//
+//    MvcResult result = mockMvc.perform(requestBuilder)
+//        .andExpect(status().is4xxClientError())
+//        .andReturn();
+//
+//    System.out.println(result.getResolvedException().getMessage());
+//  }
+//
+//  @Test
+//  public void Signup_Duplicate_Username() throws Exception {
+//
+//    RequestBuilder requestBuilder = MockMvcRequestBuilders
+//        .post("/signup")
+//        .contentType(MediaType.APPLICATION_JSON)
+//        .content("{" + "\"email\":\"email1@email.com\"," + "\"username\":\"user1\","
+//            + "\"password\":\"pwd1\"" + "}");
+//
+//    MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+//
+//    result = mockMvc.perform(requestBuilder).andExpect(status().is5xxServerError()).andReturn();
+//
+//    System.out.println(result.getResolvedException().getMessage());
+//  }
 }
