@@ -12,11 +12,16 @@ import io.swagger.annotations.ApiParam;
 import java.util.List;
 
 import io.swagger.annotations.ApiOperation;
+import javax.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 @RestController
 public class UserController {
@@ -24,11 +29,16 @@ public class UserController {
   @Autowired
   private UserService userService;
 
+  private Logger logger = LoggerFactory.getLogger(this.getClass());
+
   @PostMapping("/signup")
   @ApiOperation(value = "Signup a new user", notes = "provide username, email and password", response = JwtResponse.class)
   public ResponseEntity<?> signup(
       @ApiParam(value = "user body: username, email and password", required = true) @Valid @RequestBody User user)
       throws SignUpException {
+    String ip = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes())
+        .getRequest().getRemoteAddr();
+    logger.info("remote ip: " + ip + " requests signup");
     String token = userService.signup(user);
     User savedUser = userService.findByEmail(user.getEmail());
     return ResponseEntity.ok(new JwtResponse(token, savedUser.getUsername()));

@@ -32,9 +32,6 @@ public class UserSenderImplTest {
     @Mock
     private AmqpTemplate amqpTemplate;
 
-    @Mock
-    private ObjectMapper mapper = new ObjectMapper();
-
     @InjectMocks
     private User user;
 
@@ -54,29 +51,25 @@ public class UserSenderImplTest {
         assertEquals(user.getId(), actualUserId);
     }
 
-    //user null
     @Test
     public void findByUsername_User_Success() throws IOException {
         String userJson = (new ObjectMapper()).writeValueAsString(user);
         when(amqpTemplate.convertSendAndReceive(anyString(), anyString())).thenReturn(userJson);
-        when(mapper.readValue(anyString(), any(TypeReference.class))).thenReturn(user);
         User actualUser = userSender.findByUsername(user.getUsername());
-        System.out.println(actualUser);
-        assertNull(actualUser);
-//        assertNotNull(actualUser);
-//        assertEquals(user.getEmail(), actualUser.getEmail());
-//        assertEquals(user.getUsername(), actualUser.getUsername());
+        assertNotNull(actualUser);
+        assertEquals(user.getEmail(), actualUser.getEmail());
+        assertEquals(user.getUsername(), actualUser.getUsername());
     }
 
-    //user null
     @Test
     public void findByUserId_User_Success() throws IOException {
-        String userJson = (new ObjectMapper()).writeValueAsString(user.getId());
+        String userJson = (new ObjectMapper()).writeValueAsString(user);
         when(amqpTemplate.convertSendAndReceive(anyString(), anyString())).thenReturn(userJson);
-        when(mapper.readValue(anyString(), any(TypeReference.class))).thenReturn(user);
         User actualUser = userSender.findByUserId(user.getId());
-        System.out.println(actualUser);
-        assertNull(actualUser);
+        assertNotNull(actualUser);
+        assertEquals(user.getId(), actualUser.getId());
+        assertEquals(user.getUsername(), actualUser.getUsername());
+        assertEquals(user.getEmail(), actualUser.getEmail());
     }
 
     @Test
@@ -87,9 +80,7 @@ public class UserSenderImplTest {
         List<User> userList = new ArrayList<>();
         userList.add(user);
         String userListJson = (new ObjectMapper()).writeValueAsString(userList);
-        when(mapper.writeValueAsString(anyList())).thenReturn(userIdJson);
         when(amqpTemplate.convertSendAndReceive(anyString(), anyString())).thenReturn(userListJson);
-        when(mapper.readValue(anyString(), any(TypeReference.class))).thenReturn(userList);
         List<User> actualListUser = userSender.findUsersByUserIds(userIdList);
         assertNotNull(actualListUser);
         assertEquals(userList.size(),actualListUser.size());
