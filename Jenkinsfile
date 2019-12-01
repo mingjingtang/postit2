@@ -102,7 +102,7 @@ pipeline {
             }
         }
         stage('Coverage') {
-            parallel {
+            stages {
                 stage('Api-Gateway') {
                     steps {
                         dir("api-gateway") {
