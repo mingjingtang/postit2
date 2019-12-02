@@ -7,6 +7,8 @@ import com.example.commentsapi.model.User;
 import com.example.commentsapi.repository.*;
 import javax.persistence.EntityNotFoundException;
 import javax.security.auth.message.AuthException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,8 @@ public class CommentServiceImpl implements CommentService {
   @Autowired
   private CommentUserRepository commentUserRepository;
 
+  Logger logger = LoggerFactory.getLogger(this.getClass());
+
   @Override
   public CommentWithDetails createComment(String username, Long postId, Comment comment) {
     User user = userRepository.findByUsername(username);
@@ -41,6 +45,7 @@ public class CommentServiceImpl implements CommentService {
       commentWithDetails.setText(savedComment.getText());
       commentWithDetails.setUser(user);
       commentWithDetails.setPost(postWithUser);
+      logger.info("user " + username + " creates a comment with id " + savedComment.getCommentId());
       return commentWithDetails;
     }
 
@@ -54,7 +59,7 @@ public class CommentServiceImpl implements CommentService {
       throw new EntityNotFoundException("comment with id: " + commentId + " not found");
     }
     User user = userRepository.findByUsername(username);
-    if(commentUserRepository.findCommentsByUserId(user.getId()).contains(comment) == false){
+    if (commentUserRepository.findCommentsByUserId(user.getId()).contains(comment) == false) {
       throw new AuthException("this comment cannot be deleted by this user");
     }
     commentRepository.delete(comment);

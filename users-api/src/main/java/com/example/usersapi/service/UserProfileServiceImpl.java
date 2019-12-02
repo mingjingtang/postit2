@@ -7,6 +7,8 @@ import com.example.usersapi.repository.ProfileRepository;
 import com.example.usersapi.repository.UserProfileRepository;
 import com.example.usersapi.repository.UserRepository;
 import javax.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,8 @@ public class UserProfileServiceImpl implements UserProfileService {
 
   @Autowired
   private UserProfileRepository userProfileRepository;
+
+  Logger logger = LoggerFactory.getLogger(this.getClass());
 
   @Override
   public UserProfileWithUser createProfile(String username, @Valid UserProfile userProfile) {
@@ -42,7 +46,7 @@ public class UserProfileServiceImpl implements UserProfileService {
     try {
       userProfileId = userProfileRepository.findProfileIdByUserId(userId);
     } catch (EmptyResultDataAccessException e) {
-      System.out.println("this user has no profile yet");
+      logger.warn("this user " + username + " has no profile yet");
       return this.createProfile(username, userProfile);
     }
     UserProfile oldUserProfile = profileRepository.findById(userProfileId).orElse(null);
