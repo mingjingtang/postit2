@@ -10,6 +10,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import io.jsonwebtoken.Jwt;
 import io.swagger.annotations.ApiParam;
 import java.util.List;
+import java.util.logging.Level;
 
 import io.swagger.annotations.ApiOperation;
 import javax.servlet.http.HttpServletRequest;
@@ -49,6 +50,9 @@ public class UserController {
   public ResponseEntity<?> login(
       @ApiParam(value = "user body: email and password", required = true) @RequestBody User user)
       throws LoginException {
+    String ip = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes())
+            .getRequest().getRemoteAddr();
+    logger.info("remote ip:" + ip + " requests login");
     String token = userService.login(user);
     User foundUser = userService.findByEmail(user.getEmail());
     return ResponseEntity.ok(new JwtResponse(token, foundUser.getUsername()));
