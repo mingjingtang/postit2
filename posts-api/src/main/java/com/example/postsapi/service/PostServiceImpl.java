@@ -17,6 +17,8 @@ import java.util.stream.StreamSupport;
 
 import javax.persistence.EntityNotFoundException;
 import javax.security.auth.message.AuthException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,15 +34,19 @@ public class PostServiceImpl implements PostService {
   @Autowired
   private PostUserRepository postUserRepository;
 
+  Logger logger = LoggerFactory.getLogger(this.getClass());
+
   @Override
   public PostWithUser createPost(String username, Post post) {
     Post savedPost = postRepository.save(post);
     User user = userRepository.findByUsername(username);
     if (user == null) {
+      logger.warn("user with username:" + username + " not found");
       return null;
     }
     postUserRepository.save(user.getId(), savedPost.getPostId());
     PostWithUser postWithUser = new PostWithUser(savedPost, user);
+    logger.info("user " + username + " creates a post with id " + postWithUser.getPostId());
     return postWithUser;
   }
 
@@ -48,11 +54,13 @@ public class PostServiceImpl implements PostService {
   public Long deletePostByPostId(String username, Long postId) throws AuthException {
     Post post = postRepository.findById(postId).orElse(null);
     if (post == null) {
+      logger.warn("post with id:" + postId + " not found");
       throw new EntityNotFoundException("post with id:" + postId + " not found");
     }
     User user = userRepository.findByUsername(username);
     Long authorId = postUserRepository.getUserIdByPostId(postId);
     if (user.getId() != authorId) {
+      logger.warn("this post cannot be deleted by this user");
       throw new AuthException("this post cannot be deleted by this user");
     }
     postRepository.delete(post);
@@ -83,6 +91,7 @@ public class PostServiceImpl implements PostService {
   public PostWithUser findByPostId(Long postId) {
     Post post = postRepository.findById(postId).orElse(null);
     if (post == null) {
+      logger.warn("post not found for post id " + postId);
       return null;
     }
     Long userId = postUserRepository.getUserIdByPostId(postId);

@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 import javax.persistence.EntityNotFoundException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,8 @@ public class UserRoleServiceImpl implements UserRoleService {
   @Autowired
   private UserRoleRepository userRoleRepository;
 
+  Logger logger = LoggerFactory.getLogger(this.getClass());
+
   @Override
   public UserWithRoles getRoleByUsername(String username) {
     User user = userRepository.findByUsername(username);
@@ -37,12 +41,13 @@ public class UserRoleServiceImpl implements UserRoleService {
   public UserWithRoles assginRoleToUser(String roleName, Long userId) {
     User user = userRepository.findById(userId).orElse(null);
     if (user == null) {
+      logger.warn("userId " + userId + " not found");
       throw new EntityNotFoundException("user not found");
     }
     UserRole userRole = roleRepository.findByName(roleName);
     List<UserRole> roles = userRoleRepository.findRolesByUserId(userId);
     if (roles.contains(userRole)) {
-      System.out.println("duplicate role for the same user");
+      logger.warn("duplicate role for the same user");
       return new UserWithRoles(user, roles);
     }
     userRoleRepository.save(user.getId(), userRole.getId());
@@ -62,6 +67,7 @@ public class UserRoleServiceImpl implements UserRoleService {
   public RoleWithUsers findUsersByRole(String roleName) {
     UserRole role = roleRepository.findByName(roleName);
     if (role == null) {
+      logger.warn("userrole not found: " + roleName);
       throw new EntityNotFoundException("userrole not found: " + roleName);
     }
     List<User> users = userRoleRepository.findUserByRoleId(role.getId());
@@ -72,6 +78,7 @@ public class UserRoleServiceImpl implements UserRoleService {
   public UserWithRoles removeRoleFromUser(String roleName, Long userId) {
     User user = userRepository.findById(userId).orElse(null);
     if (user == null) {
+      logger.warn("user not found: " + userId);
       throw new EntityNotFoundException("user not found");
     }
     UserRole userRole = roleRepository.findByName(roleName);
