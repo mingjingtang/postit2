@@ -7,6 +7,8 @@ import com.example.apigateway.repository.UserRepository;
 import com.example.apigateway.repository.UserRoleRepository;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,12 +34,14 @@ public class UserServiceImpl implements UserService {
   @Autowired
   private JwtUtil jwtUtil;
 
+  Logger logger = LoggerFactory.getLogger(this.getClass());
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     User user = userRepository.findUserByUsername(username);
 
     if (user == null) {
+      logger.warn("request with username: " + username + " is not found");
       throw new UsernameNotFoundException("User null");
     }
 
@@ -49,12 +53,10 @@ public class UserServiceImpl implements UserService {
   private List<GrantedAuthority> getGrantedAuthorities(User user) {
     List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
     List<UserRole> roles = userRoleRepository.findRolesByUserId(user.getId());
-    for(UserRole role : roles) {
+    for (UserRole role : roles) {
       authorities.add(new SimpleGrantedAuthority(role.getName()));
     }
 
     return authorities;
   }
-
-
 }

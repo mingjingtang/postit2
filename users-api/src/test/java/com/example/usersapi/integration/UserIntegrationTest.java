@@ -87,5 +87,38 @@ public class UserIntegrationTest {
     user.setId(null);
     userRepository.save(user);
   }
+
+
+  @Test
+  public void login_User_Success(){
+    signup_User_Success();
+
+    User user = createUser();
+    user = userRepository.save(user);
+    User foundUser = userRepository.findByEmail(user.getEmail());
+    System.out.println(foundUser);
+
+    assertNotNull(user);
+    assertNotNull(foundUser);
+    assertEquals(user.getId(), foundUser.getId());
+  }
+
+
+  @Test(expected = DataIntegrityViolationException.class)
+  public void login_EmailNull_Exception(){
+    User user = createUser();
+    userRepository.save(user);
+    user.setEmail(null);
+    userRepository.save(user);
+  }
+
+  @Test(expected = DataIntegrityViolationException.class)
+  public void login_PasswordNull_Exception(){
+    User user = createUser();
+    userRepository.save(user);
+    user.setPassword(null);
+    userRepository.save(user);
+  }
+
 }
 

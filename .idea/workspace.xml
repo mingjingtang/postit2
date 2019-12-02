@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="106bac30-0aed-4688-9eb5-79914f93fdd9" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/integration/LoginTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-api/users-api.log.2019-12-01.0.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" afterDir="false" />
@@ -23,76 +24,36 @@
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserRoleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/application-dev.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/UsersApiApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/JwtUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserProfileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserRoleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/JwtResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Post.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserProfile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/CommentWithDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/PostWithUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/RoleWithUsers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserProfileWithUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserWithRoles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/CommentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/PostRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/ProfileRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserProfileRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V10__create_user_role.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V1__create_users.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V2__create_posts.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V3__create_post_user.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V4__create_comments.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V5__create_post_comment.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V6__create_user_comment.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V7__create_profile.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V8__create_user_profile.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/V9__create_roles.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/classes/db/migration/afterMigrate.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/UsersApiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/UsersApiApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserRoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/CommentWithDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/CommentWithDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/PostWithUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/PostWithUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/RoleWithUsers.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/RoleWithUsers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserProfileWithUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserProfileWithUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserWithRoles.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserWithRoles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/TEST-com.example.usersapi.service.UserServiceTest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/com.example.usersapi.service.UserServiceTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/test-classes/com/example/usersapi/service/UserServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/test-classes/com/example/usersapi/service/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/test-classes/com/example/usersapi/service/UserServiceTest.class" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/eureka-server/target/" />
-    <ignored path="$PROJECT_DIR$/users-api/target/" />
-    <ignored path="$PROJECT_DIR$/api-gateway/target/" />
-    <ignored path="$PROJECT_DIR$/posts-api/target/" />
-    <ignored path="$PROJECT_DIR$/comments-api/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,51 +66,6 @@
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="272" />
-  </component>
-  <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="266">
-                  <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/CommentSenderImplTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="388">
-                  <caret line="107" column="67" lean-forward="true" selection-start-line="107" selection-start-column="43" selection-end-line="107" selection-end-column="67" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/messagingqueue/sender/UserSenderImpl.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-19">
-                  <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -168,68 +84,11 @@
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/users-api" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/service/CommentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/service/CommentService.java" />
-        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/controller/CommentController.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/repository/UserRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/listener/UserListener.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/Post.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserPostRepository.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/PostWithUser.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/listener/PostListener.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/PostService.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/repository/PostRepository.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/PostServiceImpl.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentService.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/repository/PostCommentRepository.java" />
-        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/UserCommentRepository.java" />
-        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/repository/PostCommentRepository.java" />
-        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/listener/CommentListener.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/controller/PostController.java" />
-        <option value="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/model/CommentWithDetails.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/model/Comment.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/model/CommentWithDetails.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/ProfileRepository.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/UserProfile.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/resources/db/migration/V6__create_user_comment.sql" />
-        <option value="$PROJECT_DIR$/users-api/src/main/resources/db/migration/V7__create_user_profile.sql" />
-        <option value="$PROJECT_DIR$/users-api/src/main/resources/db/migration/V9_profile.sql" />
-        <option value="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/repository/PostUserRepository.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserProfileRepository.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserService.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java" />
-        <option value="$PROJECT_DIR$/users-api/Jenkinsfile" />
-        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/ZuulGatewayApplication.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SwaggerConfig.java" />
-        <option value="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/controller/DocumentationController.java" />
-        <option value="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/User.java" />
-        <option value="$PROJECT_DIR$/users-api/pom.xml" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserProfileController.java" />
-        <option value="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserRoleController.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/PostServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/messagingqueue/sender/CommentSenderTest.java" />
-        <option value="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/CommentSenderImplTest.java" />
-        <option value="$PROJECT_DIR$/posts-api/pom.xml" />
-        <option value="$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java" />
-      </list>
     </option>
   </component>
   <component name="MavenImportPreferences">
@@ -240,245 +99,27 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="2049" />
-    <option name="y" value="23" />
-    <option name="width" value="1942" />
-    <option name="height" value="1053" />
+  <component name="ProjectId" id="1UPPfhDlLjt3oCDpfKl9AfFXavg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="commentsapi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="commentsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="comments-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="commentsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-              <item name="sender" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-              <item name="receiver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-              <item name="sender" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-              <item name="sender" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="posts-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="postsapi" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="usersapi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="usersapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="postit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="users-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="usersapi" type="462c0819:PsiDirectoryNode" />
-              <item name="messagingqueue" type="462c0819:PsiDirectoryNode" />
-              <item name="receiver" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575003820954" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575255210789" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -493,92 +134,79 @@
       <recent name="$PROJECT_DIR$/users-api/src/main/test/java" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="JUnit.UserSenderImplTest.findByUsername_User_Success">
-    <configuration name="UserSenderImplTest.findByUserId_User_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="posts-api" />
+  <component name="RunManager" selected="JUnit.com.example.usersapi in users-api">
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="users-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.postsapi.messagingqueue.sender.*" />
+          <option name="PATTERN" value="com.example.usersapi.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.postsapi.messagingqueue.sender" />
-      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.messagingqueue.sender.UserSenderImplTest" />
-      <option name="METHOD_NAME" value="findByUserId_User_Success" />
+      <option name="PACKAGE_NAME" value="com.example.usersapi.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.usersapi.controller.UserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserIntegrationTest.login_EmailNull_Exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="users-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.usersapi.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.usersapi.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.example.usersapi.integration.UserIntegrationTest" />
+      <option name="METHOD_NAME" value="login_EmailNull_Exception" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserSenderImplTest.findByUsername_User_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="posts-api" />
+    <configuration name="UserIntegrationTest.login_PasswordNull_Exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="users-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.postsapi.messagingqueue.sender.*" />
+          <option name="PATTERN" value="com.example.usersapi.integration.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.postsapi.messagingqueue.sender" />
-      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.messagingqueue.sender.UserSenderImplTest" />
-      <option name="METHOD_NAME" value="findByUsername_User_Success" />
+      <option name="PACKAGE_NAME" value="com.example.usersapi.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.example.usersapi.integration.UserIntegrationTest" />
+      <option name="METHOD_NAME" value="login_PasswordNull_Exception" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserSenderImplTest.findIdByUserName_Long_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="posts-api" />
+    <configuration name="UserIntegrationTest.login_User_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="users-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.postsapi.messagingqueue.sender.*" />
+          <option name="PATTERN" value="com.example.usersapi.integration.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.postsapi.messagingqueue.sender" />
-      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.messagingqueue.sender.UserSenderImplTest" />
-      <option name="METHOD_NAME" value="findIdByUserName_Long_Success" />
+      <option name="PACKAGE_NAME" value="com.example.usersapi.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.example.usersapi.integration.UserIntegrationTest" />
+      <option name="METHOD_NAME" value="login_User_Success" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserSenderImplTest.findUserByUserIds_ListUsers_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="posts-api" />
+    <configuration name="com.example.usersapi in users-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="users-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.postsapi.messagingqueue.sender.*" />
+          <option name="PATTERN" value="com.example.usersapi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.postsapi.messagingqueue.sender" />
-      <option name="MAIN_CLASS_NAME" value="com.example.postsapi.messagingqueue.sender.UserSenderImplTest" />
-      <option name="METHOD_NAME" value="findUserByUserIds_ListUsers_Success" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.example.postsapi in posts-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="posts-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.postsapi.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.postsapi" />
+      <option name="PACKAGE_NAME" value="com.example.usersapi" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -621,13 +249,25 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserSenderImplTest.findByUsername_User_Success" />
-        <item itemvalue="JUnit.UserSenderImplTest.findIdByUserName_Long_Success" />
-        <item itemvalue="JUnit.com.example.postsapi in posts-api" />
-        <item itemvalue="JUnit.UserSenderImplTest.findUserByUserIds_ListUsers_Success" />
-        <item itemvalue="JUnit.UserSenderImplTest.findByUserId_User_Success" />
+        <item itemvalue="JUnit.com.example.usersapi in users-api" />
+        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.UserIntegrationTest.login_PasswordNull_Exception" />
+        <item itemvalue="JUnit.UserIntegrationTest.login_EmailNull_Exception" />
+        <item itemvalue="JUnit.UserIntegrationTest.login_User_Success" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -645,501 +285,58 @@
       <workItem from="1574453615468" duration="723000" />
       <workItem from="1574965873117" duration="11256000" />
       <workItem from="1574984402909" duration="13340000" />
+      <workItem from="1575230296151" duration="11399000" />
+      <workItem from="1575255367618" duration="3650000" />
     </task>
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="com_example_postsapi_in_posts-api - 2019.11.28 at 23h 52m 39s.xml">
-      <configuration name="com.example.postsapi in posts-api" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 53m 45s.xml">
-      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 55m 05s.xml">
-      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserSenderImplTest_findIdByUserName_Long_Success - 2019.11.28 at 23h 55m 39s.xml">
-      <configuration name="UserSenderImplTest.findIdByUserName_Long_Success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 55m 58s.xml">
-      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 57m 50s.xml">
-      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 58m 18s.xml">
-      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.28 at 23h 59m 52s.xml">
-      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.29 at 00h 00m 05s.xml">
-      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserSenderImplTest_findByUsername_User_Success - 2019.11.29 at 00h 02m 27s.xml">
-      <configuration name="UserSenderImplTest.findByUsername_User_Success" configurationId="JUnit" />
-    </history-entry>
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84108000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="2049" y="23" width="1942" height="1053" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.0984127" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27070063" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.32913166" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32913166" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32913166" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.040816326" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32883817" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32962963" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.19104804" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3057325" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.32913166" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32913166" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32913166" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.040816326" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32883817" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/model/UserRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/repository/RoleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/repository/UserRoleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/ZuulGatewayApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SwaggerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/controller/DocumentationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="69" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/JwtRequestFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/JwtUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRoleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="20" selection-start-column="42" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/resources/application-dev.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-250" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="124" column="17" selection-start-line="124" selection-start-column="17" selection-end-line="124" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserRoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="44" column="65" selection-start-line="44" selection-start-column="65" selection-end-line="44" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/CommentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/model/wrapper/PostWithUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/service/PostServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="23" selection-start-line="21" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="83" column="19" selection-start-line="83" selection-start-column="2" selection-end-line="83" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/repository/CommentRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/repository/PostUserRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/repository/UserRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/controller/PostControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/messagingqueue/receiver/PostReceiverImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/receiver/PostReceiverImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/CommentServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="76" column="81" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="76" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserRoleServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2448">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserProfileServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/service/PostServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="30" column="59" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="30" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/messagingqueue/receiver/UserReceiverTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/messagingqueue/sender/PostSenderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1389">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/messagingqueue/sender/CommentSenderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-194">
-          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comments-api/src/test/java/com/example/commentsapi/messagingqueue/sender/UserSenderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="44" column="24" lean-forward="true" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/messagingqueue/sender/UserSenderImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comments-api/src/test/java/com/example/commentsapi/messagingqueue/sender/PostSenderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="112" column="17" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/messagingqueue/sender/CommentSenderImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-496">
-          <caret line="36" column="18" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/CommentSenderImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="107" column="67" lean-forward="true" selection-start-line="107" selection-start-column="43" selection-end-line="107" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts-api/src/test/java/com/example/postsapi/messagingqueue/sender/UserSenderImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1388" height="129" key="GridCell.Tab.0.bottom" timestamp="1575298886990">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1388" height="129" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575298886990" />
+    <state width="1836" height="151" key="GridCell.Tab.0.bottom/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030498" />
+    <state width="1388" height="129" key="GridCell.Tab.0.center" timestamp="1575298886988">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1388" height="129" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575298886988" />
+    <state width="1836" height="151" key="GridCell.Tab.0.center/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030497" />
+    <state width="1388" height="129" key="GridCell.Tab.0.left" timestamp="1575298886987">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1388" height="129" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575298886987" />
+    <state width="1836" height="151" key="GridCell.Tab.0.left/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030496" />
+    <state width="1388" height="129" key="GridCell.Tab.0.right" timestamp="1575298886989">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1388" height="129" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575298886989" />
+    <state width="1836" height="151" key="GridCell.Tab.0.right/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030497" />
+    <state x="647" y="355" key="com.intellij.ide.util.TipDialog" timestamp="1575255369038">
+      <screen x="0" y="23" width="2048" height="1077" />
+    </state>
+    <state x="647" y="355" key="com.intellij.ide.util.TipDialog/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@0.23.2048.1077" timestamp="1575255369038" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/integration/SignupTest.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/postit2$com_example_usersapi_in_users_api.ic" NAME="com.example.usersapi in users-api Coverage Results" MODIFIED="1575298886940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.usersapi.*</FILTER>
+    </SUITE>
   </component>
   <component name="masterDetails">
     <states>
