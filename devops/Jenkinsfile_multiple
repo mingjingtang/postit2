@@ -101,7 +101,7 @@ pipeline {
                 }
             }
         }
-        stage('Coverage1') {
+        stage('Coverage') {
             parallel{
                 stage('Users-API') {
                     steps {
@@ -117,10 +117,6 @@ pipeline {
                         }
                     }
                 }
-            }
-        }
-        stage('Coverage2') {
-            parallel {
                 stage('Api-Gateway') {
                     steps {
                         dir("api-gateway") {
