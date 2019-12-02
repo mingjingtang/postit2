@@ -103,20 +103,6 @@ pipeline {
         }
         stage('Coverage') {
             parallel{
-                stage('Users-API') {
-                    steps {
-                        dir("users-api") {
-                            sh 'mvn clean package jacoco:report'
-                        }
-                    }
-                    post {
-                        always {
-                            dir("users-api") {
-                                publishCoverage adapters: [jacocoAdapter('target/site/jacoco/jacoco.xml')]
-                            }
-                        }
-                    }
-                }
                 stage('Api-Gateway') {
                     steps {
                         dir("api-gateway") {
