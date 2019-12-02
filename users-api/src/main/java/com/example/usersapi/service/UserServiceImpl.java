@@ -59,9 +59,11 @@ public class UserServiceImpl implements UserService {
   @Override
   public String login(User user) throws LoginException {
     if (user.getEmail() == null || user.getEmail().length() == 0) {
+      logger.error("email is missing or empty");
       throw new LoginException("invalid email");
     }
     if (user.getPassword() == null || user.getPassword().length() == 0) {
+      logger.error("password is missing or empty");
       throw new LoginException("invalid password");
     }
     User newUser = userRepository.findByEmail(user.getEmail());
@@ -83,11 +85,11 @@ public class UserServiceImpl implements UserService {
     newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
 
     if (userRepository.findByUsername(newUser.getUsername()) != null) {
-      logger.info("username already exists: " + newUser.getUsername());
+      logger.warn("username already exists: " + newUser.getUsername());
       throw new SignUpException("username already exists");
     }
     if (userRepository.findByEmail(newUser.getEmail()) != null) {
-      logger.info("username already exists: " + newUser.getEmail());
+      logger.warn("username already exists: " + newUser.getEmail());
       throw new SignUpException("email already exists");
     }
     User createdUser = userRepository.save(newUser);
@@ -98,7 +100,7 @@ public class UserServiceImpl implements UserService {
           + " successfully created an account");
       return jwtUtil.generateToken(userDetails);
     }
-    logger.info("signup failed");
+    logger.warn("signup failed");
     throw new SignUpException("signup failed");
   }
 
