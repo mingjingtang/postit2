@@ -9,15 +9,26 @@ import com.example.usersapi.repository.RoleRepository;
 import com.example.usersapi.repository.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.annotation.IfProfileValue;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @ActiveProfiles("test")
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@EnableAutoConfiguration(exclude = {RabbitAutoConfiguration.class})
+@DirtiesContext
+//@IfProfileValue(name = "test.type", values={"integration-test"})
 public class UserIntegrationTest {
 
   @Autowired
@@ -25,6 +36,9 @@ public class UserIntegrationTest {
 
   @Autowired
   UserRepository userRepository;
+
+  @MockBean
+  private AmqpTemplate amqpTemplate;
 
   private UserRole createUserRole(){
     UserRole userRole = roleRepository.findByName("ROLE_ADMIN");
