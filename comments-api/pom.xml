@@ -12,8 +12,8 @@
   <groupId>com.example</groupId>
   <artifactId>comments-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>demo</name>
-  <description>Demo project for Spring Boot</description>
+  <name>comments-api</name>
+  <description>comments-api project for Spring Boot</description>
 
   <properties>
     <java.version>1.8</java.version>
