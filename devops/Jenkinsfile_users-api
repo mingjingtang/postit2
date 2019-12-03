@@ -1,0 +1,49 @@
+pipeline {
+    agent {
+        docker {
+            image 'maven:3.6.3-jdk-8'
+            args '--privileged -u="root" -v /tmp/.m2:/root/.m2 -v /usr/local/bin/docker:/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock'
+        }
+    }
+    options {
+        skipStagesAfterUnstable()
+    }
+    stages {
+        stage('Build') {
+            steps {
+                dir("users-api") {
+                    sh 'mvn -B -DskipTests clean package'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                dir("users-api") {
+                    sh 'mvn test'
+                }
+            }
+            post {
+                always { 
+                    dir("users-api") { 
+                        junit 'target/surefire-reports/*.xml'
+                    }
+                }
+            }
+        }
+        stage('Coverage') {
+            steps {
+                dir("users-api") {
+                    sh 'mvn clean package jacoco:report'
+                }
+            }
+            post {
+                always {
+                    dir("users-api") {
+                        publishCoverage adapters: [jacocoAdapter('target/site/jacoco/jacoco.xml')]
+                    }
+                }
+            }
+           
+        }
+    }
+}
