@@ -3,15 +3,17 @@ package com.example.usersapi.integration;
 import com.example.usersapi.model.User;
 import com.example.usersapi.repository.UserRepository;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -26,6 +28,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
+@EnableAutoConfiguration(exclude = {RabbitAutoConfiguration.class})
+@DirtiesContext
 public class LoginTest {
 
   @Autowired
@@ -34,6 +38,8 @@ public class LoginTest {
   @Autowired
   private UserRepository userRepository;
 
+  @MockBean
+  private AmqpTemplate amqpTemplate;
 
   @After
   public void clear() {
