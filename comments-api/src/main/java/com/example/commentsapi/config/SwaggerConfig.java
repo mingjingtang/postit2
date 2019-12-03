@@ -26,7 +26,7 @@ public class SwaggerConfig {
         .apis(RequestHandlerSelectors.basePackage("com.example.commentsapi.controller"))
         .paths(PathSelectors.any()).build().apiInfo(
             new ApiInfo("Comments-Api Documentation", "Documentation automatically generated",
-                model.getParent().getVersion(), null,
-                new Contact("kyle", "", "qc91129@gmail.com"), null, null));
+                model.getParent().getVersion(), null, new Contact("kyle", "", "qc91129@gmail.com"),
+                null, null));
   }
 }

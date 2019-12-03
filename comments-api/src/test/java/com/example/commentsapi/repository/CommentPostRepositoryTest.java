@@ -45,27 +45,27 @@ public class CommentPostRepositoryTest {
   private Comment comment;
 
   @Before
-  public void init(){
+  public void init() {
     comment.setCommentId(1L);
     comment.setText("comment");
   }
 
   @Test
-  public void savePostIdToCommentId_Success(){
+  public void savePostIdToCommentId_Success() {
     when(jdbcTemplate.update(anyString(), any(Object.class))).thenReturn(1);
     int actualStatus = commentPostRepository.save(1L, 1L);
     assertEquals(1, 1);
   }
 
   @Test
-  public void deletePostIdToCommentId_Success(){
+  public void deletePostIdToCommentId_Success() {
     when(jdbcTemplate.update(anyString(), any(Object.class))).thenReturn(1);
     int actualStatus = commentPostRepository.delete(1L);
     assertEquals(1, 1);
   }
 
   @Test
-  public void findPostIdsByCommentIds_MapCommentIdToPostId_Success(){
+  public void findPostIdsByCommentIds_MapCommentIdToPostId_Success() {
     List<Long> commentIdList = new ArrayList<>();
     commentIdList.add(1L);
     List<Map<String, Object>> results = new ArrayList<>();
@@ -76,21 +76,22 @@ public class CommentPostRepositoryTest {
 
     when(namedParameterJdbcTemplate.queryForList(anyString(), anyMap())).thenReturn(results);
 
-    Map<Long, Long> commentIdToPostId = commentPostRepository.findPostIdsByCommentIds(commentIdList);
+    Map<Long, Long> commentIdToPostId = commentPostRepository
+        .findPostIdsByCommentIds(commentIdList);
     assertEquals(1, commentIdToPostId.size());
-    assertEquals(2l, (long)commentIdToPostId.get(1L));
-
+    assertEquals(2l, (long) commentIdToPostId.get(1L));
   }
 
   @Test
-  public void findPostIdsByCommentIds_MapCommentIdToPostId_ZeroInput(){
+  public void findPostIdsByCommentIds_MapCommentIdToPostId_ZeroInput() {
     List<Long> commentIdList = new ArrayList<>();
-    Map<Long, Long> commentIdToPostId = commentPostRepository.findPostIdsByCommentIds(commentIdList);
+    Map<Long, Long> commentIdToPostId = commentPostRepository
+        .findPostIdsByCommentIds(commentIdList);
     assertEquals(0, commentIdToPostId.size());
   }
 
   @Test
-  public void findCommentsByPostId_ListOfComment_Success(){
+  public void findCommentsByPostId_ListOfComment_Success() {
     List<Long> commentIdList = new ArrayList<>();
     commentIdList.add(1L);
 
@@ -103,7 +104,7 @@ public class CommentPostRepositoryTest {
   }
 
   @Test
-  public void findUserIdsByCommentIds_MapCommentIdToUserId_Success(){
+  public void findUserIdsByCommentIds_MapCommentIdToUserId_Success() {
     List<Long> commentIdList = new ArrayList<>();
     List<Map<String, Object>> results = new ArrayList<>();
     Map<String, Object> resultSet = new HashMap<>();
@@ -112,9 +113,10 @@ public class CommentPostRepositoryTest {
     results.add(resultSet);
 
     when(namedParameterJdbcTemplate.queryForList(anyString(), anyMap())).thenReturn(results);
-    Map<Long, Long> actualCommentIdToUserId = commentPostRepository.findUserIdsByCommentIds(commentIdList);
+    Map<Long, Long> actualCommentIdToUserId = commentPostRepository
+        .findUserIdsByCommentIds(commentIdList);
     assertEquals(1, actualCommentIdToUserId.size());
-    assertEquals(2l, (long)actualCommentIdToUserId.get(1L));
+    assertEquals(2l, (long) actualCommentIdToUserId.get(1L));
   }
 }
 

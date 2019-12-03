@@ -21,6 +21,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 public class CommentUserRepositoryTest {
+
   @Rule
   public MockitoRule rule = MockitoJUnit.rule().silent();
 
@@ -37,27 +38,27 @@ public class CommentUserRepositoryTest {
   private Comment comment;
 
   @Before
-  public void init(){
+  public void init() {
     comment.setCommentId(1L);
     comment.setText("comment");
   }
 
   @Test
-  public void saveUserIdToCommentId_Success(){
-    when(jdbcTemplate.update(anyString(),any(Object.class))).thenReturn(1);
+  public void saveUserIdToCommentId_Success() {
+    when(jdbcTemplate.update(anyString(), any(Object.class))).thenReturn(1);
     int actualStatus = commentUserRepository.save(1L, 1L);
     assertEquals(1, 1);
   }
 
   @Test
-  public void deleteUserIdToCommentId_Success(){
-    when(jdbcTemplate.update(anyString(),any(Object.class))).thenReturn(1);
+  public void deleteUserIdToCommentId_Success() {
+    when(jdbcTemplate.update(anyString(), any(Object.class))).thenReturn(1);
     int actualStatus = commentUserRepository.delete(1L);
     assertEquals(1, 1);
   }
 
   @Test
-  public void findCommentsByUserId_ListOfComment_Success(){
+  public void findCommentsByUserId_ListOfComment_Success() {
     List<Long> commentIdList = new ArrayList<>();
     commentIdList.add(1L);
 

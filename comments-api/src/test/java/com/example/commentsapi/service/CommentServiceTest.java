@@ -63,7 +63,7 @@ public class CommentServiceTest {
   private CommentWithDetails commentWithDetails;
 
   @Before
-  public void init(){
+  public void init() {
     user.setId(1L);
     user.setEmail("email1@email.com");
     user.setUsername("user1");
@@ -81,7 +81,7 @@ public class CommentServiceTest {
   }
 
   @Test
-  public void createComment_CommentWithDetails_Success(){
+  public void createComment_CommentWithDetails_Success() {
 
     when(userRepository.findByUsername(anyString())).thenReturn(user);
     when(postRepository.findByPostId(anyLong())).thenReturn(postWithUser);
@@ -89,7 +89,8 @@ public class CommentServiceTest {
     when(commentPostRepository.save(anyLong(), anyLong())).thenReturn(1);
     when(commentUserRepository.save(anyLong(), anyLong())).thenReturn(1);
 
-    CommentWithDetails actualCommentWithDetails = commentService.createComment("user1", 1L, comment);
+    CommentWithDetails actualCommentWithDetails = commentService
+        .createComment("user1", 1L, comment);
     assertEquals(comment.getCommentId(), actualCommentWithDetails.getId());
   }
 
@@ -100,8 +101,8 @@ public class CommentServiceTest {
     when(commentRepository.findById(anyLong())).thenReturn(Optional.of(comment));
     when(commentUserRepository.findCommentsByUserId(anyLong())).thenReturn(comments);
     when(userRepository.findByUsername(anyString())).thenReturn(user);
-    Long actualCommentId = commentService.deleteComment("username",3L);
-    assertEquals(3l, (long)actualCommentId);
+    Long actualCommentId = commentService.deleteComment("username", 3L);
+    assertEquals(3l, (long) actualCommentId);
   }
 
   @Test(expected = EntityNotFoundException.class)

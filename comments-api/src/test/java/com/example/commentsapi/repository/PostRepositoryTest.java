@@ -17,6 +17,7 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
 public class PostRepositoryTest {
+
   @Rule
   public MockitoRule rule = MockitoJUnit.rule().silent();
 
@@ -33,7 +34,7 @@ public class PostRepositoryTest {
   private Post post;
 
   @Before
-  public void init(){
+  public void init() {
     user.setId(1L);
     user.setEmail("email1");
     user.setUsername("user1");
@@ -43,10 +44,10 @@ public class PostRepositoryTest {
   }
 
   @Test
-  public void findByPostId_PostWithUser_Success(){
+  public void findByPostId_PostWithUser_Success() {
     PostWithUser postWithUser = new PostWithUser(post, user);
     when(postSender.findByPostId(anyLong())).thenReturn(postWithUser);
     PostWithUser actualPostWithUser = postRepository.findByPostId(1L);
-    assertEquals(1l, (long)actualPostWithUser.getPostId());
+    assertEquals(1l, (long) actualPostWithUser.getPostId());
   }
 }
