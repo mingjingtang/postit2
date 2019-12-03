@@ -5,8 +5,6 @@ import com.example.postsapi.model.Post;
 import com.example.postsapi.model.User;
 import com.example.postsapi.model.wrapper.CommentWithDetails;
 import com.example.postsapi.model.wrapper.PostWithUser;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Rule;

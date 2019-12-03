@@ -16,7 +16,7 @@ public interface PostService {
 
   public PostWithUser findByPostId(Long postId);
 
-  public  List<Post> findPostsByUserId(Long userId);
+  public List<Post> findPostsByUserId(Long userId);
 
   public List<Post> findPostsByPostIds(List<Long> postIdList);
 }

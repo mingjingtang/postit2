@@ -41,155 +41,118 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {PostController.class})
 @AutoConfigureMockMvc
-@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class, DataSourceAutoConfiguration.class})
+@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class,
+    DataSourceAutoConfiguration.class})
 
 public class PostControllerTest {
 
-    @Autowired
-    private WebApplicationContext webApplicationContext;
+  @Autowired
+  private WebApplicationContext webApplicationContext;
 
-    private MockMvc mockMvc;
+  private MockMvc mockMvc;
 
-    @MockBean
-    private PostService postService;
+  @MockBean
+  private PostService postService;
 
+  @MockBean
+  private CommentService commentService;
 
-    @MockBean
-    private CommentService commentService;
+  @InjectMocks
+  private Post post;
 
-    @InjectMocks
-    private Post post;
+  @InjectMocks
+  private Comment comment;
 
-    @InjectMocks
-    private Comment comment;
+  @InjectMocks
+  private User user;
 
-    @InjectMocks
-    private User user;
+  private PostWithUser postWithUser;
 
-    private PostWithUser postWithUser;
+  private CommentWithDetails commentWithDetails;
 
-    private CommentWithDetails commentWithDetails;
+  @Before
+  public void init() {
+    mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 
-    @Before
-    public void init() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+    // dummy post
+    post.setPostId(1L);
+    post.setTitle("title");
+    post.setDescription("post");
 
+    user.setId(1L);
+    user.setUsername("name");
+    user.setEmail("name@gmail.com");
 
-        // dummy post
-        post.setPostId(1L);
-        post.setTitle("title");
-        post.setDescription("post");
+    postWithUser = new PostWithUser(post, user);
 
-        user.setId(1L);
-        user.setUsername("name");
-        user.setEmail("name@gmail.com");
+    comment.setCommentId(1L);
+    comment.setText("comment");
+    commentWithDetails = new CommentWithDetails(comment, user, postWithUser);
+  }
 
-        postWithUser = new PostWithUser(post, user);
+  private static String createPostInJson(String title, String description) {
+    return "{ \"title\": \"" + title + "\", " + "\"description\":\"" + description + "\"}";
+  }
 
-        comment.setCommentId(1L);
-        comment.setText("comment");
-        commentWithDetails = new CommentWithDetails(comment, user, postWithUser);
+  @Test
+  public void createPost_Post_Success() throws Exception {
 
-    }
+    RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/").header("username", "username")
+        .contentType(MediaType.APPLICATION_JSON).content(createPostInJson("title", "description"));
 
-    private static String createPostInJson(String title, String description) {
-        return "{ \"title\": \"" + title + "\", " +
-                "\"description\":\"" + description + "\"}";
-    }
+    when(postService.createPost((anyString()), any())).thenReturn(postWithUser);
 
-    private static String createCommentInJson(String text) {
-        return "{ \"text\": \"" + text + "\"}";
-    }
+    MvcResult result = mockMvc.perform(requestBuilder).andExpect(status().isOk()).andExpect(
+        content().json(
+            "{\"postId\":1,\"title\":\"title\",\"description\":\"post\",\"user\":{\"id\":1,\"username\":\"name\",\"email\":\"name@gmail.com\"}}"))
+        .andReturn();
+    System.out.println(result.getResponse().getContentAsString());
+  }
 
-    @Test
-    public void createPost_Post_Success() throws Exception {
+  @Test
+  public void deletePost_PostId_Success() throws Exception {
 
-        RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .post("/").header("username", "username")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(createPostInJson("title", "description"));
+    RequestBuilder requestBuilder = MockMvcRequestBuilders.delete("/1")
+        .header("username", "username");
 
+    when(postService.deletePostByPostId(anyString(), anyLong())).thenReturn(1L);
 
-        when(postService.createPost((anyString()), any())).thenReturn(postWithUser);
+    MvcResult result = mockMvc.perform(requestBuilder).andExpect(status().isOk())
+        .andExpect(content().string("1")).andReturn();
+  }
 
-        MvcResult result = mockMvc.perform(requestBuilder)
-                .andExpect(status().isOk())
-                .andExpect(content().json("{\"postId\":1,\"title\":\"title\",\"description\":\"post\",\"user\":{\"id\":1,\"username\":\"name\",\"email\":\"name@gmail.com\"}}"))
-                .andReturn();
-        System.out.println(result.getResponse().getContentAsString());
-    }
+  @Test
+  public void listPosts_List_Success() throws Exception {
+    RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/list")
+        .contentType(MediaType.APPLICATION_JSON);
 
-    @Test
-    public void deletePost_PostId_Success() throws Exception {
+    List<PostWithUser> postsList = new ArrayList<>();
+    postsList.add(postWithUser);
 
-        RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .delete("/1").header("username", "username");
+    when(postService.listPosts()).thenReturn(postsList);
 
+    MvcResult result = mockMvc.perform(requestBuilder).andExpect(status().isOk()).andExpect(
+        content().json(
+            "[{\"postId\":1,\"title\":\"title\",\"description\":\"post\",\"user\":{\"id\":1,\"username\":\"name\",\"email\":\"name@gmail.com\"}}]"))
+        .andReturn();
+    System.out.println(result.getResponse().getContentAsString());
+  }
 
-        when(postService.deletePostByPostId(anyString(),anyLong())).thenReturn(1L);
+  @Test
+  public void GetComments_List_Success() throws Exception {
+    RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/1/comment")
+        .contentType(MediaType.APPLICATION_JSON);
 
-        MvcResult result = mockMvc.perform(requestBuilder)
-                .andExpect(status().isOk())
-                .andExpect(content().string("1"))
-                .andReturn();
-    }
+    List<CommentWithDetails> commentsList = new ArrayList<>();
+    commentsList.add(commentWithDetails);
 
-    @Test
-    public void listPosts_List_Success() throws Exception {
-        RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .get("/list")
-                .contentType(MediaType.APPLICATION_JSON);
+    when(commentService.getCommentsByPostId((any()))).thenReturn(commentsList);
 
-        List<PostWithUser> postsList = new ArrayList<>();
-        postsList.add(postWithUser);
+    MvcResult result = mockMvc.perform(requestBuilder).andExpect(status().isOk()).andExpect(
+        content().json(
+            "[{\"id\":1,\"text\":\"comment\",\"user\":{\"id\":1,\"username\":\"name\",\"email\":\"name@gmail.com\"},\"post\":{\"postId\":1,\"title\":\"title\",\"description\":\"post\",\"user\":{\"id\":1,\"username\":\"name\",\"email\":\"name@gmail.com\"}}}]"))
+        .andReturn();
 
-        when(postService.listPosts()).thenReturn(postsList);
-
-        MvcResult result = mockMvc.perform(requestBuilder)
-                .andExpect(status().isOk())
-                .andExpect(content().json("[{\"postId\":1,\"title\":\"title\",\"description\":\"post\",\"user\":{\"id\":1,\"username\":\"name\",\"email\":\"name@gmail.com\"}}]"))
-                .andReturn();
-        System.out.println(result.getResponse().getContentAsString());
-    }
-
-//    @Test
-//    public void UpdatePost_Post_Success() throws Exception{
-//        RequestBuilder requestBuilder = MockMvcRequestBuilders
-//                .put("/1")
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .content(createPostInJson("updated title", "body"));
-//
-//        Post updatedPost = post;
-//        updatedPost.setTitle("updated title");
-//
-//        when(postService.updatePost(any(), any())).thenReturn(post);
-//
-//        MvcResult result = mockMvc.perform(requestBuilder)
-//                .andExpect(status().isOk())
-//                .andExpect(content().json("{\"postId\":1,\"title\":\"updated title\",\"description\":\"post\"}"))
-//                .andReturn();
-//
-//        System.out.println(result.getResponse().getContentAsString());
-//    }
-
-    @Test
-    public void GetComments_List_Success() throws Exception{
-        RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .get("/1/comment")
-                .contentType(MediaType.APPLICATION_JSON);
-
-
-        List<CommentWithDetails> commentsList = new ArrayList<>();
-        commentsList.add(commentWithDetails);
-
-        when(commentService.getCommentsByPostId((any()))).thenReturn(commentsList);
-
-        MvcResult result = mockMvc.perform(requestBuilder)
-                .andExpect(status().isOk())
-                .andExpect(content().json("[{\"id\":1,\"text\":\"comment\",\"user\":{\"id\":1,\"username\":\"name\",\"email\":\"name@gmail.com\"},\"post\":{\"postId\":1,\"title\":\"title\",\"description\":\"post\",\"user\":{\"id\":1,\"username\":\"name\",\"email\":\"name@gmail.com\"}}}]"))
-                .andReturn();
-
-        System.out.println(result.getResponse().getContentAsString());
-    }
-
+    System.out.println(result.getResponse().getContentAsString());
+  }
 }

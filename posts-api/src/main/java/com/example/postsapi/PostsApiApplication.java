@@ -13,13 +13,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @RestController
 public class PostsApiApplication {
 
-	@RequestMapping("/test")
-	public String home(){
-		return "some posts";
-	}
+  @RequestMapping("/test")
+  public String home() {
+    return "some posts";
+  }
 
-	public static void main(String[] args) {
-		SpringApplication.run(PostsApiApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(PostsApiApplication.class, args);
+  }
 }

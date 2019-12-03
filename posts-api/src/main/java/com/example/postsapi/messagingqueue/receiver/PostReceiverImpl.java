@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class PostReceiverImpl implements PostReceiver{
+public class PostReceiverImpl implements PostReceiver {
 
   @Autowired
   private PostService postService;
