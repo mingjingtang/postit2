@@ -6,9 +6,19 @@ Postit2 is a back-end program for the forum-like frontend, which has user accoun
 
 This project is to decompose a monolith spring back-end to work under microservices architecture and aims at decoupling relationship between services to achieve higher scalability.
 
+##### Links:
+
+[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2416899)
+
+[Swagger API doc](https://postit2.cfapps.io/swagger-ui.html)
+
+[Demo APP](https://qimingchen.github.io/S1-Project-1.io/src/html/index.html)
+
 ## Tech Stack
 
-* Java 
+#### Development
+
+* Java EE
 * Spring boot
 * PostgreSQL
 * Docker 
@@ -16,7 +26,34 @@ This project is to decompose a monolith spring back-end to work under microservi
 * Flyway
 * Eureka
 * Zuul
-* Pivotal Cloud Foundry (In progress)
+* Swagger API docs
+
+#### Testing (unit tests and integration tests)
+
+* Springboot-test
+* Mockito
+* H2 database
+
+#### DevOps
+
+###### CICD - Continuous Integration / Delivery
+
+* Jenkins
+* Blue Ocean Pipeline
+* Jacoco Coverage Reporting
+
+###### Logging and Monitoring
+
+* Logstash
+* ElasticSearch
+* Kibana
+
+#### Deployment
+
+* Pivotal Cloud Foundry
+  * CloudAMQP (RabbitMQ)
+  * ElephantSQL (PostgreSQL)
+  * Service Registry (Eureka-Server)
 
 ## Design
 
@@ -30,6 +67,9 @@ This project is to decompose a monolith spring back-end to work under microservi
 
 #### Data Intercommunication
 ![Data intercommunication diagram](https://github.com/mingjingtang/postit2/blob/dev/assets/data_intercommunication.png)
+
+#### DevOps
+![DevOps diagram](https://github.com/mingjingtang/postit2/blob/qc-readme/assets/devops.png)
 
 ## Agile Practice and Extreme Programming
 
@@ -86,12 +126,6 @@ This project is to decompose a monolith spring back-end to work under microservi
   * We refactor the wrapper files into a sub path in model so the file structure is clearer. 
   * The whole process of composing elements is a hard work, we have to draw the structure first, then add them one by one.
 
-## Further Improvement
-
-* Exception handling
-
-* Cloud deployment
-
 ## Timeline
 
 * 2019 11 08 Fri
@@ -130,7 +164,40 @@ This project is to decompose a monolith spring back-end to work under microservi
   * final check for apis and frontend integration
   * finish readme
   * prepare for presentation
-  
+* 2019 11 21 Thr
+  * Write User stories
+  * List tasks
+  * Set up Jenkins
+* 2019 11 22 Fri
+  * Swagger API Docs
+  * SonarQube
+* 2019 11 23-24 Weekend
+  * Exception Handling
+* 2019 11 25 Mon
+  * Users-API unit testing
+  * Exception Handling
+  * Validator
+* 2019 11 26 Tue
+  * api-gateway unit testing
+* 2019 11 27 Wed
+  * comments-API testing
+  * ELK
+* 2019 11 28 Thr
+  * posts-api testing
+* 2019 11 29 Fri
+  * deployment
+* 2019 11 30 Sat
+  * Integration Test
+* 2019 12 01 Sun
+  * Jenkins
+* 2019 12 02 Mon
+  * Jenkins
+  * ELK
+  * Integration Test
+* 2019 12 03 Tue
+  * ReadMe
+
+
 ## Contributor
 
 * Mingjing Tang
