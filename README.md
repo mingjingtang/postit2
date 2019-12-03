@@ -59,17 +59,17 @@ This project is to decompose a monolith spring back-end to work under microservi
 
 #### System Architecture
 
-![System Architecture](https://github.com/mingjingtang/postit2/blob/dev/assets/postit2_system_architecture.png)
+![System Architecture](https://github.com/mingjingtang/postit2/assets/postit2_system_architecture.png)
 
 #### Database
 
-![Database ERD](https://github.com/mingjingtang/postit2/blob/dev/assets/database_ERD.png)
+![Database ERD](https://github.com/mingjingtang/postit2/assets/database_ERD.png)
 
 #### Data Intercommunication
-![Data intercommunication diagram](https://github.com/mingjingtang/postit2/blob/dev/assets/data_intercommunication.png)
+![Data intercommunication diagram](https://github.com/mingjingtang/postit2/assets/data_intercommunication.png)
 
 #### DevOps
-![DevOps diagram](https://github.com/mingjingtang/postit2/blob/qc-readme/assets/devops.png)
+![DevOps diagram](https://github.com/mingjingtang/postit2/assets/devops.png)
 
 ## Agile Practice and Extreme Programming
 
