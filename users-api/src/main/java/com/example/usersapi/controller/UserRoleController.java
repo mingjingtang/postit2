@@ -2,7 +2,6 @@ package com.example.usersapi.controller;
 
 import com.example.usersapi.model.wrapper.RoleWithUsers;
 import com.example.usersapi.model.UserRole;
-import com.example.usersapi.model.wrapper.UserProfileWithUser;
 import com.example.usersapi.model.wrapper.UserWithRoles;
 import com.example.usersapi.service.UserRoleService;
 import java.util.List;
@@ -31,25 +30,28 @@ public class UserRoleController {
 
   @PostMapping("/role")
   @ApiOperation(value = "create userrole by admin user", notes = "create role", response = UserRole.class, responseContainer = "List")
-  public List<UserRole> createRole(@RequestHeader("username") String username, @RequestBody UserRole userRole){
+  public List<UserRole> createRole(@RequestHeader("username") String username,
+      @RequestBody UserRole userRole) {
     return userRoleService.createRole(userRole);
   }
 
   @DeleteMapping("/role/{roleName}")
   @ApiOperation(value = "Delete user role by admin user", notes = "delete role by pass role name", response = UserRole.class, responseContainer = "List")
-  public List<UserRole> deleteRole(@RequestHeader("username") String username, @PathVariable String roleName){
+  public List<UserRole> deleteRole(@RequestHeader("username") String username,
+      @PathVariable String roleName) {
     return userRoleService.deleteRole(roleName);
   }
 
   @GetMapping("/roles")
   @ApiOperation(value = "List all user roles", notes = "get roles", response = UserRole.class, responseContainer = "List")
-  public List<UserRole> listAllRoles(@RequestHeader("username") String username){
+  public List<UserRole> listAllRoles(@RequestHeader("username") String username) {
     return userRoleService.listAllRoles();
   }
 
   @GetMapping("/role/{roleName}")
   @ApiOperation(value = "Find users by user role", notes = "get users by roleName ", response = RoleWithUsers.class)
-  public RoleWithUsers findUsersByRole(@RequestHeader("username") String username, @PathVariable String roleName){
+  public RoleWithUsers findUsersByRole(@RequestHeader("username") String username,
+      @PathVariable String roleName) {
     return userRoleService.findUsersByRole(roleName);
   }
 
@@ -66,6 +68,4 @@ public class UserRoleController {
       @PathVariable Long userId, @PathVariable String roleName) {
     return userRoleService.removeRoleFromUser(roleName, userId);
   }
-
-
 }

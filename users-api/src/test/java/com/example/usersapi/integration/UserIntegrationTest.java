@@ -26,9 +26,9 @@ public class UserIntegrationTest {
   @Autowired
   UserRepository userRepository;
 
-  private UserRole createUserRole(){
+  private UserRole createUserRole() {
     UserRole userRole = roleRepository.findByName("ROLE_ADMIN");
-    if(userRole == null){
+    if (userRole == null) {
       userRole = new UserRole();
       userRole.setName("ROLE_ADMIN");
       userRole = roleRepository.save(userRole);
@@ -36,7 +36,7 @@ public class UserIntegrationTest {
     return userRole;
   }
 
-  private User createUser(){
+  private User createUser() {
     UserRole userRole = createUserRole();
 
     User user = new User();
@@ -47,12 +47,10 @@ public class UserIntegrationTest {
     return user;
   }
 
-
-
   @Test
   public void signup_User_Success() {
     User user = userRepository.findByUsername("batman");
-    if(user != null) {
+    if (user != null) {
       userRepository.delete(user);
     }
     user = createUser();
@@ -74,9 +72,8 @@ public class UserIntegrationTest {
     userRepository.save(user);
   }
 
-
   @Test
-  public void login_User_Success(){
+  public void login_User_Success() {
     signup_User_Success();
 
     User user = createUser();
@@ -89,9 +86,8 @@ public class UserIntegrationTest {
     assertEquals(user.getId(), foundUser.getId());
   }
 
-
   @Test(expected = DataIntegrityViolationException.class)
-  public void login_EmailNull_Exception(){
+  public void login_EmailNull_Exception() {
     User user = createUser();
     userRepository.save(user);
     user.setEmail(null);
@@ -99,12 +95,11 @@ public class UserIntegrationTest {
   }
 
   @Test(expected = DataIntegrityViolationException.class)
-  public void login_PasswordNull_Exception(){
+  public void login_PasswordNull_Exception() {
     User user = createUser();
     userRepository.save(user);
     user.setPassword(null);
     userRepository.save(user);
   }
-
 }
 

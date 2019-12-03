@@ -27,57 +27,43 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 public class LoginTest {
-    @Autowired
-    private MockMvc mockMvc;
 
-    @Autowired
-    private UserRepository userRepository;
+  @Autowired
+  private MockMvc mockMvc;
 
-//    @InjectMocks
-//    private SignupTest signupTest;
+  @Autowired
+  private UserRepository userRepository;
 
-    @Before
-    public void init(){
-//        signupTest.Signup_User_Success();
+
+  @After
+  public void clear() {
+    User user = userRepository.findByUsername("user1");
+    if (userRepository.findByUsername("user1") != null) {
+      userRepository.delete(user);
     }
+  }
 
-    @After
-    public void clear(){
-        User user = userRepository.findByUsername("user1");
-        if(userRepository.findByUsername("user1") != null) {
-            userRepository.delete(user);
-        }
-    }
+  @Test
+  public void Login_User_Success() throws Exception {
+    RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/login")
+        .contentType(MediaType.APPLICATION_JSON)
+        .content("{" + "\"email\":\"admin@email\"," + "\"password\":\"admin\"" + "}");
 
+    MvcResult token = mockMvc.perform(requestBuilder).andExpect(status().isOk()).andReturn();
 
-    @Test
-    public void Login_User_Success() throws Exception{
-        RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .post("/login")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("{" + "\"email\":\"admin@email\"," + "\"password\":\"admin\"" + "}");
+    assertNotNull(token);
+    System.out.println(token.getResponse().getContentAsString());
+  }
 
-        MvcResult token = mockMvc.perform(requestBuilder)
-                .andExpect(status().isOk())
-                .andReturn();
+  @Test
+  public void Login_validator_EmailOrPassword() throws Exception {
+    RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/login")
+        .contentType(MediaType.APPLICATION_JSON)
+        .content("{" + "\"email\":\"email1email.com\"," + "\"password\":\"pwd1\"" + "}");
 
-        assertNotNull(token);
-        System.out.println(token.getResponse().getContentAsString());
-    }
+    MvcResult result = mockMvc.perform(requestBuilder).andExpect(status().is4xxClientError())
+        .andReturn();
 
-
-    @Test
-    public void Login_validator_EmailOrPassword() throws Exception{
-        RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .post("/login")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("{" + "\"email\":\"email1email.com\"," + "\"password\":\"pwd1\"" + "}");
-
-        MvcResult result = mockMvc.perform(requestBuilder)
-                .andExpect(status().is4xxClientError())
-                .andReturn();
-
-        System.out.println(result.getResolvedException().getMessage());
-    }
-
+    System.out.println(result.getResolvedException().getMessage());
+  }
 }

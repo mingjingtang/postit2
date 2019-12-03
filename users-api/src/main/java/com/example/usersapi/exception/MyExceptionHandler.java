@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,7 +20,7 @@ import java.util.List;
 public class MyExceptionHandler extends ResponseEntityExceptionHandler {
 
   @ExceptionHandler(SignUpException.class)
-  public ResponseEntity<ErrorResponse> handleSignupException(SignUpException e){
+  public ResponseEntity<ErrorResponse> handleSignupException(SignUpException e) {
     List<String> details = Arrays.asList(e.getMessage());
     String causeMessage = (e.getCause() == null) ? "" : e.getMessage();
     ErrorResponse errorResponse = new ErrorResponse(HttpStatus.resolve(500), details, causeMessage);
@@ -29,7 +28,7 @@ public class MyExceptionHandler extends ResponseEntityExceptionHandler {
   }
 
   @ExceptionHandler(LoginException.class)
-  public ResponseEntity<ErrorResponse> handleLoginException(LoginException e){
+  public ResponseEntity<ErrorResponse> handleLoginException(LoginException e) {
     List<String> details = Arrays.asList(e.getMessage());
     String causeMessage = (e.getCause() == null) ? "" : e.getMessage();
     ErrorResponse errorResponse = new ErrorResponse(HttpStatus.resolve(401), details, causeMessage);
@@ -38,18 +37,16 @@ public class MyExceptionHandler extends ResponseEntityExceptionHandler {
 
   @Override
   protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-      HttpHeaders headers, HttpStatus status,
-      WebRequest request) {
+      HttpHeaders headers, HttpStatus status, WebRequest request) {
 
     List<String> details = new ArrayList<>();
-    for(ObjectError error : ex.getBindingResult().getAllErrors()) {
+    for (ObjectError error : ex.getBindingResult().getAllErrors()) {
       details.add(error.getDefaultMessage());
     }
     ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST, details);
 
     return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
   }
-
 }
 
 class ErrorResponse {

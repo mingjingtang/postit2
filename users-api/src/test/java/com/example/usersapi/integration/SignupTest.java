@@ -33,12 +33,13 @@ public class SignupTest {
   private UserRepository userRepository;
 
   @Before
-  public void init(){}
+  public void init() {
+  }
 
   @After
-  public void clear(){
+  public void clear() {
     User user = userRepository.findByUsername("user1");
-    if(userRepository.findByUsername("user1") != null) {
+    if (userRepository.findByUsername("user1") != null) {
       userRepository.delete(user);
     }
   }
@@ -46,15 +47,12 @@ public class SignupTest {
   @Test
   public void Signup_User_Success() throws Exception {
 
-    RequestBuilder requestBuilder = MockMvcRequestBuilders
-        .post("/signup")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content("{" + "\"email\":\"email1@email.com\"," + "\"username\":\"user1\","
+    RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/signup")
+        .contentType(MediaType.APPLICATION_JSON).content(
+            "{" + "\"email\":\"email1@email.com\"," + "\"username\":\"user1\","
                 + "\"password\":\"pwd1\"" + "}");
 
-    MvcResult token = mockMvc.perform(requestBuilder)
-        .andExpect(status().isOk())
-        .andReturn();
+    MvcResult token = mockMvc.perform(requestBuilder).andExpect(status().isOk()).andReturn();
 
     assertNotNull(token);
     System.out.println(token.getResponse().getContentAsString());
@@ -63,14 +61,12 @@ public class SignupTest {
   @Test
   public void Signup_Validator_Email() throws Exception {
 
-    RequestBuilder requestBuilder = MockMvcRequestBuilders
-        .post("/signup")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content("{" + "\"email\":\"email1email.com\"," + "\"username\":\"user1\","
-            + "\"password\":\"pwd1\"" + "}");
+    RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/signup")
+        .contentType(MediaType.APPLICATION_JSON).content(
+            "{" + "\"email\":\"email1email.com\"," + "\"username\":\"user1\","
+                + "\"password\":\"pwd1\"" + "}");
 
-    MvcResult result = mockMvc.perform(requestBuilder)
-        .andExpect(status().is4xxClientError())
+    MvcResult result = mockMvc.perform(requestBuilder).andExpect(status().is4xxClientError())
         .andReturn();
 
     System.out.println(result.getResolvedException().getMessage());
@@ -79,11 +75,10 @@ public class SignupTest {
   @Test
   public void Signup_Duplicate_Username() throws Exception {
 
-    RequestBuilder requestBuilder = MockMvcRequestBuilders
-        .post("/signup")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content("{" + "\"email\":\"email1@email.com\"," + "\"username\":\"user1\","
-            + "\"password\":\"pwd1\"" + "}");
+    RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/signup")
+        .contentType(MediaType.APPLICATION_JSON).content(
+            "{" + "\"email\":\"email1@email.com\"," + "\"username\":\"user1\","
+                + "\"password\":\"pwd1\"" + "}");
 
     MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 

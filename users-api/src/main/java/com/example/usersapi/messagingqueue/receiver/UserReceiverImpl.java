@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserReceiverImpl implements UserReceiver{
+public class UserReceiverImpl implements UserReceiver {
 
   @Autowired
   private UserService userService;
@@ -67,7 +67,8 @@ public class UserReceiverImpl implements UserReceiver{
   public String handleMessage_findUsersByUserIds(String message) throws IOException {
     List<Long> userIdList = new ArrayList<>();
     try {
-      userIdList = mapper.readValue(message, new TypeReference<List<Long>>(){});
+      userIdList = mapper.readValue(message, new TypeReference<List<Long>>() {
+      });
     } catch (IOException e) {
       e.printStackTrace();
     }
