@@ -20,13 +20,13 @@ public class SwaggerConfig {
 
   @Bean
   public Docket api() throws IOException, XmlPullParserException {
-    MavenXpp3Reader reader = new MavenXpp3Reader();
-    Model model = reader.read(new FileReader("pom.xml"));
+//    MavenXpp3Reader reader = new MavenXpp3Reader();
+//    Model model = reader.read(new FileReader("pom.xml"));
     return new Docket(DocumentationType.SWAGGER_2).select()
         .apis(RequestHandlerSelectors.basePackage("com.example.usersapi.controller"))
         .paths(PathSelectors.any()).build().apiInfo(
             new ApiInfo("Users-Api Documentation", "Documentation automatically generated",
-                model.getParent().getVersion(), null,
+                "1.0", null,
                 new Contact("mingjing", "", "tmjcsh@gmail.com"), null, null));
   }
 }

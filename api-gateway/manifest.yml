@@ -1,0 +1,12 @@
+---
+applications:
+- name: pcf-api-gateway-1
+  memory: 512MB
+  instances: 1
+  docker:
+    image: mingjing/pcf-api-gateway-1
+  env:
+    SPRING_PROFILES_ACTIVE: pcf
+  services:
+  - service-registry
+  - pgdev

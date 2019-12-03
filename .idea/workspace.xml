@@ -2,15 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="106bac30-0aed-4688-9eb5-79914f93fdd9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api-gateway.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/Dockerfile_pcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/manifest.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-pcf.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-api/Dockerfile_pcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-api/manifest.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/RabbitMqConfig.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-api/src/main/resources/application-pcf.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-api/src/main/resources/application.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/integration/LoginTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-api/users-api.log.2019-12-01.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-api/users-api.log.2019-12-02.08133083445575.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/Jenkinsfile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/PostSenderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/PostSenderImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/UserProfile.java" afterDir="false" />
@@ -20,6 +38,8 @@
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserProfileWithUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserProfileWithUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserWithRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserWithRoles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserProfileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserProfileServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserRoleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserService.java" afterDir="false" />
@@ -28,30 +48,53 @@
       <change beforePath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/UsersApiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/UsersApiApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/JwtUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserProfileController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserRoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSender.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/JwtResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/JwtResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Post.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserRole.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/CommentWithDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/CommentWithDetails.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/PostWithUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/PostWithUser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/RoleWithUsers.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/RoleWithUsers.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserProfileWithUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserProfileWithUser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserWithRoles.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserWithRoles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/CommentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/PostRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/ProfileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/ProfileRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/RoleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserProfileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserProfileRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRoleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/TEST-com.example.usersapi.service.UserServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/com.example.usersapi.service.UserServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/TEST-com.example.usersapi.service.UserServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/surefire-reports/TEST-com.example.usersapi.service.UserServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/com.example.usersapi.service.UserServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/surefire-reports/com.example.usersapi.service.UserServiceTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/test-classes/com/example/usersapi/service/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/test-classes/com/example/usersapi/service/UserServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,22 +117,14 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>findbyid</find>
-      <find>getpost</find>
-      <find>save</find>
-      <find>juni</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/users-api" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/users-api" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -110,10 +145,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575255210789" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api-gateway" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -127,14 +167,15 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api-gateway" />
+      <recent name="$PROJECT_DIR$/users-api/src/main/test/java" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/users-api/src" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/users-api/src/main/test/java" />
-    </key>
   </component>
-  <component name="RunManager" selected="JUnit.com.example.usersapi in users-api">
+  <component name="RunManager" selected="Spring Boot.ZuulGatewayApplication">
     <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="users-api" />
       <extension name="coverage">
@@ -150,50 +191,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserIntegrationTest.login_EmailNull_Exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="users-api" />
+    <configuration name="com.example.apigateway in api-gateway" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api-gateway" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.usersapi.integration.*" />
+          <option name="PATTERN" value="com.example.apigateway.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.usersapi.integration" />
-      <option name="MAIN_CLASS_NAME" value="com.example.usersapi.integration.UserIntegrationTest" />
-      <option name="METHOD_NAME" value="login_EmailNull_Exception" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.example.apigateway" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserIntegrationTest.login_PasswordNull_Exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="users-api" />
+    <configuration name="com.example.commentsapi in comments-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="comments-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.usersapi.integration.*" />
+          <option name="PATTERN" value="com.example.commentsapi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.usersapi.integration" />
-      <option name="MAIN_CLASS_NAME" value="com.example.usersapi.integration.UserIntegrationTest" />
-      <option name="METHOD_NAME" value="login_PasswordNull_Exception" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.example.commentsapi" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserIntegrationTest.login_User_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="users-api" />
+    <configuration name="com.example.postsapi in posts-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="posts-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.usersapi.integration.*" />
+          <option name="PATTERN" value="com.example.postsapi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.usersapi.integration" />
-      <option name="MAIN_CLASS_NAME" value="com.example.usersapi.integration.UserIntegrationTest" />
-      <option name="METHOD_NAME" value="login_User_Success" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.example.postsapi" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -249,11 +284,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.com.example.apigateway in api-gateway" />
+        <item itemvalue="JUnit.com.example.postsapi in posts-api" />
+        <item itemvalue="JUnit.com.example.commentsapi in comments-api" />
         <item itemvalue="JUnit.com.example.usersapi in users-api" />
         <item itemvalue="JUnit.UserControllerTest" />
-        <item itemvalue="JUnit.UserIntegrationTest.login_PasswordNull_Exception" />
-        <item itemvalue="JUnit.UserIntegrationTest.login_EmailNull_Exception" />
-        <item itemvalue="JUnit.UserIntegrationTest.login_User_Success" />
       </list>
     </recent_temporary>
   </component>
@@ -286,7 +321,12 @@
       <workItem from="1574965873117" duration="11256000" />
       <workItem from="1574984402909" duration="13340000" />
       <workItem from="1575230296151" duration="11399000" />
-      <workItem from="1575255367618" duration="3650000" />
+      <workItem from="1575255367618" duration="6959000" />
+      <workItem from="1575315539146" duration="355000" />
+      <workItem from="1575316063997" duration="2304000" />
+      <workItem from="1575319940834" duration="1201000" />
+      <workItem from="1575383625641" duration="1029000" />
+      <workItem from="1575387692713" duration="3807000" />
     </task>
     <servers />
   </component>
@@ -297,29 +337,63 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1388" height="129" key="GridCell.Tab.0.bottom" timestamp="1575298886990">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="336" y="248" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575397147454">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
-    <state width="1388" height="129" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575298886990" />
-    <state width="1836" height="151" key="GridCell.Tab.0.bottom/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030498" />
-    <state width="1388" height="129" key="GridCell.Tab.0.center" timestamp="1575298886988">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1388" height="129" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575298886988" />
-    <state width="1836" height="151" key="GridCell.Tab.0.center/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030497" />
-    <state width="1388" height="129" key="GridCell.Tab.0.left" timestamp="1575298886987">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1388" height="129" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575298886987" />
-    <state width="1836" height="151" key="GridCell.Tab.0.left/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030496" />
-    <state width="1388" height="129" key="GridCell.Tab.0.right" timestamp="1575298886989">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1388" height="129" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575298886989" />
-    <state width="1836" height="151" key="GridCell.Tab.0.right/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030497" />
-    <state x="647" y="355" key="com.intellij.ide.util.TipDialog" timestamp="1575255369038">
+    <state x="336" y="245" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1575383950668" />
+    <state x="336" y="248" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.825@0.23.1440.825" timestamp="1575397147454" />
+    <state width="1228" height="113" key="GridCell.Tab.0.bottom" timestamp="1575341169678">
       <screen x="0" y="23" width="2048" height="1077" />
     </state>
+    <state width="1388" height="207" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575312950375" />
+    <state width="1228" height="40" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1575320482442" />
+    <state width="1228" height="113" key="GridCell.Tab.0.bottom/2656.1175.1440.877/0.23.2048.1077/2048.23.2048.1129@0.23.2048.1077" timestamp="1575341169678" />
+    <state width="1836" height="151" key="GridCell.Tab.0.bottom/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030498" />
+    <state width="1228" height="113" key="GridCell.Tab.0.center" timestamp="1575341169676">
+      <screen x="0" y="23" width="2048" height="1077" />
+    </state>
+    <state width="1388" height="207" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575312950373" />
+    <state width="1228" height="40" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1575320482442" />
+    <state width="1228" height="113" key="GridCell.Tab.0.center/2656.1175.1440.877/0.23.2048.1077/2048.23.2048.1129@0.23.2048.1077" timestamp="1575341169676" />
+    <state width="1836" height="151" key="GridCell.Tab.0.center/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030497" />
+    <state width="1228" height="113" key="GridCell.Tab.0.left" timestamp="1575341169676">
+      <screen x="0" y="23" width="2048" height="1077" />
+    </state>
+    <state width="1388" height="207" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575312950371" />
+    <state width="1228" height="40" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1575320482442" />
+    <state width="1228" height="113" key="GridCell.Tab.0.left/2656.1175.1440.877/0.23.2048.1077/2048.23.2048.1129@0.23.2048.1077" timestamp="1575341169676" />
+    <state width="1836" height="151" key="GridCell.Tab.0.left/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030496" />
+    <state width="1228" height="113" key="GridCell.Tab.0.right" timestamp="1575341169677">
+      <screen x="0" y="23" width="2048" height="1077" />
+    </state>
+    <state width="1388" height="207" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575312950374" />
+    <state width="1228" height="40" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1575320482442" />
+    <state width="1228" height="113" key="GridCell.Tab.0.right/2656.1175.1440.877/0.23.2048.1077/2048.23.2048.1129@0.23.2048.1077" timestamp="1575341169677" />
+    <state width="1836" height="151" key="GridCell.Tab.0.right/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@2048.23.2048.1129" timestamp="1575256030497" />
+    <state width="1228" height="113" key="GridCell.Tab.1.bottom" timestamp="1575341169680">
+      <screen x="0" y="23" width="2048" height="1077" />
+    </state>
+    <state width="1177" height="278" key="GridCell.Tab.1.bottom/0.23.1440.825@0.23.1440.825" timestamp="1575315895397" />
+    <state width="1228" height="113" key="GridCell.Tab.1.bottom/2656.1175.1440.877/0.23.2048.1077/2048.23.2048.1129@0.23.2048.1077" timestamp="1575341169680" />
+    <state width="1228" height="113" key="GridCell.Tab.1.center" timestamp="1575341169679">
+      <screen x="0" y="23" width="2048" height="1077" />
+    </state>
+    <state width="1177" height="278" key="GridCell.Tab.1.center/0.23.1440.825@0.23.1440.825" timestamp="1575315895397" />
+    <state width="1228" height="113" key="GridCell.Tab.1.center/2656.1175.1440.877/0.23.2048.1077/2048.23.2048.1129@0.23.2048.1077" timestamp="1575341169679" />
+    <state width="1228" height="113" key="GridCell.Tab.1.left" timestamp="1575341169678">
+      <screen x="0" y="23" width="2048" height="1077" />
+    </state>
+    <state width="1177" height="278" key="GridCell.Tab.1.left/0.23.1440.825@0.23.1440.825" timestamp="1575315895397" />
+    <state width="1228" height="113" key="GridCell.Tab.1.left/2656.1175.1440.877/0.23.2048.1077/2048.23.2048.1129@0.23.2048.1077" timestamp="1575341169678" />
+    <state width="1228" height="113" key="GridCell.Tab.1.right" timestamp="1575341169679">
+      <screen x="0" y="23" width="2048" height="1077" />
+    </state>
+    <state width="1177" height="278" key="GridCell.Tab.1.right/0.23.1440.825@0.23.1440.825" timestamp="1575315895397" />
+    <state width="1228" height="113" key="GridCell.Tab.1.right/2656.1175.1440.877/0.23.2048.1077/2048.23.2048.1129@0.23.2048.1077" timestamp="1575341169679" />
+    <state x="455" y="277" key="com.intellij.ide.util.TipDialog" timestamp="1575387693393">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state x="455" y="277" key="com.intellij.ide.util.TipDialog/0.23.1440.825@0.23.1440.825" timestamp="1575387693393" />
     <state x="647" y="355" key="com.intellij.ide.util.TipDialog/2656.1175.1440.877/2048.23.2048.1129/0.23.2048.1077@0.23.2048.1077" timestamp="1575255369038" />
   </component>
   <component name="XDebuggerManager">
