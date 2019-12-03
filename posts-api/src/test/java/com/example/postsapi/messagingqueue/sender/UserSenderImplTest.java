@@ -51,6 +51,13 @@ public class UserSenderImplTest {
         assertEquals(user.getId(), actualUserId);
     }
 
+    @Test(expected = RuntimeException.class)
+    public void findIdByUserName_Long_Failure() throws JsonProcessingException {
+        String userIdJson = (new ObjectMapper()).writeValueAsString(user.getId());
+        when(amqpTemplate.convertSendAndReceive(anyString(), anyString())).thenReturn("");
+        userSender.findIdByUsername(user.getUsername());
+    }
+
     @Test
     public void findByUsername_User_Success() throws IOException {
         String userJson = (new ObjectMapper()).writeValueAsString(user);
@@ -59,6 +66,12 @@ public class UserSenderImplTest {
         assertNotNull(actualUser);
         assertEquals(user.getEmail(), actualUser.getEmail());
         assertEquals(user.getUsername(), actualUser.getUsername());
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void findByUsername_User_JsonException() throws IOException {
+        when(amqpTemplate.convertSendAndReceive(anyString(), anyString())).thenReturn("");
+        userSender.findByUsername(user.getUsername());
     }
 
     @Test
@@ -70,6 +83,12 @@ public class UserSenderImplTest {
         assertEquals(user.getId(), actualUser.getId());
         assertEquals(user.getUsername(), actualUser.getUsername());
         assertEquals(user.getEmail(), actualUser.getEmail());
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void findByUserId_User_JsonException() throws IOException {
+        when(amqpTemplate.convertSendAndReceive(anyString(), anyString())).thenReturn("");
+        userSender.findByUserId(user.getId());
     }
 
     @Test
@@ -85,5 +104,27 @@ public class UserSenderImplTest {
         assertNotNull(actualListUser);
         assertEquals(userList.size(),actualListUser.size());
         assertEquals(userList.get(0).getId(), actualListUser.get(0).getId());
+    }
+
+    @Test
+    public void findUserByUserIds_EmptyInput_Success() throws IOException {
+        List<Long> userIdList = new ArrayList<>();
+        List<User> actualListUser = userSender.findUsersByUserIds(userIdList);
+        assertNotNull(actualListUser);
+        assertEquals(0,actualListUser.size());
+    }
+
+    @Test
+    public void findUserByUserIds_ListUsers_JsonException() throws IOException {
+        List<Long> userIdList = new ArrayList<>();
+        userIdList.add(user.getId());
+        String userIdJson = (new ObjectMapper()).writeValueAsString(userIdList);
+        List<User> userList = new ArrayList<>();
+        userList.add(user);
+        String userListJson = (new ObjectMapper()).writeValueAsString(userList);
+        when(amqpTemplate.convertSendAndReceive(anyString(), anyString())).thenReturn("");
+        List<User> actualListUser = userSender.findUsersByUserIds(userIdList);
+        assertNotNull(actualListUser);
+        assertEquals(0, actualListUser.size());
     }
 }
