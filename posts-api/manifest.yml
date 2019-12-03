@@ -1,0 +1,13 @@
+---
+applications:
+  - name: pcf-posts-api
+    memory: 512MB
+    instances: 1
+    docker:
+      image: kyleqc/pcf-posts-api
+    env:
+      SPRING_PROFILES_ACTIVE: pcf
+    services:
+      - service-registry
+      - posts-api-pgdev
+      - rabbitmq

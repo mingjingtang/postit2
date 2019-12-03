@@ -55,11 +55,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   public void configure(HttpSecurity http) throws Exception {
 
     http.cors().and().csrf().disable().authorizeRequests()
+        .antMatchers("/user/test", "/post/test", "/comment/test").permitAll()
         .antMatchers("/user/signup", "/user/login", "/post/list").permitAll()
-        .antMatchers("/post/**/comment").permitAll()
-        .antMatchers("/user/v2/api-docs").permitAll()
-        .antMatchers("/post/v2/api-docs").permitAll()
-        .antMatchers("/comment/v2/api-docs").permitAll()
+        .antMatchers("/post/**/comment").permitAll().antMatchers("/user/v2/api-docs").permitAll()
+        .antMatchers("/post/v2/api-docs").permitAll().antMatchers("/comment/v2/api-docs")
+        .permitAll()
+//                .antMatchers(HttpMethod.POST, "/user/signup").permitAll()
+//                .antMatchers(HttpMethod.POST, "/user/login").permitAll()
+//                .antMatchers(HttpMethod.GET, "/post/list").permitAll()
+//        .anyRequest().permitAll()
         .antMatchers("/user/**", "/post/**", "comment/**").authenticated()
         .antMatchers("/user/role/**").hasRole("ADMIN").and().httpBasic().and().sessionManagement()
         .sessionCreationPolicy(SessionCreationPolicy.STATELESS);

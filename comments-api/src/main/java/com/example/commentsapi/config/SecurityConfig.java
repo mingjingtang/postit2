@@ -1,6 +1,5 @@
-package com.example.usersapi.config;
+package com.example.commentsapi.config;
 
-import com.example.usersapi.service.UserService;
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -21,9 +20,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-  @Autowired
-  private UserService userService;
 
   @Autowired
   @Bean("encoder")
@@ -54,7 +50,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
   }
 
-  public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-    auth.userDetailsService(userService);
-  }
 }

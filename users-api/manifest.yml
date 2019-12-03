@@ -1,0 +1,13 @@
+---
+applications:
+  - name: pcf-users-api
+    memory: 512MB
+    instances: 1
+    docker:
+      image: kyleqc/pcf-users-api
+    env:
+      SPRING_PROFILES_ACTIVE: pcf
+    services:
+      - service-registry
+      - pgdev
+      - rabbitmq

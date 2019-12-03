@@ -1,0 +1,30 @@
+mvn clean package
+docker build -t pcf-api-gateway -f ./Dockerfile_pcf .
+docker tag pcf-api-gateway kyleqc/pcf-api-gateway
+docker push kyleqc/pcf-api-gateway
+cf push pcf-api-gateway --docker-image kyleqc/pcf-api-gateway
+
+mvn clean package
+docker build -t pcf-users-api -f ./Dockerfile_pcf .
+docker tag pcf-users-api kyleqc/pcf-users-api
+docker push kyleqc/pcf-users-api
+cf push pcf-users-api --docker-image kyleqc/pcf-users-api
+
+mvn clean package
+docker build -t pcf-posts-api -f ./Dockerfile_pcf .
+docker tag pcf-posts-api kyleqc/pcf-posts-api
+docker push kyleqc/pcf-posts-api
+cf push pcf-posts-api --docker-image kyleqc/pcf-posts-api
+
+mvn clean package
+docker build -t pcf-comments-api -f ./Dockerfile_pcf .
+docker tag pcf-comments-api kyleqc/pcf-comments-api
+docker push kyleqc/pcf-comments-api
+cf push pcf-comments-api --docker-image kyleqc/pcf-comments-api
+
+
+cf add-network-policy pcf-api-gateway --destination-app pcf-users-api --protocol tcp --port 8081
+cf add-network-policy pcf-users-api --destination-app pcf-api-gateway --protocol tcp --port 8080
+
+cf add-network-policy qc-zuul --destination-app pcf-users-api --protocol tcp --port 0-65535
+cf add-network-policy pcf-users-api --destination-app pcf-api-gateway --protocol tcp --port 8080
