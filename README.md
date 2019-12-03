@@ -6,9 +6,17 @@ Postit2 is a back-end program for the forum-like frontend, which has user accoun
 
 This project is to decompose a monolith spring back-end to work under microservices architecture and aims at decoupling relationship between services to achieve higher scalability.
 
+Links:
+
+[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2416899)
+[Swagger API doc](https://postit2.cfapps.io/swagger-ui.html)
+[Demo APP](https://qimingchen.github.io/S1-Project-1.io/src/html/index.html)
+
 ## Tech Stack
 
-* Java 
+#### Development
+
+* Java EE
 * Spring boot
 * PostgreSQL
 * Docker 
@@ -16,7 +24,30 @@ This project is to decompose a monolith spring back-end to work under microservi
 * Flyway
 * Eureka
 * Zuul
-* Pivotal Cloud Foundry (In progress)
+* Swagger
+
+### Testing (unit tests and integration tests)
+
+* Springboot-test
+* Mockito
+
+### DevOps
+
+##### CICD - Continuous Integration / Delivery
+
+* Jenkins
+* Blue Ocean Pipeline
+* Jacoco Coverage Reporting
+
+##### Logging and Monitoring
+
+* Logstash
+* ElasticSearch
+* Kibana
+
+##### Deployment
+
+* Pivotal Cloud Foundry
 
 ## Design
 
@@ -30,6 +61,9 @@ This project is to decompose a monolith spring back-end to work under microservi
 
 #### Data Intercommunication
 ![Data intercommunication diagram](https://github.com/mingjingtang/postit2/blob/dev/assets/data_intercommunication.png)
+
+#### DevOps
+![DevOps diagram](https://github.com/mingjingtang/postit2/blob/qc-readme/assets/devops.png)
 
 ## Agile Practice and Extreme Programming
 
