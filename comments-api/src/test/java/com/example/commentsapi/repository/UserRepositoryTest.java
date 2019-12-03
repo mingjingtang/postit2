@@ -29,14 +29,14 @@ public class UserRepositoryTest {
   private User user;
 
   @Before
-  public void init(){
+  public void init() {
     user.setId(1L);
     user.setEmail("email1");
     user.setUsername("user1");
   }
 
   @Test
-  public void findByUsername_User_Success(){
+  public void findByUsername_User_Success() {
     when(userSender.findByUsername(anyString())).thenReturn(user);
     User actualUser = userRepository.findByUsername("user1");
     assertEquals(user.getId(), actualUser.getId());

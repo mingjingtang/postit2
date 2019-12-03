@@ -174,5 +174,4 @@ public class UserRoleControllerTest {
         .andReturn();
     System.out.println(result.getResponse().getContentAsString());
   }
-
 }

@@ -13,7 +13,7 @@
   <artifactId>posts-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>posts-api</name>
-  <description>Demo project for Spring Boot</description>
+  <description>posts-api project for Spring Boot</description>
 
   <properties>
     <java.version>1.8</java.version>

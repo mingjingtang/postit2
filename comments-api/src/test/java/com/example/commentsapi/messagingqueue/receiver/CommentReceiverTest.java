@@ -8,7 +8,6 @@ import static org.mockito.Mockito.when;
 import com.example.commentsapi.model.Comment;
 import com.example.commentsapi.repository.CommentPostRepository;
 import com.example.commentsapi.repository.CommentUserRepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;

@@ -30,5 +30,4 @@ public interface UserService extends UserDetailsService {
   public List<User> findUsersByIds(List<Long> userIdList);
 
   public List<CommentWithDetails> getCommentsByUser(String username) throws JsonProcessingException;
-
 }

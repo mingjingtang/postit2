@@ -14,21 +14,20 @@ import java.util.List;
 @EnableAutoConfiguration
 public class DocumentationController implements SwaggerResourcesProvider {
 
-    @Override
-    public List get() {
-        List resources = new ArrayList<>();
-        resources.add(swaggerResource("users-api", "/user/v2/api-docs", "2.0"));
-        resources.add(swaggerResource("posts-api", "/post/v2/api-docs", "2.0"));
-        resources.add(swaggerResource("comments-api", "/comment/v2/api-docs", "2.0"));
-        return resources;
-    }
+  @Override
+  public List get() {
+    List resources = new ArrayList<>();
+    resources.add(swaggerResource("users-api", "/user/v2/api-docs", "2.0"));
+    resources.add(swaggerResource("posts-api", "/post/v2/api-docs", "2.0"));
+    resources.add(swaggerResource("comments-api", "/comment/v2/api-docs", "2.0"));
+    return resources;
+  }
 
-    private SwaggerResource swaggerResource(String name, String location, String version) {
-        SwaggerResource swaggerResource = new SwaggerResource();
-        swaggerResource.setName(name);
-        swaggerResource.setLocation(location);
-        swaggerResource.setSwaggerVersion(version);
-        return swaggerResource;
-    }
-
+  private SwaggerResource swaggerResource(String name, String location, String version) {
+    SwaggerResource swaggerResource = new SwaggerResource();
+    swaggerResource.setName(name);
+    swaggerResource.setLocation(location);
+    swaggerResource.setSwaggerVersion(version);
+    return swaggerResource;
+  }
 }

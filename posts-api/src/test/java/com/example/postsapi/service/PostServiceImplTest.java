@@ -27,123 +27,121 @@ import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
 public class PostServiceImplTest {
-    @Rule
-    public MockitoRule rule = MockitoJUnit.rule().silent();
 
-    @Mock
-    PostRepository postRepository;
+  @Rule
+  public MockitoRule rule = MockitoJUnit.rule().silent();
 
-    @Mock
-    UserRepository userRepository;
+  @Mock
+  PostRepository postRepository;
 
-    @Mock
-    PostUserRepository postUserRepository;
+  @Mock
+  UserRepository userRepository;
 
-    @InjectMocks
-    User user;
+  @Mock
+  PostUserRepository postUserRepository;
 
-    @InjectMocks
-    Post post;
+  @InjectMocks
+  User user;
 
-    @InjectMocks
-    PostServiceImpl postService;
+  @InjectMocks
+  Post post;
 
-    private PostWithUser postWithUser;
+  @InjectMocks
+  PostServiceImpl postService;
 
-    List<Post> posts;
-    List<Long> postIdList;
-    Iterable<Post> postIter;
+  private PostWithUser postWithUser;
 
-    @Before
-    public void init(){
-        post.setPostId(1L);
-        post.setTitle("title");
-        post.setDescription("post");
+  List<Post> posts;
+  List<Long> postIdList;
+  Iterable<Post> postIter;
 
-        user.setId(1L);
-        user.setUsername("name");
-        user.setEmail("name@gmail.com");
+  @Before
+  public void init() {
+    post.setPostId(1L);
+    post.setTitle("title");
+    post.setDescription("post");
 
-        postWithUser = new PostWithUser(post, user);
+    user.setId(1L);
+    user.setUsername("name");
+    user.setEmail("name@gmail.com");
 
-        posts= new ArrayList<>();
-        posts.add(post);
+    postWithUser = new PostWithUser(post, user);
 
-        postIdList = new ArrayList<>();
-        postIdList.add(post.getPostId());
-        postIter = posts;
-    }
+    posts = new ArrayList<>();
+    posts.add(post);
 
-    @Test
-    public void createPost_PostWithUser_Success(){
-        when(postRepository.save(any())).thenReturn(post);
-        when(userRepository.findByUsername(anyString())).thenReturn(user);
+    postIdList = new ArrayList<>();
+    postIdList.add(post.getPostId());
+    postIter = posts;
+  }
 
-        PostWithUser actualPostWithUser = postService.createPost("name", post);
-        assertEquals(postWithUser.getPostId(), actualPostWithUser.getPostId());
-    }
+  @Test
+  public void createPost_PostWithUser_Success() {
+    when(postRepository.save(any())).thenReturn(post);
+    when(userRepository.findByUsername(anyString())).thenReturn(user);
 
+    PostWithUser actualPostWithUser = postService.createPost("name", post);
+    assertEquals(postWithUser.getPostId(), actualPostWithUser.getPostId());
+  }
 
+  @Test
+  public void deletePostByPostId_Long_Success() throws AuthException {
+    when(postRepository.findById(anyLong())).thenReturn(java.util.Optional.of(post));
+    when(userRepository.findByUsername(anyString())).thenReturn(user);
+    when(postUserRepository.getUserIdByPostId(anyLong())).thenReturn(user.getId());
 
-    @Test
-    public void deletePostByPostId_Long_Success() throws AuthException {
-        when(postRepository.findById(anyLong())).thenReturn(java.util.Optional.of(post));
-        when(userRepository.findByUsername(anyString())).thenReturn(user);
-        when(postUserRepository.getUserIdByPostId(anyLong())).thenReturn(user.getId());
+    Long actualPostId = postService.deletePostByPostId("name", 1l);
+    assertEquals(1l, (long) actualPostId);
+  }
 
-        Long actualPostId = postService.deletePostByPostId("name", 1l);
-        assertEquals(1l, (long)actualPostId);
-    }
+  @Test(expected = EntityNotFoundException.class)
+  public void deletePostByPostId_commentNotFound_EntityNotFoundException() throws AuthException {
+    when(postRepository.findById(anyLong())).thenReturn(Optional.empty());
+    postService.deletePostByPostId("username", 1L);
+  }
 
-    @Test(expected = EntityNotFoundException.class)
-    public void deletePostByPostId_commentNotFound_EntityNotFoundException() throws AuthException {
-        when(postRepository.findById(anyLong())).thenReturn(Optional.empty());
-        postService.deletePostByPostId("username", 1L);
-    }
+  @Test
+  public void listPost_List_Success() throws JsonProcessingException {
+    List<User> userList = new ArrayList<>();
+    userList.add(user);
 
+    when(postRepository.findAll()).thenReturn(postIter);
+    when(postUserRepository.findUserIdsByPostIds(anyList())).thenReturn(postIdList);
+    when(userRepository.findUsersByUserIds(anyList())).thenReturn(userList);
 
-    @Test
-    public void listPost_List_Success() throws JsonProcessingException {
-        List<User> userList = new ArrayList<>();
-        userList.add(user);
+    List<PostWithUser> actualPostWithUserList = postService.listPosts();
+    assertNotNull(actualPostWithUserList);
+    List<PostWithUser> expectPostWithUserList = new ArrayList<>();
+    expectPostWithUserList.add(postWithUser);
 
-        when(postRepository.findAll()).thenReturn(postIter);
-        when(postUserRepository.findUserIdsByPostIds(anyList())).thenReturn(postIdList);
-        when(userRepository.findUsersByUserIds(anyList())).thenReturn(userList);
+    assertEquals(expectPostWithUserList.size(), actualPostWithUserList.size());
+    assertEquals(expectPostWithUserList.get(0).getPostId(),
+        actualPostWithUserList.get(0).getPostId());
+  }
 
-        List<PostWithUser> actualPostWithUserList = postService.listPosts();
-        assertNotNull(actualPostWithUserList);
-        List<PostWithUser> expectPostWithUserList = new ArrayList<>();
-        expectPostWithUserList.add(postWithUser);
+  @Test
+  public void findByPostId_PostWithUser_Success() {
+    when(postRepository.findById(anyLong())).thenReturn(Optional.of(post));
+    when(postUserRepository.getUserIdByPostId(anyLong())).thenReturn(user.getId());
+    when(userRepository.findByUserId(anyLong())).thenReturn(user);
+    PostWithUser actualPostWithUser = postService.findByPostId(1l);
+    assertNotNull(actualPostWithUser);
+    assertEquals(postWithUser.getPostId(), actualPostWithUser.getPostId());
+  }
 
-        assertEquals(expectPostWithUserList.size(), actualPostWithUserList.size());
-        assertEquals(expectPostWithUserList.get(0).getPostId(), actualPostWithUserList.get(0).getPostId());
-    }
+  @Test
+  public void findPostByUserId_List_Success() {
+    when(postUserRepository.findPostsByUserId(anyLong())).thenReturn(posts);
+    List<Post> actualPostList = postService.findPostsByUserId(user.getId());
+    assertNotNull(actualPostList);
+    assertEquals(posts, actualPostList);
+  }
 
-    @Test
-    public void findByPostId_PostWithUser_Success(){
-        when(postRepository.findById(anyLong())).thenReturn(Optional.of(post));
-        when(postUserRepository.getUserIdByPostId(anyLong())).thenReturn(user.getId());
-        when(userRepository.findByUserId(anyLong())).thenReturn(user);
-        PostWithUser actualPostWithUser = postService.findByPostId(1l);
-        assertNotNull(actualPostWithUser);
-        assertEquals(postWithUser.getPostId(), actualPostWithUser.getPostId());
-    }
-
-
-    @Test
-    public void findPostByUserId_List_Success(){
-        when(postUserRepository.findPostsByUserId(anyLong())).thenReturn(posts);
-        List<Post> actualPostList = postService.findPostsByUserId(user.getId());
-        assertNotNull(actualPostList);
-        assertEquals(posts, actualPostList);
-    }
-
-    @Test
-    public void findPostByPostId_List_Success(){
-        when(postRepository.findAllById(anyList())).thenReturn(postIter);
-        List<Post> actualPosts = postService.findPostsByPostIds(postIdList);
-        assertNotNull(actualPosts);
-        assertEquals(posts, actualPosts);
-    }
+  @Test
+  public void findPostByPostId_List_Success() {
+    when(postRepository.findAllById(anyList())).thenReturn(postIter);
+    List<Post> actualPosts = postService.findPostsByPostIds(postIdList);
+    assertNotNull(actualPosts);
+    assertEquals(posts, actualPosts);
+  }
 }

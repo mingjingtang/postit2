@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 class TestFlywayConfig {
+
   @Bean
   public FlywayMigrationStrategy clean() {
     return flyway -> {

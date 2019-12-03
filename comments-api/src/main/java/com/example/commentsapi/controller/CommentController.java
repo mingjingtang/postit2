@@ -5,7 +5,6 @@ import com.example.commentsapi.model.CommentWithDetails;
 import com.example.commentsapi.service.CommentService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
 import javax.security.auth.message.AuthException;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

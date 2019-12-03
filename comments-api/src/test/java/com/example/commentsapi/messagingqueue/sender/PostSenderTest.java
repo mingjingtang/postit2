@@ -2,16 +2,12 @@ package com.example.commentsapi.messagingqueue.sender;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
-import static org.postgresql.hostchooser.HostRequirement.any;
 
 import com.example.commentsapi.model.Post;
 import com.example.commentsapi.model.PostWithUser;
 import com.example.commentsapi.model.User;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import javax.persistence.EntityNotFoundException;
@@ -62,7 +58,7 @@ public class PostSenderTest {
     when(amqpTemplate.convertSendAndReceive(anyString(), anyString())).thenReturn(postJson);
     PostWithUser actualPostWithUser = postSender.findByPostId(1L);
     assertNotNull(actualPostWithUser);
-    assertEquals(1l, (long)actualPostWithUser.getPostId());
+    assertEquals(1l, (long) actualPostWithUser.getPostId());
   }
 
   @Test(expected = EntityNotFoundException.class)

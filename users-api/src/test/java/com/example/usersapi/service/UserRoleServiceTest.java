@@ -158,7 +158,7 @@ public class UserRoleServiceTest {
     when(userRoleRepository.findRolesByUserId(anyLong())).thenReturn(roles);
 
     UserWithRoles actualUserWithRoles = userRoleService.removeRoleFromUser("xx", 1L);
-    assertEquals(0, roles.size());
+    assertEquals(0, actualUserWithRoles.getRoles().size());
   }
 
   @Test(expected = EntityNotFoundException.class)

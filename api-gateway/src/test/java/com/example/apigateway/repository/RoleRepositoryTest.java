@@ -19,6 +19,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 public class RoleRepositoryTest {
+
   @Rule
   public MockitoRule rule = MockitoJUnit.rule().silent();
 
@@ -32,24 +33,25 @@ public class RoleRepositoryTest {
   private JdbcTemplate jdbcTemplate;
 
   @Before
-  public void init(){
+  public void init() {
     userRole.setId(1L);
     userRole.setName("ROLE_TEST");
   }
 
   @Test
-  public void findRoleById_UserRole_Success(){
-    when(jdbcTemplate.queryForObject(anyString(), any(), any(RowMapper.class))).thenReturn(userRole);
+  public void findRoleById_UserRole_Success() {
+    when(jdbcTemplate.queryForObject(anyString(), any(), any(RowMapper.class)))
+        .thenReturn(userRole);
 
     UserRole actualUserRole = roleRepository.findRoleById(1L);
     assertEquals("ROLE_TEST", actualUserRole.getName());
-    assertEquals((long)1L, (long)actualUserRole.getId());
+    assertEquals((long) 1L, (long) actualUserRole.getId());
   }
 
   @Test
-  public void findRoleById_EmptyResultDataAccessException(){
-    when(jdbcTemplate.queryForObject(anyString(), any(), any(RowMapper.class))).thenThrow(
-        EmptyResultDataAccessException.class);
+  public void findRoleById_EmptyResultDataAccessException() {
+    when(jdbcTemplate.queryForObject(anyString(), any(), any(RowMapper.class)))
+        .thenThrow(EmptyResultDataAccessException.class);
 
     UserRole actualUserRole = roleRepository.findRoleById(1L);
     assertNull(actualUserRole);

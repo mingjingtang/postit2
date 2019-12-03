@@ -6,14 +6,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestController {
+
   @RequestMapping("/unittest")
-  public String unittest(){
+  public String unittest() {
     return "helloworld";
   }
 
   @PreAuthorize("authenticated()")
   @RequestMapping("/auth")
-  public String auth(){
+  public String auth() {
     return "helloauth";
   }
 }
