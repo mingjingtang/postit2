@@ -16,8 +16,9 @@ public class UserRepository {
     try {
       String sql = "SELECT * FROM users WHERE username = ?";
       return jdbcTemplate.queryForObject(sql, new Object[]{username},
-          (rs, rowNum) -> new User(rs.getLong("id"), rs.getString("email"), rs.getString("username"), rs.getString("password")));
-    }catch (EmptyResultDataAccessException e){
+          (rs, rowNum) -> new User(rs.getLong("id"), rs.getString("email"),
+              rs.getString("username"), rs.getString("password")));
+    } catch (EmptyResultDataAccessException e) {
       System.out.println("Entity record Not Found: username: " + username);
       return null;
     }
