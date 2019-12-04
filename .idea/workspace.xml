@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="106bac30-0aed-4688-9eb5-79914f93fdd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api-gateway.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/Dockerfile_pcf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/manifest.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-pcf.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comments-api/Dockerfile_pcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comments-api/comments-api.log.2019-12-02.012670050286935.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comments-api/manifest.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/config/RabbitMqConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comments-api/src/main/resources/application-pcf.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comments-api/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts-api/Dockerfile_pcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts-api/manifest.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts-api/posts-api.log.2019-12-02.011180091397511.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/config/RabbitMqConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts-api/src/main/resources/application-pcf.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts-api/src/main/resources/application.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/users-api/Dockerfile_pcf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/users-api/manifest.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/RabbitMqConfig.java" afterDir="false" />
@@ -14,13 +24,11 @@
       <change afterPath="$PROJECT_DIR$/users-api/src/main/resources/application.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/integration/LoginTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/users-api/users-api.log.2019-12-02.08133083445575.tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/JwtRequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/comments-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/comments-api/src/main/java/com/example/commentsapi/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/posts-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/posts-api/src/main/java/com/example/postsapi/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/Jenkinsfile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" afterDir="false" />
@@ -123,7 +131,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/users-api" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MavenImportPreferences">
@@ -326,7 +334,7 @@
       <workItem from="1575316063997" duration="2304000" />
       <workItem from="1575319940834" duration="1201000" />
       <workItem from="1575383625641" duration="1029000" />
-      <workItem from="1575387692713" duration="3807000" />
+      <workItem from="1575387692713" duration="6833000" />
     </task>
     <servers />
   </component>
@@ -337,11 +345,11 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="336" y="248" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575397147454">
+    <state x="336" y="248" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575400570016">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state x="336" y="245" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1575383950668" />
-    <state x="336" y="248" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.825@0.23.1440.825" timestamp="1575397147454" />
+    <state x="336" y="248" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.825@0.23.1440.825" timestamp="1575400570016" />
     <state width="1228" height="113" key="GridCell.Tab.0.bottom" timestamp="1575341169678">
       <screen x="0" y="23" width="2048" height="1077" />
     </state>

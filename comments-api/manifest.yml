@@ -1,0 +1,13 @@
+---
+applications:
+  - name: pcf-comments-api-1
+    memory: 512MB
+    instances: 1
+    docker:
+      image: mingjing/pcf-comments-api-1
+    env:
+      SPRING_PROFILES_ACTIVE: pcf
+    services:
+      - service-registry
+      - comments-api
+      - rabbitmq
