@@ -4,13 +4,16 @@
     <list default="true" id="106bac30-0aed-4688-9eb5-79914f93fdd9" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SwaggerConfig.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/integration/LoginTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-api/users-api.log.2019-12-01.0.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/Jenkinsfile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/UsersApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/controller/UserRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/PostSenderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/messagingqueue/sender/PostSenderImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/UserProfile.java" afterDir="false" />
@@ -20,6 +23,8 @@
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserProfileWithUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserProfileWithUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserWithRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/model/wrapper/UserWithRoles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/repository/UserRoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserProfileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserProfileServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserRoleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/main/java/com/example/usersapi/service/UserService.java" afterDir="false" />
@@ -28,30 +33,53 @@
       <change beforePath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/service/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/UsersApiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/UsersApiApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/JwtUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserProfileController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/controller/UserRoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/receiver/UserReceiverImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/CommentSenderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSender.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/messagingqueue/sender/PostSenderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/JwtResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/JwtResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/Post.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/UserRole.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/CommentWithDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/CommentWithDetails.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/PostWithUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/PostWithUser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/RoleWithUsers.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/RoleWithUsers.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserProfileWithUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserProfileWithUser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserWithRoles.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/model/wrapper/UserWithRoles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/CommentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/PostRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/ProfileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/ProfileRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/RoleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserProfileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserProfileRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/repository/UserRoleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserProfileServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserRoleServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/classes/com/example/usersapi/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/TEST-com.example.usersapi.service.UserServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/com.example.usersapi.service.UserServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/TEST-com.example.usersapi.service.UserServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/surefire-reports/TEST-com.example.usersapi.service.UserServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-api/target/surefire-reports/com.example.usersapi.service.UserServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/surefire-reports/com.example.usersapi.service.UserServiceTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-api/target/test-classes/com/example/usersapi/service/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/users-api/target/test-classes/com/example/usersapi/service/UserServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,13 +111,13 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/users-api" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -127,11 +155,11 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/users-api/src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/users-api/src/main/test/java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/users-api/src" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.com.example.usersapi in users-api">
@@ -327,7 +355,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/users-api/src/test/java/com/example/usersapi/integration/SignupTest.java</url>
-          <line>52</line>
+          <line>47</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -125,6 +125,63 @@ This project is to decompose a monolith spring back-end to work under microservi
   * We create different models to construct json object
   * We refactor the wrapper files into a sub path in model so the file structure is clearer. 
   * The whole process of composing elements is a hard work, we have to draw the structure first, then add them one by one.
+  
+* Jenkins: setup pipeline for multiple microservices in 
+  * We start with separating microservice into different repo, then setup Jenkins one by one.
+  * But we finally find out that we can go with one repo, but setup the pipeline configuration to load a specific Jenkinsfiles to test different directories.
+
+* Jenkins: Jacoco sometimes fails to produce the coverage report
+
+* ELK
+  * need to set 'read_only_allow_delete' to false to elasticsearch setting, credit to tracy
+  * figure out how to create index pattern for customized patterns.
+
+* Swagger
+  * figure out how to setup swagger to work under microservices environment
+
+* Deployment
+  * figure out the networking problem, solved by using PCF's provided services
+
+* Unit test and Integration test
+  * Challenging to mock some objects, like Jackson's ObjectMapper. We analyzed the role of ObjectMapper in the program workflow and found out we could use the real ObjectMapper and didn't need to mock it
+  * Better understanding the purpose of unit testing and integration test.
+  * Challenging to test messaging queue.
+
+* Exception Handling
+  * challenging to find exceptional cases
+
+## Installation Instruction
+
+#### Installing the app locally
+
+1. Clone the project
+2. Install Docker
+3. Goto the project's directory, launch the project by 'docker-compose up'
+
+#### Jenkins
+
+1. Create Jenkins file in the project's directory
+2. Push the project to Github
+3. Install Jenkins and launch Jenkins service
+4. Login Jenkins, install plugins
+  * Blue Ocean (pipeline plugin)
+  * Jacoco, Code coverage API (code coverage plugin)
+5. For each service, create a pipeline, setup pipeline from SCM to load the repository for pipeline.
+6. Open the Blue Ocean and run the pipeline.
+
+#### ELK
+
+1. Install ELK kit:
+    * ElasticSearch
+    * Logstash
+    * Kibana
+2. Download the 'logstash.conf' file, modified the 'path' attributes to match with local machine
+3. cmd: '/usr/local/bin/logstash -f logstash.conf' to start logstash service
+4. start ElasticSearch and Kibana
+5. start the app to generate logs
+6. Login to Kibana, goto Management -> Create Index Pattern -> Enter 'users-api-*' (search for the pattern)
+
+
 
 ## Timeline
 
