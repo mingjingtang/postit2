@@ -2,6 +2,7 @@ package com.example.apigateway.config;
 
 import com.example.apigateway.service.UserService;
 import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.MalformedJwtException;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -40,6 +41,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         logger.warn("Unable to get JWT Token");
       } catch (ExpiredJwtException e) {
         logger.warn("JWT Token has expired");
+      } catch (MalformedJwtException e) {
+        logger.warn("JWT Token is malformed");
       }
     } else {
       logger.warn("JWT Token does not begin with Bearer String");
