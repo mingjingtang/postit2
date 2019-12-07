@@ -5,6 +5,10 @@ public class UserRole {
   private Long id;
   private String name;
 
+  public UserRole(){
+
+  }
+
   public UserRole(Long id, String name) {
     this.id = id;
     this.name = name;

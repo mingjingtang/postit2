@@ -1,6 +1,9 @@
 package com.example.usersapi.messagingqueue.receiver;
 
 import com.example.usersapi.model.User;
+import com.example.usersapi.model.UserRole;
+import com.example.usersapi.model.wrapper.UserWithPwd;
+import com.example.usersapi.repository.UserRoleRepository;
 import com.example.usersapi.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -18,6 +21,9 @@ public class UserReceiverImpl implements UserReceiver {
 
   @Autowired
   private UserService userService;
+
+  @Autowired
+  private UserRoleRepository userRoleRepository;
 
   private ObjectMapper mapper = new ObjectMapper();
 
@@ -43,6 +49,21 @@ public class UserReceiverImpl implements UserReceiver {
       String username = message.split(":")[1];
       User user = userService.findByUsername(username);
       userJson = mapper.writeValueAsString(user);
+      return userJson;
+    }
+    return "";
+  }
+
+  @Override
+  @RabbitListener(queuesToDeclare = @Queue("findByUsernameWithPassword"))
+  public String handleMessage_findByUsernameWithPassword(String message) throws JsonProcessingException {
+    System.out.println("received:" + message);
+    String userJson = "";
+    if (message.startsWith("findByUsername")) {
+      String username = message.split(":")[1];
+      User user = userService.findByUsername(username);
+      UserWithPwd userBean = new UserWithPwd(user);
+      userJson = mapper.writeValueAsString(userBean);
       return userJson;
     }
     return "";
@@ -75,5 +96,20 @@ public class UserReceiverImpl implements UserReceiver {
     List<User> userList = userService.findUsersByIds(userIdList);
     String userListJson = mapper.writeValueAsString(userList);
     return userListJson;
+  }
+
+  @Override
+  @RabbitListener(queuesToDeclare = @Queue("findRolesByUserId"))
+  public String handleMessage_findRolesByUserId(String message) throws IOException {
+    System.out.println("received:" + message);
+    String rolesJson = "";
+    if (message.startsWith("findRolesByUserId")) {
+      Long userId = Long.parseLong(message.split(":")[1]);
+      User user = userService.findById(userId);
+      List<UserRole> roles = userRoleRepository.findRolesByUserId(user.getId());
+      rolesJson = mapper.writeValueAsString(roles);
+      return rolesJson;
+    }
+    return "";
   }
 }
