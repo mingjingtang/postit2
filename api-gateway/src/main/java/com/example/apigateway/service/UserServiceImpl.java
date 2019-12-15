@@ -1,10 +1,9 @@
 package com.example.apigateway.service;
 
 import com.example.apigateway.config.JwtUtil;
-import com.example.apigateway.model.User;
 import com.example.apigateway.model.UserRole;
+import com.example.apigateway.model.UserWithRoles;
 import com.example.apigateway.repository.UserRepository;
-import com.example.apigateway.repository.UserRoleRepository;
 import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
@@ -29,16 +28,13 @@ public class UserServiceImpl implements UserService {
   private UserRepository userRepository;
 
   @Autowired
-  private UserRoleRepository userRoleRepository;
-
-  @Autowired
   private JwtUtil jwtUtil;
 
   Logger logger = LoggerFactory.getLogger(this.getClass());
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    User user = userRepository.findUserByUsername(username);
+    UserWithRoles user = userRepository.findUserWithRolesByUsername(username, "auth-verification-13772384292");
 
     if (user == null) {
       logger.warn("request with username: " + username + " is not found");
@@ -46,13 +42,13 @@ public class UserServiceImpl implements UserService {
     }
 
     return new org.springframework.security.core.userdetails.User(user.getUsername(),
-        bCryptPasswordEncoder.encode(user.getPassword()), true, true, true, true,
+        "", true, true, true, true,
         getGrantedAuthorities(user));
   }
 
-  private List<GrantedAuthority> getGrantedAuthorities(User user) {
+  private List<GrantedAuthority> getGrantedAuthorities(UserWithRoles user) {
     List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-    List<UserRole> roles = userRoleRepository.findRolesByUserId(user.getId());
+    List<UserRole> roles = user.getRoles();
     for (UserRole role : roles) {
       authorities.add(new SimpleGrantedAuthority(role.getName()));
     }

@@ -9,4 +9,3 @@ applications:
     SPRING_PROFILES_ACTIVE: pcf
   services:
   - service-registry
-  - rabbitmq
