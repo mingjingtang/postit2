@@ -17,8 +17,10 @@ import springfox.documentation.spring.web.plugins.Docket;
 import java.io.IOException;
 import springfox.documentation.swagger.web.ApiKeyVehicle;
 import springfox.documentation.swagger.web.SecurityConfiguration;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
+@Profile("!pcf")
 public class SwaggerConfig {
 
   @Value("${api-gateway.host}")
